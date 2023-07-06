@@ -7,10 +7,10 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Academic Page of Wu, Chengpei (吴成沛)"
+title                    : "Academic Home Page"
 title_separator          : "-"
 name                     : &name "Wu, chengpei"
-description              : &description "Graduate student, School of Computer Science, Sichuan Normal University. Interested in network science and graph machine learning."
+description              : &description "Nothing"
 url                      : https://chengpei-wu.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "chengpei-wu/chengpei-wu.github.io"
@@ -82,11 +82,11 @@ analytics:
 author:
   name             : "Wu, Chengpei"
   avatar           : "profile.png"
-  bio              : "Graduate student, School of Computer Science, Sichuan Normal University. Interested in network science and graph machine learning."
+  bio              : "I am currently pursuing the master's degree in the School of Computer Science at Sichuan Normal University, Chengdu, China. I recieved the bachelor's degree in 2021. \n\tMy research interests include machine learning, graph machine learning, and network science."
   location         : "Chengdu, China"
   employer         :
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : "http://yourfullgooglescholarurl.com"
+  # pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  # googlescholar    : "http://yourfullgooglescholarurl.com"
   email            : "chengpei.wu@hotmail.com"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
@@ -103,13 +103,13 @@ author:
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         :
-  orcid            : "http://orcid.org/yourorcidurl"
+  orcid            : "https://orcid.org/0009-0007-9460-4807"
   pinterest        :
   soundcloud       :
-  stackoverflow    : # http://stackoverflow.com/users/123456/username
+  # stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : "replacethistwitterhandle"
+  # twitter          : "replacethistwitterhandle"
   vine             :
   weibo            :
   xing             :
