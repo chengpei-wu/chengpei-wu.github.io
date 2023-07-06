@@ -12,6 +12,15 @@ I am currently pursuing a master's in the School of Computer Science at [Sichuan
 I received the bachelor's degree from [Chengdu University](https://en.cdu.edu.cn/), Chengdu, China, in 2021.
 My research interests include Machine Learning, Graph Representation Learning, and Network Science.
 
+------
+
+# News
+
+- [**06/01/2023**] Three papers accepted by IEEE SMC 2023.
+- [**04/19/2023**] One paper accepted by IEEE Transactions on Neural Networks and Learning Systems.
+
+------
+
 # Selected Publications
 
 1. **Chengpei Wu**, [Yang Lou](https://fylou.github.io/index.html), and Junli Li "Pyramid Pooling-Based Local Profiles for Graph Classification"
