@@ -8,6 +8,18 @@ redirect_from:
   - /about.html
 ---
 
-This is the homepage of Wu, Chengpei.  
-I am currently pursuing a master's in the School of Computer Science at [Sichuan Normal University](http://english.sicnu.edu.cn/EnglishIndex/webindex), Chengdu, China.  
-I received the bachelor's degree from [Chengdu University](https://en.cdu.edu.cn/), Chengdu, China, in 2021. 
+I am currently pursuing a master's in the School of Computer Science at [Sichuan Normal University](http://english.sicnu.edu.cn/EnglishIndex/webindex), Chengdu, China. Under the supervision of Professor [Li, Junli](https://baike.baidu.hk/item/%E6%9D%8E%E5%9D%87%E5%88%A9/6082659).
+I received the bachelor's degree from [Chengdu University](https://en.cdu.edu.cn/), Chengdu, China, in 2021.
+My research interests include Machine Learning, Graph Representation Learning, and Network Science.
+
+# Selected Publications
+
+1. **Chengpei Wu**, [Yang Lou](https://fylou.github.io/index.html), and Junli Li "Pyramid Pooling-Based Local Profiles for Graph Classification"
+   *IEEE International Conference on Systems, Man, and Cybernetics* (*SMC*) October 1-4, 2023, Maui, Hawaii, USA. (2023)
+2. **Chengpei Wu**, [Yang Lou](https://fylou.github.io/index.html), Lin Wang, Junli Li, and [Guanrong Chen](http://www.ee.cityu.edu.hk/~gchen/), "SPP-CNN: An Efficient Framework for Network Robustness Prediction" *Submitted to IEEE* arXiv: 2305.07872 (2023)
+3. [Yang Lou](https://fylou.github.io/index.html), **Chengpei Wu**, Junli Li, Lin Wang, and [Guanrong Chen](http://www.ee.cityu.edu.hk/~gchen/), "[Network Robustness Prediction: Influence of Training Data Distributions](https://ieeexplore.ieee.org/document/10130828)," *IEEE Transactions on Neural Networks and Learning Systems*, doi:10.1109/TNNLS.2023.3269753 (2023)
+4. **Chengpei Wu**, [Yang Lou](https://fylou.github.io/index.html), Ruizi Wu, Wenwen Liu, and Junli Li
+   "CNN-based Prediction of Network Robustness With Missing Edges"
+   *In Proceedings of [International Joint Conference on Neural Networks](https://wcci2022.org/)* (*[IJCNN](https://wcci2022.org/)*)
+   Padua, Italy, doi:10.1109/IJCNN55064.2022.9892188 (2022)
+
