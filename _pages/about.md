@@ -16,8 +16,8 @@ My research interests include Machine Learning, Graph Representation Learning, a
 
 # News
 
-- [**06/01/2023**] Three papers accepted by IEEE SMC 2023.
-- [**04/19/2023**] One paper accepted by IEEE Transactions on Neural Networks and Learning Systems.
+- [**06/01/2023**] Three papers accepted by [*IEEE SMC 2023*](https://ieeesmc2023.org/).
+- [**04/19/2023**] One paper accepted by [*IEEE Transactions on Neural Networks and Learning Systems*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5962385).
 
 ------
 
