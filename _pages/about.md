@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am currently pursuing a master's in the School of Computer Science at [Sichuan Normal University](http://english.sicnu.edu.cn/EnglishIndex/webindex), Chengdu, China. Under the supervision of Professor [Li, Junli](https://baike.baidu.hk/item/%E6%9D%8E%E5%9D%87%E5%88%A9/6082659).
+I am currently pursuing a master's degree in the School of Computer Science at [Sichuan Normal University](http://english.sicnu.edu.cn/EnglishIndex/webindex), Chengdu, China. Under the supervision of Professor [Li, Junli](https://baike.baidu.hk/item/%E6%9D%8E%E5%9D%87%E5%88%A9/6082659).
 I received the bachelor's degree from [Chengdu University](https://en.cdu.edu.cn/), Chengdu, China, in 2021.
 My research interests include Machine Learning, Graph Representation Learning, and Network Science.
 
