@@ -34,7 +34,7 @@ Learning, Graph Representation Learning, and Network Science.
    [*IEEE International Conference on Systems, Man, and Cybernetics* (*SMC*)](https://ieeesmc2023.org/) October 1-4, 2023, Maui, Hawaii, USA.
 2. **Chengpei Wu**, [Yang Lou](https://fylou.github.io/index.html), Lin Wang, Junli Li,
    and [Guanrong Chen](http://www.ee.cityu.edu.hk/~gchen/), "SPP-CNN: An Efficient Framework for Network Robustness
-   Prediction," *IEEE Transactions on Circuits and Systems I: Regular*. (In Press)
+   Prediction," [*IEEE Transactions on Circuits and Systems I: Regular*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8919). (In Press)
 3. **Chengpei Wu**, [Yang Lou](https://fylou.github.io/index.html), Ruizi Wu, Wenwen Liu, and Junli Li
    "CNN-based Prediction of Network Robustness With Missing Edges"
    *In Proceedings
