@@ -13,8 +13,8 @@ This paper investigates the influence of missing edges in predicting network rob
 Citation:
 
 ```
-'AT'inproceedings{Wu2022IJCNN,
-  title        = {{CNN}-based Prediction of Network Robustness With Missing Edges},
+@inproceedings{Wu2022IJCNN,
+  title        = {CNN-based Prediction of Network Robustness With Missing Edges},
   author       = {Wu, Chengpei and Lou, Yang and Wu, Ruizi and Liu, Wenwen and Li, Junli},
   booktitle    = {2022 International Joint Conference on Neural Networks (IJCNN)},
   year         = {2022},
