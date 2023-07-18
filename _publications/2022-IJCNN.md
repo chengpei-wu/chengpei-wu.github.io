@@ -1,14 +1,18 @@
 ---
-title: "Paper Title Number 1"
+title: "CNN-based Prediction of Network Robustness With Missing Edges"
 collection: publications
-permalink: /publication/2009-10-01-paper-title-number-1
-excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
-date: 2009-10-01
+permalink: /publication/2022-IJCNN
+excerpt: 'This paper investigates the influence of missing edges in predicting network robustness using convolutional neural network.'
+date: 2022-7-18
 venue: 'Journal 1'
-paperurl: 'http://academicpages.github.io/files/paper1.pdf'
-citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
+paperurl: '10.1109/IJCNN55064.2022.9892188'
+citation: '**Chengpei Wu**, [Yang Lou](https://fylou.github.io/index.html), Ruizi Wu, Wenwen Liu, and Junli Li
+   "CNN-based Prediction of Network Robustness With Missing Edges"
+   *In Proceedings
+   of International Joint Conference on Neural Networks* (*IJCNN*)
+   Padua, Italy, doi:10.1109/IJCNN55064.2022.9892188'
 ---
-This paper is about the number 1. The number 2 is left for future work.
+This paper investigates the influence of missing edges in predicting network robustness using convolutional neural network.
 
 [Download paper here](http://academicpages.github.io/files/paper1.pdf)
 
