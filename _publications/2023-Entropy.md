@@ -1,15 +1,32 @@
 ---
-title: "Paper Title Number 1"
+title: "Influence of Removing Leaf Node Neighbors on Network Controllability"
 collection: publications
-permalink: /publication/2009-10-01-paper-title-number-1
-excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
-date: 2009-10-01
-venue: 'Journal 1'
-paperurl: 'http://academicpages.github.io/files/paper1.pdf'
-citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
+permalink: /publication/2023-Entropy
+excerpt: 'This paper proposed a leaf node neighbors based attack model for network controllability.'
+date: 2022-6-15
+venue: 'Entropy'
+
+
 ---
-This paper is about the number 1. The number 2 is left for future work.
 
-[Download paper here](http://academicpages.github.io/files/paper1.pdf)
+## Abstract: 
 
-Recommended citation: Your Name, You. (2009). "Paper Title Number 1." <i>Journal 1</i>. 1(1).
+From the perspective of network attackers, finding attack sequences that can cause significant damage to network controllability is an important task, which also helps defenders improve robustness during network constructions. Therefore, developing effective attack strategies is a key aspect of research on network controllability and its robustness. In this paper, we propose a Leaf Node Neighbor-based Attack (LNNA) strategy that can effectively disrupt the controllability of undirected networks. The LNNA strategy targets the neighbors of leaf nodes, and when there are no leaf nodes in the network, the strategy attacks the neighbors of nodes with a higher degree to produce the leaf nodes. Results from simulations on synthetic and real-world networks demonstrate the effectiveness of the proposed method. In particular, our findings suggest that removing neighbors of low-degree nodes (i.e., nodes with degree 1 or 2) can significantly reduce the controllability robustness of networks. Thus, protecting such low-degree nodes and their neighbors during network construction can lead to networks with improved controllability robustness.
+
+## Citation:
+
+```
+@Article{Wu2023Entropy,
+    AUTHOR = {Wu, Chengpei and Xu, Siyi and Yu, Zhuoran and Li, Junli},
+    TITLE = {Influence of Removing Leaf Node Neighbors on Network Controllability},
+    JOURNAL = {Entropy},
+    VOLUME = {25},
+    YEAR = {2023},
+    NUMBER = {6},
+    ARTICLE-NUMBER = {945},
+    ISSN = {1099-4300},
+}
+```
+
+Paper [Download](https://www.mdpi.com/1099-4300/25/6/945)
+
