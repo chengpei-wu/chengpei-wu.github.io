@@ -12,8 +12,10 @@ redirect_from:
 I am currently pursuing the master's degree in the School of Computer Science
 at [Sichuan Normal University](http://english.sicnu.edu.cn/EnglishIndex/webindex), Chengdu, China. Under the supervision
 of Professor [Li, Junli](https://baike.baidu.hk/item/%E6%9D%8E%E5%9D%87%E5%88%A9/6082659). I received the bachelor's
-degree from [Chengdu University](https://en.cdu.edu.cn/), Chengdu, China, in 2021. My research interests include Machine
-Learning, Graph Representation Learning, and Network Science.
+degree from [Chengdu University](https://en.cdu.edu.cn/), Chengdu, China, in 2021.  
+My research interests include Machine Learning, Graph Representation Learning, and Complex Networks. 
+My recent research work mainly focuses on using deep learning for efficient and accurate robustness approximation of complex networks. 
+Additionally, I am exploring graph representation learning and investigating the applications and improvements of graph neural networks.
 
 ------
 

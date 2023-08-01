@@ -7,9 +7,9 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Academic Home Page"
+title                    : "Home Page"
 title_separator          : "-"
-name                     : &name "Wu, chengpei"
+name                     : &name "Chengpei Wu"
 description              : &description "Nothing"
 url                      : https://chengpei-wu.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -80,7 +80,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Wu, Chengpei"
+  name             : "Chengpei Wu"
   avatar           : "bio-photo.jpg"
   bio              : "I am pursuing my master's degree in the School of Computer Science at Sichuan Normal University, Chengdu, China."
   location         : "Chengdu, China"
