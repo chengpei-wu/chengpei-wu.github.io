@@ -13,7 +13,7 @@ Network robustness refers to the ability of a network to continue its functionin
 
 ## Citation:
 
-```
+```tex
 @article{Wu2023TNNLS,
   author={Lou, Yang and Wu, Chengpei and Li, Junli and Wang, Lin and Chen, Guanrong},
   journal={IEEE Transactions on Neural Networks and Learning Systems}, 

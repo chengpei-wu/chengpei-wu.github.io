@@ -15,7 +15,7 @@ From the perspective of network attackers, finding attack sequences that can cau
 
 ## Citation:
 
-```
+```tex
 @Article{Wu2023Entropy,
     AUTHOR = {Wu, Chengpei and Xu, Siyi and Yu, Zhuoran and Li, Junli},
     TITLE = {Influence of Removing Leaf Node Neighbors on Network Controllability},
