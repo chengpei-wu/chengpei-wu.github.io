@@ -14,7 +14,7 @@ Network robustness refers to the ability of a network to continue its functionin
 ## Citation:
 
 ```
-@article{10130828,
+@article{Wu2023TNNLS,
   author={Lou, Yang and Wu, Chengpei and Li, Junli and Wang, Lin and Chen, Guanrong},
   journal={IEEE Transactions on Neural Networks and Learning Systems}, 
   title={Network Robustness Prediction: Influence of Training Data Distributions}, 
@@ -25,5 +25,5 @@ Network robustness refers to the ability of a network to continue its functionin
   doi={10.1109/TNNLS.2023.3269753}
 }
 ```
-
-Paper [Download](https://ieeexplore.ieee.org/document/10130828)
+## Download:
+- [PDF](https://ieeexplore.ieee.org/document/10130828)

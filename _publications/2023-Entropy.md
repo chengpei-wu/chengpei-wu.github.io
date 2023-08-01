@@ -3,7 +3,7 @@ title: "Influence of Removing Leaf Node Neighbors on Network Controllability"
 collection: publications
 permalink: /publication/2023-Entropy
 excerpt: 'This paper proposed a leaf node neighbors based attack model for network controllability.'
-date: 2022-6-15
+date: 2023-6-15
 venue: 'Entropy'
 
 
@@ -27,6 +27,6 @@ From the perspective of network attackers, finding attack sequences that can cau
     ISSN = {1099-4300},
 }
 ```
-
-Paper [Download](https://www.mdpi.com/1099-4300/25/6/945)
+## Download:
+- [PDF](https://www.mdpi.com/1099-4300/25/6/945)
 
