@@ -9,7 +9,7 @@ venue: 'IEEE Transactions on Circuits and Systems I: Regular Papers'
 ---
 ## Abstract: 
 
-<img src="img-SPP_CNN.png" alt="img.png" style="zoom:80%;" />SPP-CNN is an efficient method for network robustness approximation based on *Spatial Pyramid Pooling*, Its contributions are as follows:
+<img src="https://chengpei-wu.github.io/images/img-SPP_CNN.png" alt="./img-SPP_CNN.png" style="zoom:80%;" />SPP-CNN is an efficient method for network robustness approximation based on *Spatial Pyramid Pooling*, Its contributions are as follows:
 
 - SPP-CNN is proposed, which has a wider tolerance to different input-data sizes than the CNN- and GNN-based approaches, while maintaining fast approximation speed like the CNN-based approaches. Together with the sorting strategy, the robustness prediction performance of SPP-CNN significantly outperforms the other CNN- and GNN-based approaches.
 - SPP-CNN shows stronger generalizability than the other approaches on predicting the network robustness for datasets with unseen topologies and sizes. 
