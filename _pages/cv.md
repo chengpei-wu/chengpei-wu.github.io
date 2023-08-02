@@ -20,6 +20,12 @@ Publications
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
 
+Conference Participation
+======
+- [*International Joint Conference on Neural Networks (IJCNN)*](https://ieeexplore.ieee.org/xpl/conhome/9891857/proceeding) July 18-23, 2022, Padua, Italy.
+- [*IEEE International Conference on Systems, Man, and Cybernetics* (*SMC*)](https://ieeesmc2023.org/) October 1-4, 2023, Maui, Hawaii, USA.
+
+
 Honors and Awards
 ======
 
