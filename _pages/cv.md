@@ -29,7 +29,7 @@ Conference Participation
 Honors and Awards
 ======
 
-- National Encouragement scholarship, Chengdu University (2018, 2019, 2020).
-- Outstanding graduate from Chengdu University (2021).
+- National Encouragement Scholarship, Chengdu University (2018, 2019, 2020).
+- Outstanding Graduate from Chengdu University (2021).
 - Academic Scholarship, Sichuan Normal University (2021).
 - President's Scholarship, Sichuan Normal University (2022).
