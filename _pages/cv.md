@@ -7,7 +7,7 @@ redirect_from:
   - /resume
 ---
 
-{% include base_path %}[PDF Download]('http://chengpei-wu.github.io/files/CV.pdf')
+{% include base_path %}[PDF Download](http://chengpei-wu.github.io/files/CV.pdf)
 
 Education
 ======
