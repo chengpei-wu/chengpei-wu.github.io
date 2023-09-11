@@ -14,6 +14,7 @@ at [Sichuan Normal University](http://english.sicnu.edu.cn/EnglishIndex/webindex
 of Professor [Li, Junli](https://baike.baidu.hk/item/%E6%9D%8E%E5%9D%87%E5%88%A9/6082659). I received the bachelor's
 degree from [Chengdu University](https://en.cdu.edu.cn/), Chengdu, China, in 2021.  
 My research interests include Complex Networks, Machine Learning, and Graph Representation Learning. Recently, my research work mainly focuses on using deep learning approaches (graph neural networks, convolutional neural networks) for efficient and accurate robustness approximation of complex networks. Additionally, I am exploring the integration of graph machine learning and complex network knowledge, as well as the application of graph neural networks in complex network research.
+
 ------
 
 # News*
