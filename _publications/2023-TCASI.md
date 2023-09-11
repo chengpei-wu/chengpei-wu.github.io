@@ -2,7 +2,7 @@
 title: "SPP-CNN: An Efficient Framework for Network Robustness Prediction"
 collection: publications
 permalink: /publication/2023-TCASI
-excerpt: 'This paper proposed a sptial pyramid pooling based CNN model for predicting network robustness, which has wider tolerance to network size, while maintaining fast speed.'
+excerpt: 'This paper proposed a spatial pyramid pooling based CNN model for predicting network robustness, which has wider tolerance to network size, while maintaining fast speed.'
 date: 2023-7-13
 venue: 'IEEE Transactions on Circuits and Systems I: Regular Papers'
 
