@@ -19,10 +19,11 @@ My research interests include Complex Networks, Machine Learning, and Graph Repr
 
 # News*
 
-- [**07/13/2023**] Paper accepted by [*IEEE Transactions on Circuits and Systems I: Regular
+- [**10/2023**] I have been awarded the National Scholarship.
+- [**07/2023**] Paper accepted by [*IEEE Transactions on Circuits and Systems I: Regular
   Papers*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8919)
-- [**06/01/2023**] Paper accepted by [*IEEE International Conference on Systems, Man, and Cybernetics* (*SMC*) 2023](https://ieeesmc2023.org/).
-- [**04/19/2023**] Paper accepted by [*IEEE Transactions on Neural Networks and Learning
+- [**06/2023**] Paper accepted by [*IEEE International Conference on Systems, Man, and Cybernetics* (*SMC*) 2023](https://ieeesmc2023.org/).
+- [**04/2023**] Paper accepted by [*IEEE Transactions on Neural Networks and Learning
   Systems*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5962385).
 
 ------

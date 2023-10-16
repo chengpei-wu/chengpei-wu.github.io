@@ -33,3 +33,4 @@ Honors and Awards
 - Outstanding Graduate from Chengdu University (2021).
 - Academic Scholarship, Sichuan Normal University (2021).
 - President's Scholarship, Sichuan Normal University (2022).
+- National Scholarship, Sichuan Normal University (2023).
