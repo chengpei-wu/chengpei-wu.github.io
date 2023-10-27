@@ -9,12 +9,15 @@ author_profile: true
   You can also find my articles on <u><a href="{{author.googlescholar}}">my Google Scholar profile</a>.</u>
 {% endif %}
 
+------
 ## Preprints:
 
 1. **Chengpei Wu**, [Yang Lou](https://fylou.github.io/index.html), Junli Li, Lin Wang, Shengli Xie, and [Guanrong Chen](http://www.ee.cityu.edu.hk/~gchen/) "A Multitask Network Robustness Analysis System Based on the Graph Isomorphism Network." submitted to [*IEEE Transactions on Cybernetics (TCYB)*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?reload=true&punumber=6221036). 
 
+------
 ## Journal Papers:
 
+------
 ### 2023:
 
 1. **Chengpei Wu**, [Yang Lou](https://fylou.github.io/index.html), Lin Wang, Junli Li,
@@ -26,13 +29,16 @@ author_profile: true
    ," [*IEEE Transactions on Neural Networks and Learning Systems*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5962385), doi:10.1109/TNNLS.2023.3269753. [[pdf](https://ieeexplore.ieee.org/document/10130828)]
 3. **Chengpei Wu**, Siyi Xu, Zhuoran Yu, and Junli Li, "Influence of Removing Leaf Node Neighbors on Network Controllability," [*Entropy*](https://www.mdpi.com/journal/entropy), doi:10.3390/e25060945. [[pdf](https://www.mdpi.com/1099-4300/25/6/945)]
 
+------
 ## Conference Papers:
 
+------
 ### 2022:
 1. **Chengpei Wu**, [Yang Lou](https://fylou.github.io/index.html), Ruizi Wu, Wenwen Liu, and Junli Li “CNN-based Prediction of Network
     Robustness With Missing Edges,” In Proceedings of International Joint Conference on Neural Networks
     (IJCNN) Padua, Italy. [[pdf](https://ieeexplore.ieee.org/document/9892188)]
 
+------
 ### 2023:
 
 2. **Chengpei Wu**, [Yang Lou](https://fylou.github.io/index.html), and Junli Li "Pyramid Pooling-Based Local Profiles for Graph

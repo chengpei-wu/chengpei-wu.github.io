@@ -9,11 +9,13 @@ redirect_from:
 
 {% include base_path %}[PDF Download](http://chengpei-wu.github.io/files/CV.pdf)
 
+------
 Education
 ======
 * B.S. in Chengdu University, Chengdu, China, 2017-2021.
 * Master student in Sichuan Normal University, Chengdu, China, 2021-2024.
 
+------
 Selected Publications
 ======
 1. **Chengpei Wu**, Yang Lou, and Junli Li "Pyramid Pooling-Based Local Profiles for Graph
@@ -34,13 +36,15 @@ Network Controllability," Entropy, doi:10.3390/e25060945
 Robustness With Missing Edges” In Proceedings of International Joint Conference on Neural Networks
 (IJCNN) Padua, Italy.
 
+
+------
 Conference Participation
 ======
 - [*International Joint Conference on Neural Networks (IJCNN)*](https://ieeexplore.ieee.org/xpl/conhome/9891857/proceeding) July 18-23, 2022, Padua, Italy.
 - NetSci, July 25–29, 2022, Shanghai, China. (Conference Volunteer).
 - [*IEEE International Conference on Systems, Man, and Cybernetics* (*SMC*)](https://ieeesmc2023.org/) October 1-4, 2023, Maui, Hawaii, USA.
 
-
+------
 Honors and Awards
 ======
 - National Encouragement Scholarship, Chengdu University (2018, 2019, 2020).
