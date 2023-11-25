@@ -45,6 +45,12 @@ Robustness With Missing Edges” In Proceedings of International Joint Conferenc
 - [*IEEE International Conference on Systems, Man, and Cybernetics* (*SMC*)](https://ieeesmc2023.org/) October 1-4, 2023, Maui, Hawaii, USA.
 
 ------
+## Skills
+
+- Programming: Python, HTML, C
+- Language: Chinese (native speaker), English (CET-6)
+
+------
 ## Honors and Awards
 
 - National Encouragement Scholarship, Chengdu University (2018, 2019, 2020).
