@@ -31,20 +31,26 @@ author_profile: true
 
 ------
 ## Conference Papers:
+------
+### 2024
+
+1. Yang Lou, **Chengpei Wu**, and Bo-Yu Chen, “Exploring Graph Representations in Machine Learning for Network Robustness Evaluation,” \textit{In Proceedings of International Joint Conference on Neural Networks
+    (IJCNN)}, June 30-July 05, 2024, Yokohama, Japan. 
 
 ------
-### 2022:
+### 2023
+
+1. **Chengpei Wu**, [Yang Lou](https://fylou.github.io/index.html), and Junli Li "Pyramid Pooling-Based Local Profiles for Graph
+    Classification," IEEE International Conference on Systems, Man, and Cybernetics (SMC) October 1-4,
+    2023, Maui, Hawaii, USA.[[source code](https://github.com/chengpei-wu/PPLP)]
+2. **Chengpei Wu**, Siyi Xu, and Junli Li "Predicting Robustness Performance with Noises in Network
+    Representation," IEEE International Conference on Systems, Man, and Cybernetics (SMC) October
+    1-4, 2023, Maui, Hawaii, USA.
+3. **Chengpei Wu**, Siyi Xu, and Junli Li "A Nested Edge Addition Strategy for Network Controllability Robustness Enhancement," IEEE International Conference on Systems, Man, and Cybernetics (SMC) October1-4, 2023, Maui, Hawaii, USA.
+
+
+------
+### 2022
 1. **Chengpei Wu**, [Yang Lou](https://fylou.github.io/index.html), Ruizi Wu, Wenwen Liu, and Junli Li “CNN-based Prediction of Network
     Robustness With Missing Edges,” In Proceedings of International Joint Conference on Neural Networks
     (IJCNN) Padua, Italy. [[pdf](https://ieeexplore.ieee.org/document/9892188)]
-
-------
-### 2023:
-
-2. **Chengpei Wu**, [Yang Lou](https://fylou.github.io/index.html), and Junli Li "Pyramid Pooling-Based Local Profiles for Graph
-    Classification," IEEE International Conference on Systems, Man, and Cybernetics (SMC) October 1-4,
-    2023, Maui, Hawaii, USA.[[source code](https://github.com/chengpei-wu/PPLP)]
-3. **Chengpei Wu**, Siyi Xu, and Junli Li "Predicting Robustness Performance with Noises in Network
-    Representation," IEEE International Conference on Systems, Man, and Cybernetics (SMC) October
-    1-4, 2023, Maui, Hawaii, USA.
-4. **Chengpei Wu**, Siyi Xu, and Junli Li "A Nested Edge Addition Strategy for Network Controllability Robustness Enhancement," IEEE International Conference on Systems, Man, and Cybernetics (SMC) October1-4, 2023, Maui, Hawaii, USA.

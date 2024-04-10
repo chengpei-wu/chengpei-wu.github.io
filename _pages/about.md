@@ -9,20 +9,18 @@ redirect_from:
 
 ---
 
-I am currently pursuing the master's degree in the School of Computer Science
-at [Sichuan Normal University](http://english.sicnu.edu.cn/EnglishIndex/webindex), Chengdu, China. Under the supervision
-of Professor [Li, Junli](https://cs.sicnu.edu.cn/p/0/?StId=st_app_news_i_x8962). I received the bachelor's
-degree from [Chengdu University](https://en.cdu.edu.cn/), Chengdu, China, in 2021.  
-My research interests include Complex Networks, Machine Learning, and Graph Representation Learning. Recently, my research work mainly focuses on using deep learning approaches (graph neural networks, convolutional neural networks) for efficient and accurate robustness approximation of complex networks. Additionally, I am exploring the integration of graph machine learning and complex network knowledge, as well as the application of graph neural networks in complex network research.  
-<font color=Red>I am looking for Ph.D. position in the field of graph (machine) learning.</font>
+I am currently pursuing a master’s degree in the School of Computer Science at Sichuan Normal University, Chengdu, China. Under the supervision of Prof. Junli Li.
+
+My research interests include Complex Networks, Graph Machine Learning, and Graph Representation Learning. Recently, my research work mainly focuses on using deep learning approaches (graph neural networks, convolutional neural networks) for efficient and accurate robustness approximation of complex networks. Additionally, I am exploring the integration of graph machine learning and complex network knowledge, as well as the application of graph neural networks in complex network research. I am also interested in exploring the integration of Large Language Models (LLMs) with graph learning techniques and associated graph-based tasks.  
+<font color=Red>I am looking for Ph.D. positions in the field of graph (machine) learning.</font>
 
 ------
 
 # News*
-
+- [**03/2024**] Paper accepted by [*International Joint Conference on Neural Networks*](https://www.inns.org/wcci-2024-call-for-papers).
 - [**10/2023**] I have been awarded the National Scholarship.
 - [**07/2023**] Paper accepted by [*IEEE Transactions on Circuits and Systems I: Regular
-  Papers*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8919)
+  Papers*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8919).
 - [**06/2023**] Paper accepted by [*IEEE International Conference on Systems, Man, and Cybernetics* (*SMC*) 2023](https://ieeesmc2023.org/).
 - [**04/2023**] Paper accepted by [*IEEE Transactions on Neural Networks and Learning
   Systems*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5962385).

@@ -47,16 +47,26 @@ Robustness With Missing Edges” In Proceedings of International Joint Conferenc
 ------
 ## Skills
 
-- Programming: Python, HTML, C
-- Language: Chinese (native speaker), English (CET-6)
-
+- **Programming**: Python, C, Java, HTML, Go.
+- **Tools**: Git/GitHub, Linux, MySQL, VS Code, PyCharm. 
+- **Frameworks**: PyTorch, Scikit-Learn, Networkx, DGL, Numpy, Pandas, Scipy, Matplotlib.
+- **Language**: Chinese (native), English (CET-6).
 ------
 ## Honors and Awards
 
-- National Encouragement Scholarship, Chengdu University (2018, 2019, 2020).
-- Outstanding Graduate from Chengdu University (2021).
+- National Encouragement Scholarship (2018, 2019, 2020).
+- Outstanding Graduate, Chengdu University (2021).
 - Academic Scholarship, Sichuan Normal University (2021).
-- President's Scholarship, Sichuan Normal University (2022).
 - National Scholarship, Sichuan Normal University (2023).
-- Merit Student, Sichuan Normal University (2023).
 - Outstanding Graduate from Sichuan Normal University and Sichuan Province (2024).
+
+------
+## Personal Project
+- [**MiniTorch**](https://github.com/chengpei-wu/MiniTorch). 
+    An autograd deep-learning python library, MiniTorch inclues the most fundamental and essential features of a deep-learning framework, such as tensor computing, autograd mechanism, dataset (dataloader), nueral network modules, loss functions, and gradient decent optimizers (SGD, Adam...).
+- [Complex Network Tools](https://github.com/chengpei-wu/ComplexNetwork).
+    I have developed and maintained an open-source Python package for the generation, analysis, and optimization of complex networks. This package implements common complex network generation models (such as BA, SW, etc.), algorithms for network attack simulation, network robustness optimization, and network robustness prediction.
+- [Paper Reproduction Hub](https://github.com/chengpei-wu/PaperReproductionHub). 
+    A repository for reproducing classic machine learning algorithms, deep learning models, and the latest interesting research papers.
+- [Graph Machine Learning Notes](https://github.com/chengpei-wu/Graph-ML-notes).
+    This repository has been created to document the learning journey in the field of graph machine learning. It includes study notes, code implementations, and other useful resources collected during the learning process.
