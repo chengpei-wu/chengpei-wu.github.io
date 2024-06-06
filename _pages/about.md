@@ -9,10 +9,10 @@ redirect_from:
 
 ---
 
-I am currently pursuing a master’s degree in the School of Computer Science at Sichuan Normal University, Chengdu, China. Under the supervision of Prof. Junli Li.
+I am going to pursue the Ph.D. degree at [Sichuan University](https://www.scu.edu.cn/), Chengdu, China. Under the supervision of [Ning Yang](https://yneversky.github.io/).
 
 My research interests include Complex Networks, Graph Machine Learning, and Graph Representation Learning. Recently, my research work mainly focuses on using deep learning approaches (graph neural networks, convolutional neural networks) for efficient and accurate robustness approximation of complex networks. Additionally, I am exploring the integration of graph machine learning and complex network knowledge, as well as the application of graph neural networks in complex network research. I am also interested in exploring the integration of Large Language Models (LLMs) with graph learning techniques and associated graph-based tasks.  
-<font color=Red>I am looking for Ph.D. positions in the field of graph (machine) learning.</font>
+
 
 ------
 
