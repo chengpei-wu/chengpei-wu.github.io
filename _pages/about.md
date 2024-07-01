@@ -9,15 +9,15 @@ redirect_from:
 
 ---
 
-I am going to pursue the Ph.D. degree at [Sichuan University](https://www.scu.edu.cn/), Chengdu, China. Under the supervision of [Ning Yang](https://yneversky.github.io/).
+I am pursuing the Ph.D. degree at [Sichuan University](https://www.scu.edu.cn/) in Chengdu, China. Under the supervision of [Ning Yang](https://yneversky.github.io/).
 
-My research interests include Complex Networks, Graph Machine Learning, and Graph Representation Learning. Recently, my research work mainly focuses on using deep learning approaches (graph neural networks, convolutional neural networks) for efficient and accurate robustness approximation of complex networks. Additionally, I am exploring the integration of graph machine learning and complex network knowledge, as well as the application of graph neural networks in complex network research. I am also interested in exploring the integration of Large Language Models (LLMs) with graph learning techniques and associated graph-based tasks.  
+Recently, my research interests have centered on graph machine learning and its adversarial robustness. Prior to this, my work primarily focused on employing deep learning techniques, such as graph neural networks and convolutional neural networks, to achieve efficient and accurate robustness approximation of complex networks. Additionally, I am interested in exploring the integration of Large Language Models (LLMs) with graph learning techniques and related graph-based tasks.    
 
 
 ------
 
 # News*
-- [**03/2024**] Paper accepted by [*International Joint Conference on Neural Networks*](https://www.inns.org/wcci-2024-call-for-papers).
+- [**06/2024**] Paper accepted by [*IEEE Transactions on Cybernetics*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?reload=true&punumber=6221036).
 - [**10/2023**] I have been awarded the National Scholarship.
 - [**07/2023**] Paper accepted by [*IEEE Transactions on Circuits and Systems I: Regular
   Papers*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8919).
@@ -35,11 +35,7 @@ My research interests include Complex Networks, Graph Machine Learning, and Grap
 2. **Chengpei Wu**, [Yang Lou](https://fylou.github.io/index.html), Lin Wang, Junli Li,
    and [Guanrong Chen](http://www.ee.cityu.edu.hk/~gchen/), "SPP-CNN: An Efficient Framework for Network Robustness
    Prediction," [*IEEE Transactions on Circuits and Systems I: Regular*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8919), doi:10.1109/TCSI.2023.3296602
-3. **Chengpei Wu**, [Yang Lou](https://fylou.github.io/index.html), Ruizi Wu, Wenwen Liu, and Junli Li
-   "CNN-based Prediction of Network Robustness With Missing Edges"
-   *In Proceedings
-   of [International Joint Conference on Neural Networks](https://wcci2022.org/)* (*[IJCNN](https://wcci2022.org/)*)
-   Padua, Italy, doi:10.1109/IJCNN55064.2022.9892188
+3. **Chengpei Wu**, [Yang Lou](https://fylou.github.io/index.html), Junli Li, Lin Wang, Shengli Xie, and [Guanrong Chen](http://www.ee.cityu.edu.hk/~gchen/) "A Multitask Network Robustness Analysis System Based on the Graph Isomorphism Network." [*IEEE Transactions on Cybernetics (TCYB)*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?reload=true&punumber=6221036).
 4. [Yang Lou](https://fylou.github.io/index.html), **Chengpei Wu**, Junli Li, Lin Wang,
    and [Guanrong Chen](http://www.ee.cityu.edu.hk/~gchen/)
    , "[Network Robustness Prediction: Influence of Training Data Distributions](https://ieeexplore.ieee.org/document/10130828)

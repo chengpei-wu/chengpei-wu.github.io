@@ -10,14 +10,13 @@ author_profile: true
 {% endif %}
 
 ------
-## Preprints:
-
-1. **Chengpei Wu**, [Yang Lou](https://fylou.github.io/index.html), Junli Li, Lin Wang, Shengli Xie, and [Guanrong Chen](http://www.ee.cityu.edu.hk/~gchen/) "A Multitask Network Robustness Analysis System Based on the Graph Isomorphism Network." submitted to [*IEEE Transactions on Cybernetics (TCYB)*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?reload=true&punumber=6221036). 
-
-------
 ## Journal Papers:
 
 ------
+### 2024:
+
+1. **Chengpei Wu**, [Yang Lou](https://fylou.github.io/index.html), Junli Li, Lin Wang, Shengli Xie, and [Guanrong Chen](http://www.ee.cityu.edu.hk/~gchen/) "A Multitask Network Robustness Analysis System Based on the Graph Isomorphism Network." [*IEEE Transactions on Cybernetics (TCYB)*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?reload=true&punumber=6221036).
+
 ### 2023:
 
 1. **Chengpei Wu**, [Yang Lou](https://fylou.github.io/index.html), Lin Wang, Junli Li,

@@ -12,8 +12,7 @@ redirect_from:
 ------
 ## Education
 
-* B.S. in Chengdu University, Chengdu, China, 2017-2021.
-* Master student in Sichuan Normal University, Chengdu, China, 2021-2024.
+* M.S. in Sichuan Normal University, Chengdu, China, 2021-2024.
 
 ------
 ## Selected Publications
@@ -30,11 +29,7 @@ Regular, doi:10.1109/TCSI.2023.3296602
 4. Yang Lou, **Chengpei Wu**, Junli Li, Lin Wang, and Guanrong Chen , "Network Robustness Prediction:
 Influence of Training Data Distributions," IEEE Transactions on Neural Networks and Learning
 Systems, doi:10.1109/TNNLS.2023.3269753
-5. **Chengpei Wu**, Siyi Xu, Zhuoran Yu, and Junli Li "Influence of Removing Leaf Node Neighbors on
-Network Controllability," Entropy, doi:10.3390/e25060945
-6. **Chengpei Wu**, Yang Lou, Ruizi Wu, Wenwen Liu, and Junli Li “CNN-based Prediction of Network
-Robustness With Missing Edges” In Proceedings of International Joint Conference on Neural Networks
-(IJCNN) Padua, Italy.
+5. **Chengpei Wu**, Yang Lou, Junli Li, Lin Wang, Shengli Xie, and Guanrong Chen, "A Multitask Network Robustness Analysis System Based on the Graph Isomorphism Network." IEEE Transactions on Cybernetics (TCYB).
 
 
 ------
