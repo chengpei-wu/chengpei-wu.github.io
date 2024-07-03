@@ -13,6 +13,7 @@ redirect_from:
 ## Education
 
 * M.S. in Sichuan Normal University, Chengdu, China, 2021-2024.
+* Ph.D. student in Sichuan University, Chengdu, China, 2024- 
 
 ------
 ## Selected Publications
