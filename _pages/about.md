@@ -9,7 +9,7 @@ redirect_from:
 
 ---
 
-I am pursuing the Ph.D. degree at [Sichuan University](https://www.scu.edu.cn/) in Chengdu, China. Under the supervision of [Ning Yang](https://yneversky.github.io/).
+My name is Chengpei Wu, I am pursuing the Ph.D. degree at [Sichuan University](https://www.scu.edu.cn/) in Chengdu, China. Under the supervision of [Ning Yang](https://yneversky.github.io/).
 
 Recently, my research interests have centered on graph machine learning and its adversarial robustness. Prior to this, my work primarily focused on employing deep learning techniques, such as graph neural networks and convolutional neural networks, to achieve efficient and accurate robustness approximation of complex networks. Additionally, I am interested in exploring the integration of Large Language Models (LLMs) with graph learning techniques and related graph-based tasks.    
 
