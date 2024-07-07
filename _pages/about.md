@@ -22,8 +22,15 @@ Recently, my research interests have centered on graph machine learning and its 
 - [**07/2023**] Paper accepted by [*IEEE Transactions on Circuits and Systems I: Regular
   Papers*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8919).
 - [**06/2023**] Paper accepted by [*IEEE International Conference on Systems, Man, and Cybernetics* (*SMC*) 2023](https://ieeesmc2023.org/).
-- [**04/2023**] Paper accepted by [*IEEE Transactions on Neural Networks and Learning
-  Systems*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5962385).
+
+
+
+------
+
+## Education
+
+* M.S. in Sichuan Normal University, Chengdu, China, 2021-2024.
+* Ph.D. student in Sichuan University, Chengdu, China, 2024- 
 
 ------
 
@@ -42,3 +49,37 @@ Recently, my research interests have centered on graph machine learning and its 
    ," [*IEEE Transactions on Neural Networks and Learning Systems*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5962385), doi:10.1109/TNNLS.2023.3269753
 
 
+
+------
+## Conference Participation
+
+- [*International Joint Conference on Neural Networks (IJCNN)*](https://ieeexplore.ieee.org/xpl/conhome/9891857/proceeding) July 18-23, 2022, Padua, Italy.
+- [*IEEE International Conference on Systems, Man, and Cybernetics* (*SMC*)](https://ieeesmc2023.org/) October 1-4, 2023, Maui, Hawaii, USA.
+
+------
+## Skills
+
+- **Programming**: Python, C, Java, HTML, Go.
+- **Tools**: Git/GitHub, Linux, MySQL, VS Code, PyCharm. 
+- **Frameworks**: PyTorch, Scikit-Learn, Networkx, DGL, Numpy, Pandas, Scipy, Matplotlib.
+- **Language**: Chinese (native), English (CET-6).
+
+
+------
+## Honors and Awards
+
+- National Encouragement Scholarship (2018, 2019, 2020).
+- Outstanding Graduate, Chengdu University (2021).
+- National Scholarship, Sichuan Normal University (2023).
+- Outstanding Graduate from Sichuan Normal University and Sichuan Province (2024).
+
+------
+## Personal Project
+- [**MiniTorch**](https://github.com/chengpei-wu/MiniTorch). 
+    An autograd deep-learning python library, MiniTorch inclues the most fundamental and essential features of a deep-learning framework, such as tensor computing, autograd mechanism, dataset (dataloader), nueral network modules, loss functions, and gradient decent optimizers (SGD, Adam...).
+- [**Complex Network Tools**](https://github.com/chengpei-wu/ComplexNetwork).
+    I have developed and maintained an open-source Python package for the generation, analysis, and optimization of complex networks. This package implements common complex network generation models (such as BA, SW, etc.), algorithms for network attack simulation, network robustness optimization, and network robustness prediction.
+- [**Paper Reproduction Hub**](https://github.com/chengpei-wu/PaperReproductionHub). 
+    A repository for reproducing classic machine learning algorithms, deep learning models, and the latest interesting research papers.
+- [**Graph Machine Learning Notes**](https://github.com/chengpei-wu/Graph-ML-notes).
+    This repository has been created to document the learning journey in the field of graph machine learning. It includes study notes, code implementations, and other useful resources collected during the learning process.
