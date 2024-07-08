@@ -68,8 +68,6 @@ Recently, my research interests have centered on graph machine learning and its 
 ------
 ## Honors and Awards
 
-- National Encouragement Scholarship (2018, 2019, 2020).
-- Outstanding Graduate, Chengdu University (2021).
 - National Scholarship, Sichuan Normal University (2023).
 - Outstanding Graduate from Sichuan Normal University and Sichuan Province (2024).
 
