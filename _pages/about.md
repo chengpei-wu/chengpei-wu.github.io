@@ -9,11 +9,10 @@ redirect_from:
 
 ---
 
-Hello, This is Wu-Chengpei, I am pursuing the Ph.D. degree at [Sichuan University](https://www.scu.edu.cn/) in Chengdu, China. Under the supervision of [Ning Yang](https://yneversky.github.io/).
-
-Recently, my research interests have centered on graph machine learning and its adversarial robustness. Prior to this, my work primarily focused on employing deep learning techniques, such as graph neural networks and convolutional neural networks, to achieve efficient and accurate robustness approximation of complex networks. Additionally, I am interested in exploring the integration of Large Language Models (LLMs) with graph learning techniques and related graph-based tasks.    
-
-
+Hi, my name is Chengpei Wu.
+My research interests include Complex Networks, and Graph Representation Learning. 
+Recently, my research work mainly focuses on unsupervised graph representation learning, such as graph pre-training and graph contrastive learning.
+I am also investigating deep learning approaches--such as graph neural networks and convolutional neural networks--for efficient and accurate robustness approximation in complex networks. In addition, I explore the integration of graph learning techniques with domain knowledge from complex network theory, and the application of graph neural networks in analyzing complex systems. I am further interested in combining large language models (LLMs) with graph learning methods to address graph-related tasks.
 ------
 
 # News*
@@ -29,8 +28,8 @@ Recently, my research interests have centered on graph machine learning and its 
 
 ## Education
 
-* M.S. in Sichuan Normal University, Chengdu, China, 2021-2024.
-* Ph.D. student in Sichuan University, Chengdu, China, 2024- 
+* B.S. in Internet of Things Engineering, Chengdu University, Chengdu, China, 2017–2021.
+* M.S. in Computer Science and Technology, Sichuan Normal University, Chengdu, China, 2021-2024.
 
 ------
 
@@ -76,8 +75,6 @@ Recently, my research interests have centered on graph machine learning and its 
 - [**MiniTorch**](https://github.com/chengpei-wu/MiniTorch). 
     An autograd deep-learning python library, MiniTorch inclues the most fundamental and essential features of a deep-learning framework, such as tensor computing, autograd mechanism, dataset (dataloader), nueral network modules, loss functions, and gradient decent optimizers (SGD, Adam...).
 - [**Complex Network Tools**](https://github.com/chengpei-wu/ComplexNetwork).
-    I have developed and maintained an open-source Python package for the generation, analysis, and optimization of complex networks. This package implements common complex network generation models (such as BA, SW, etc.), algorithms for network attack simulation, network robustness optimization, and network robustness prediction.
-- [**Paper Reproduction Hub**](https://github.com/chengpei-wu/PaperReproductionHub). 
-    A repository for reproducing classic machine learning algorithms, deep learning models, and the latest interesting research papers.
-- [**Graph Machine Learning Notes**](https://github.com/chengpei-wu/Graph-ML-notes).
-    This repository has been created to document the learning journey in the field of graph machine learning. It includes study notes, code implementations, and other useful resources collected during the learning process.
+    An open-source Python package for the generation, analysis, and optimization of complex networks. This package implements common complex network generation models (such as BA, SW, etc.), algorithms for network attack simulation, network robustness optimization, and network robustness prediction.
+- [**GNNTraining**](https://github.com/chengpei-wu/GNNTraining.git).
+    A DGL-based library for benchmark training of Graph Neural Networks (GNNs). It supports structure-tuned GCN, GAT, and GraphSAGE models on homophilous, heterophilous, and OGB datasets. The library provides unified data processing, flexible training pipelines, and reproducible results with scripts for training and hyperparameter tuning.
