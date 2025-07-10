@@ -17,42 +17,52 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. Suspendisse condimentum, libero vel tempus mattis, risus risus vulputate libero, elementum fermentum mi neque vel nisl. Maecenas facilisis maximus dignissim. Curabitur mattis vulputate dui, tincidunt varius libero luctus eu. Mauris mauris nulla, scelerisque eget massa id, tincidunt congue felis. Sed convallis tempor ipsum rhoncus viverra. Pellentesque nulla orci, accumsan volutpat fringilla vitae, maximus sit amet tortor. Aliquam ultricies odio ut volutpat scelerisque. Donec nisl nisl, porttitor vitae pharetra quis, fringilla sed mi. Fusce pretium dolor ut aliquam consequat. Cras volutpat, tellus accumsan mattis molestie, nisl lacus tempus massa, nec malesuada tortor leo vel quam. Aliquam vel ex consectetur, vehicula leo nec, efficitur eros. Donec convallis non urna quis feugiat.
+# About Me
+My research interests include machine learning and graph representation learning. Recently, my work has primarily focused on unsupervised graph representation learning, including topics such as graph pre-training and graph contrastive learning. Previously, I explored deep learning methods for efficient and accurate robustness estimation in complex networks.
 
-My research interest includes neural machine translation and computer vision. I have published more than 100 papers at the top international AI conferences with total <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'>google scholar citations <strong><span id='total_cit'>260000+</span></strong></a> (You can also use google scholar badge <a href='https://scholar.google.com/citations?user=DhtAFkwAAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>).
+In addition, I am also interested in graph foundation models, generative modeling, and large language models.
 
 
-# 🔥 News
-- *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2022.02*: &nbsp;🎉🎉 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+<span class='anchor' id='news'></span>
+# News
+- [**05/2025**] one paper (co-authored) accepted by [IJCAI 2025](https://2025.ijcai.org/).
+- [**04/2025**] one paper (co-authored) accepted by [CVPR 2025](https://cvpr.thecvf.com/).
+- [**06/2024**] one paper accepted by [*IEEE Transactions on Cybernetics*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?reload=true&punumber=6221036).
+- [**10/2023**] I have been awarded the National Scholarship for Graduate Students by the Chinese Ministry of Education.
+- [**07/2023**] one paper accepted by [*IEEE Transactions on Circuits and Systems I: Regular
+  Papers*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8919).
+- [**06/2023**] one paper accepted by [*IEEE International Conference on Systems, Man, and Cybernetics* (*SMC*) 2023](https://ieeesmc2023.org/).
 
-# 📝 Publications 
+<span class='anchor' id='publications'></span>
+# Selected Publications 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2016</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
+[1] Yiyang Zhao, **Chengpei Wu**, Lilin Zhang, and Ning Yang "Negative Metric Learning for Graphs." IJCAI 2025.
 
-[Deep Residual Learning for Image Recognition](https://openaccess.thecvf.com/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf)
+[2] **Chengpei Wu**, [Yang Lou](https://fylou.github.io/index.html), Junli Li, Lin Wang, Shengli Xie, and [Guanrong Chen](http://www.ee.cityu.edu.hk/~gchen/), "A Multitask Network Robustness Analysis System Based on the Graph Isomorphism Network." [*IEEE Transactions on Cybernetics (TCYB)*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?reload=true&punumber=6221036).
 
-**Kaiming He**, Xiangyu Zhang, Shaoqing Ren, Jian Sun
+[3] **Chengpei Wu**, [Yang Lou](https://fylou.github.io/index.html), and Junli Li "Pyramid Pooling-Based Local Profiles for Graph Classification" [*IEEE International Conference on Systems, Man, and Cybernetics* (*SMC*)](https://ieeesmc2023.org/) October 1-4, 2023, Maui, Hawaii, USA.
 
-[**Project**](https://scholar.google.com/citations?view_op=view_citation&hl=zh-CN&user=DhtAFkwAAAAJ&citation_for_view=DhtAFkwAAAAJ:ALROH1vI_8AC) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
-- Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-</div>
-</div>
+[4] **Chengpei Wu**, [Yang Lou](https://fylou.github.io/index.html), Lin Wang, Junli Li, and [Guanrong Chen](http://www.ee.cityu.edu.hk/~gchen/), "SPP-CNN: An Efficient Framework for Network Robustness Prediction," [*IEEE Transactions on Circuits and Systems I: Regular*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8919), doi:10.1109/TCSI.2023.3296602.
 
-- [Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet](https://github.com), A, B, C, **CVPR 2020**
+[5] [Yang Lou](https://fylou.github.io/index.html), **Chengpei Wu**, Junli Li, Lin Wang, and [Guanrong Chen](http://www.ee.cityu.edu.hk/~gchen/), "[Network Robustness Prediction: Influence of Training Data Distributions](https://ieeexplore.ieee.org/document/10130828)," [*IEEE Transactions on Neural Networks and Learning Systems*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5962385), doi:10.1109/TNNLS.2023.3269753.
 
-# 🎖 Honors and Awards
-- *2021.10* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2021.09* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+<span class='anchor' id='honors'></span>
+# Honors and Awards
+- Outstanding Graduate, Chengdu University (2021).
+- Academic Scholarship, Sichuan Normal University (2022).
+- National Scholarship, Sichuan Normal University (2023).
+- Merit Student, Sichuan Normal University (2023).
+- Outstanding Graduate from Sichuan Normal University and Sichuan Province (2024).
 
-# 📖 Educations
-- *2019.06 - 2022.04 (now)*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2015.09 - 2019.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
+<span class='anchor' id='educations'></span>
+# Educations
+- 2017.09 - 2021.06, Undergraduate, Chengdu University, Chengdu.
+- 2021.09 - 2024.06, Master, Sichuan Normal University, Chengdu.
 
-# 💬 Invited Talks
-- *2021.06*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. 
-- *2021.03*, Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet.  \| [\[video\]](https://github.com/)
 
-# 💻 Internships
-- *2019.05 - 2020.02*, [Lorem](https://github.com/), China.
+<!-- ## Skills
+
+- **Programming**: Python, C, Java, HTML, Go.
+- **Tools**: Git/GitHub, Linux, MySQL, VS Code, PyCharm. 
+- **Frameworks**: PyTorch, Scikit-Learn, Networkx, DGL, Numpy, Pandas, Scipy, Matplotlib.
+- **Language**: Chinese (native), English (CET-6). -->
