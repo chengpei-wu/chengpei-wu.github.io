@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ page.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts: Latex Style -->
+  <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+
+  <!-- MathJax -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+
+  <style>
+    body {
+      font-family: 'STIX Two Text', serif;
+      max-width: 860px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background-color: #fefefe;
+      color: #1a1a1a;
+      line-height: 1.75;
+    }
+
+    h1, h2, h3 {
+      font-weight: bold;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.6rem; }
+    h3 { font-size: 1.3rem; }
+
+    pre, code {
+      font-family: 'Fira Code', monospace;
+      background-color: #f4f4f4;
+      padding: 0.4em 0.6em;
+      border-radius: 5px;
+    }
+
+    pre {
+      overflow-x: auto;
+      padding: 1em;
+    }
+
+    a {
+      color: #007acc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    blockquote {
+      border-left: 4px solid #ccc;
+      padding-left: 1rem;
+      color: #555;
+      margin: 1.5rem 0;
+    }
+
+    .post-header {
+      margin-bottom: 2rem;
+    }
+
+    .post-header h1 {
+      margin-bottom: 0.2rem;
+    }
+
+    .post-date {
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    .toc {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      margin: 2rem 0;
+      background: #f9f9f9;
+    }
+
+    .toc h2 {
+      margin-top: 0;
+      font-size: 1.1rem;
+    }
+
+    .toc ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    .toc li {
+      margin: 0.3rem 0;
+    }
+
+    .return-link {
+      display: inline-block;
+      margin-top: 2rem;
+      background: #007acc;
+      color: white;
+      padding: 0.5rem 1rem;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    .return-link:hover {
+      background: #005fa3;
+    }
+
+    .like-btn {
+      margin-top: 2rem;
+      cursor: pointer;
+      padding: 0.5rem 1rem;
+      background: #eee;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    .like-btn.liked {
+      background: #ffdaab;
+      border-color: #ffaa00;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="post-header">
+    <h1>{{ page.title }}</h1>
+    <div class="post-date">{{ page.date | date: "%Y-%m-%d" }}</div>
+  </div>
+
+  <!-- 自动目录 -->
+  <div class="toc" id="toc">
+    <h2>📑 Content</h2>
+    <ul id="toc-list"></ul>
+  </div>
+
+  <!-- 正文内容 -->
+  <article>
+    {{ content }}
+  </article>
+
+  <!-- 点赞按钮 -->
+
+
+  <!-- 返回博客列表 -->
+  <a class="return-link" href="/post/">← Back</a>
+
+  <!-- 评论区：utterances -->
+  <script src="https://utteranc.es/client.js"
+    repo="chengpei-wu/chengpei-wu.github.io"
+    issue-term="title"
+    theme="github-light"
+    crossorigin="anonymous"
+    async>
+  </script>
+
+  <!-- 自动生成目录 JS -->
+  <script>
+    const tocList = document.getElementById('toc-list');
+    const headers = document.querySelectorAll('article h2, article h3');
+    headers.forEach((header, index) => {
+      const id = "toc_" + index;
+      header.id = id;
+      const li = document.createElement('li');
+      li.innerHTML = `<a href="#${id}">${header.innerText}</a>`;
+      tocList.appendChild(li);
+    });
+  </script>
+
+  <!-- 点赞功能（本地） -->
+  <script>
+    const likeKey = "like_" + window.location.pathname;
+    const likeBtn = document.getElementById("likeBtn");
+    const likeCount = document.getElementById("likeCount");
+
+    let count = parseInt(localStorage.getItem(likeKey)) || 0;
+    let liked = localStorage.getItem(likeKey + "_voted") === "1";
+
+    likeCount.textContent = count;
+    if (liked) likeBtn.classList.add("liked");
+
+    likeBtn.onclick = function () {
+      if (liked) return;
+      count++;
+      localStorage.setItem(likeKey, count);
+      localStorage.setItem(likeKey + "_voted", "1");
+      likeCount.textContent = count;
+      likeBtn.classList.add("liked");
+    };
+  </script>
+
+</body>
+</html>

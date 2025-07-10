@@ -1,0 +1,254 @@
+---
+layout: none
+title: Posts
+permalink: /post/
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My blogs</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/lunr/lunr.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Noto Sans SC', sans-serif;
+      max-width: 850px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background-color: #fff;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .nav-home {
+      display: inline-block;
+      margin-bottom: 2rem;
+      padding: 0.5em 1em;
+      background-color: #007acc;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .post-item {
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 1rem;
+    }
+
+    .post-title {
+      font-size: 1.3rem;
+      color: #007acc;
+      text-decoration: none;
+    }
+
+    .post-title:hover {
+      text-decoration: underline;
+    }
+
+    .post-date {
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    .post-tags {
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+    }
+
+    .post-tags span {
+      background: #eee;
+      padding: 0.2rem 0.4rem;
+      margin-right: 0.3rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .filter-tags {
+      margin: 2rem 0;
+    }
+
+    .filter-tags span {
+      margin: 0.3rem;
+      padding: 0.3rem 0.6rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      cursor: pointer;
+      display: inline-block;
+    }
+
+    .filter-tags span.active {
+      background: #007acc;
+      color: white;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 0.6rem;
+      margin-bottom: 2rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    .pagination {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .pagination button {
+      margin: 0.2rem;
+      padding: 0.4rem 0.8rem;
+      font-size: 1rem;
+      cursor: pointer;
+      background-color: #007acc;
+      color: white;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .pagination button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📝 My blogs</h1>
+  <a class="nav-home" href="/">← Back</a>
+
+  <input type="text" id="searchInput" class="search-input" placeholder="🔍 搜索文章标题或内容...">
+
+  <div class="filter-tags" id="tagFilter">
+    <!-- 动态填充标签 -->
+  </div>
+
+  <div id="postList">
+    <!-- 文章列表将通过 JS 动态填充 -->
+  </div>
+
+  <div class="pagination" id="pagination">
+    <!-- 页码按钮 -->
+  </div>
+
+  <script>
+    const posts = [
+      {% for post in site.posts %}
+      {
+        title: {{ post.title | jsonify }},
+        date: "{{ post.date | date: "%Y-%m-%d" }}",
+        url: "{{ post.url }}",
+        content: {{ post.content | strip_html | jsonify }},
+        excerpt: {{ post.excerpt | strip_html | truncate: 140 | jsonify }},
+        tags: [{% for tag in post.tags %}"{{ tag }}"{% if forloop.last == false %}, {% endif %}{% endfor %}]
+      },
+      {% endfor %}
+    ];
+
+    let filteredPosts = posts.slice();
+    let currentPage = 1;
+    const perPage = 5;
+
+    const postList = document.getElementById("postList");
+    const pagination = document.getElementById("pagination");
+    const tagFilter = document.getElementById("tagFilter");
+    const searchInput = document.getElementById("searchInput");
+
+    function renderTags() {
+      const tags = new Set();
+      posts.forEach(post => post.tags.forEach(tag => tags.add(tag)));
+
+      tagFilter.innerHTML = '';
+      tags.forEach(tag => {
+        const el = document.createElement('span');
+        el.textContent = tag;
+        el.onclick = () => {
+          document.querySelectorAll('.filter-tags span').forEach(s => s.classList.remove('active'));
+          el.classList.add('active');
+          filterByTag(tag);
+        };
+        tagFilter.appendChild(el);
+      });
+
+      const all = document.createElement('span');
+      all.textContent = 'All';
+      all.onclick = () => {
+        document.querySelectorAll('.filter-tags span').forEach(s => s.classList.remove('active'));
+        all.classList.add('active');
+        filteredPosts = posts.slice();
+        renderPage(1);
+      };
+      all.classList.add('active');
+      tagFilter.prepend(all);
+    }
+
+    function renderPage(page) {
+      currentPage = page;
+      const start = (page - 1) * perPage;
+      const end = start + perPage;
+      const pagePosts = filteredPosts.slice(start, end);
+
+      postList.innerHTML = pagePosts.map(post => `
+        <div class="post-item">
+          <a class="post-title" href="${post.url}">${post.title}</a>
+          <div class="post-date">${post.date}</div>
+          <div class="post-excerpt">${post.excerpt}</div>
+          <div class="post-tags">
+            ${post.tags.map(t => `<span>${t}</span>`).join(' ')}
+          </div>
+        </div>
+      `).join('');
+
+      const totalPages = Math.ceil(filteredPosts.length / perPage);
+      pagination.innerHTML = '';
+      for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement('button');
+        btn.textContent = i;
+        btn.disabled = i === currentPage;
+        btn.onclick = () => renderPage(i);
+        pagination.appendChild(btn);
+      }
+    }
+
+    function filterByTag(tag) {
+      filteredPosts = posts.filter(p => p.tags.includes(tag));
+      renderPage(1);
+    }
+
+    function setupSearch() {
+      const idx = lunr(function () {
+        this.ref('url');
+        this.field('title');
+        this.field('content');
+        posts.forEach(post => this.add(post));
+      });
+
+      searchInput.addEventListener('input', e => {
+        const query = e.target.value.trim();
+        if (query === "") {
+          filteredPosts = posts.slice();
+        } else {
+          const results = idx.search(query);
+          const urls = results.map(r => r.ref);
+          filteredPosts = posts.filter(p => urls.includes(p.url));
+        }
+        renderPage(1);
+      });
+    }
+
+    renderTags();
+    renderPage(1);
+    setupSearch();
+  </script>
+
+</body>
+</html>
