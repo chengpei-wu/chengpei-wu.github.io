@@ -64,7 +64,7 @@ Now, let us consider a more complex scenario of flow: the starting points are sa
 The probability density and the vector field satisfie the following key property (**Continuity Equation**):
 
 $$
-\frac{\partial p_t(x)}{\partial t} =- \nabla \cdot (p_t(x)\cdot u_t(x))
+\frac{\partial p_t(x)}{\partial t} =- \nabla_x \cdot (p_t(x)\cdot u_t(x))
 $$
 
 To provide an intuitive understanding of this equation, note that the left-hand side represents the instantaneous rate of change of the probability density at point $$x$$ over time. On the right-hand side, $$p_t(x)$$ denotes the probability density at position $$x$$, while $$u_t(x)$$ represents the velocity field--i.e., the speed and direction at which mass (or probability) moves at $$x$$. The product $$p_t(x)\cdot u_t(x)$$ describes the probability flux: it tells how much probability mass is flowing through space per unit time. Taking the divergence $$\nabla \cdot (p_t(x) \cdot u_t(x))$$ measures the net outflow of this flux from point $$x$$, and the negative sign indicates that when more mass flows out of $$x$$ than into it, the local density decreases accordingly.
@@ -192,7 +192,79 @@ $$
 \end{aligned}
 $$
 
-The answer is that optimizing $$\mathcal{L}_{FM} (\theta)$$ is equivalent to optimizing $$\mathcal{L}_{CFM} (\theta)$$.
+**The answer is that optimizing $$\mathcal{L}_{FM} (\theta)$$ is equivalent to optimizing $$\mathcal{L}_{CFM} (\theta)$$.**
 
-Let us give a formal proof of the above result:
-...
+Let us give a formal proof of the above result. 
+
+First, let us introduce a key lemma, which reveals the relationship of conditional vector field 
+$$u_t(x|z)$$ and (marginal) vector field $$u_t(x)$$:
+
+**Lemma 1 (marginalization trick)**. For every data point 
+$$z \in \mathbb{R}^d$$, let 
+$$u^{target}_{t}(\cdot|z)$$ denote a conditional vector field, defined so that the corresponding ODE yields the conditional probability path 
+$$p_t(\cdot|z)$$, we have:
+
+$$
+u^{target}_t(x) = \int u^{target}_{t}(x|z) \cdot \frac{p_t(x|z)\cdot p_{data}(z)}{p_t(x)}dz.
+$$
+
+**Proof.** 
+
+$$
+\begin{aligned}
+\frac{\partial p_t(x)}{\partial t} &\overset{i}{=} \partial \int p_t(x|z)p_{data}(z)dz\\
+&\overset{ii}{=} \int \frac{\partial p_t(x|z)}{\partial t} p_{data}(z) dz\\
+&\overset{iii}{=} \int (- \nabla_x \cdot (p_t(x|z)\cdot u_t(x|z))) p_{data}(z)dz\\
+&\overset{iv}{=} - \nabla_x \cdot \int (p_t(x|z)\cdot u_t(x|z)) p_{data}(z)dz\\
+&\overset{v}{=} - \nabla_x \cdot \left( p_t(x) \int u_t(x|z) \cdot \frac{p_t(x|z) \cdot p_{data}(z)}{p_t(x)}dz \right),\\
+\end{aligned}
+$$
+
+as we kown (continuity equation): 
+$$\frac{\partial p_t(x)}{\partial t} = - \nabla_x \cdot (p_t(x) \cdot u_t(x))$$, therefore:
+
+$$
+\begin{aligned}
+- \nabla_x \cdot \left( p_t(x) \int u_t(x|z) \cdot \frac{p_t(x|z) \cdot p_{data}(z)}{p_t(x)}dz \right) &= - \nabla_x \cdot (p_t(x) \cdot u_t(x)) \\
+\Rightarrow \int u_t(x|z) \cdot \frac{p_t(x|z) \cdot p_{data}(z)}{p_t(x)}dz &= u_t(x).
+\end{aligned}
+$$
+
+Q.E.D.
+
+Now, we prove the following main theorem:
+
+**Theorem 1**. The marginal flow matching loss equals the conditional flow matching loss up to a constant:
+
+$$
+\mathcal{L}_{FM} (\theta) = \mathcal{L}_{CFM} (\theta) + C
+$$
+
+**Proof.**  
+
+$$
+\begin{aligned}
+\mathcal{L}_{FM} (\theta) &= \mathbb{E}_{t\sim U[0,1], x \sim p_t} \left \| u^{\theta}_t(x) - u^{target}_t(x) \right \|^2 \\
+&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left \| u^{\theta}_t(x) - u^{target}_t(x) \right \|^2\\
+&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left [ \left \| u^{\theta}_t(x)\right \|^2 - 2\cdot u^{\theta}_t(x)^{T}\cdot u^{target}_t(x) + \underbrace{\left \| u^{target}_t(x)\right \|^2}_{\theta \text{-independent constant}} \right ] \\ 
+&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left [ \left \| u^{\theta}_t(x)\right \|^2 - 2\cdot u^{\theta}_t(x)^{T}\cdot u^{target}_t(x) \right ] + C_1 \\
+& = \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left \| u^{\theta}_t(x)\right \|^2 - \int^{1}_{0} \int \int \left ( 2\cdot u^{\theta}_t(x)^{T}\cdot u^{target}_t(x) \right ) \cdot p_t(x|z) \cdot p_{data}(z) dz dx dt + C_1\\
+
+&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left \| u^{\theta}_t(x)\right \|^2 - \int^{1}_{0} \int \int 2\cdot u^{\theta}_t(x)^{T}\cdot \int u_t^{target}(x|z) \cdot \frac{p_t(x|z) \cdot p_{data}(z)}{p_t(x)}dz \cdot p_t(x|z) \cdot p_{data}(z) dz dx dt + C_1\\
+
+&=\mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left \| u^{\theta}_t(x)\right \|^2 - \int^{1}_{0} \int \int 2\cdot u^{\theta}_t(x)^{T}\cdot u_t^{target}(x|z) \cdot p_t(x|z) \cdot p_{data}(z) dz dx dt + C_1\\
+
+&=\mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left \| u^{\theta}_t(x)\right \|^2 - \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left [2\cdot u^{\theta}_t(x)^{T}\cdot u_t^{target}(x|z) \right ]  + C_1\\
+
+&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left [ \left \| u^{\theta}_t(x)\right \|^2 - 2\cdot u^{\theta}_t(x)^{T}\cdot u_t^{target}(x|z) + \left \|u_t^{target}(x|z)\right \|^2 - \left \|u_t^{target}(x|z)\right \|^2 \right]  + C_1\\
+
+&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left [ \left \| u^{\theta}_t(x) - u_t^{target}(x|z)\right \|^2 \right] - \underbrace{\mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left \|u_t^{target}(x|z)\right \|^2}_{\theta \text{-independent constant}}  + C_1\\
+
+&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left [ \left \| u^{\theta}_t(x) - u_t^{target}(x|z)\right \|^2 \right] + C\\
+
+&= \mathcal{L}_{CFM}(\theta) + C
+
+\end{aligned}
+$$
+
+Q.E.D.

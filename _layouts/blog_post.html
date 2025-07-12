@@ -37,6 +37,33 @@
       line-height: 1.75;
       display: flex;
     }
+    /* 主内容粗体 */
+    article strong, article b {
+      font-weight: 650;
+      color: #d35400; /* 橙色系更醒目 */
+      text-shadow: 0 0.5px 0 rgba(0,0,0,0.2);
+      @REM padding: 0.1em 0.2em;
+      @REM background: linear-gradient(to bottom, transparent 60%, #fff3bf 60%);
+    }
+
+    /* 标题粗体 */
+    article h1 strong, article h2 strong {
+      font-weight: 800;
+      color: #c0392b;
+      background: none;
+      position: relative;
+    }
+
+    article h1 strong::after, article h2 strong::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, #c0392b, #e74c3c);
+    }
+
 
     /* 左侧目录区域 */
     .sidebar {
