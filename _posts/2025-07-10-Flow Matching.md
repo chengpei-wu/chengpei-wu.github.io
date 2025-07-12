@@ -245,12 +245,16 @@ $$
 $$
 \begin{aligned}
 \mathcal{L}_{FM} (\theta) &= \mathbb{E}_{t\sim U[0,1], x \sim p_t} \left \| u^{\theta}_t(x) - u^{target}_t(x) \right \|^2 \\
-&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left \| u^{\theta}_t(x) - u^{target}_t(x) \right \|^2\\
-&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left [ \left \| u^{\theta}_t(x)\right \|^2 - 2\cdot u^{\theta}_t(x)^{T}\cdot u^{target}_t(x) + \underbrace{\left \| u^{target}_t(x)\right \|^2}_{\theta \text{-independent constant}} \right ] \\ 
-&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left [ \left \| u^{\theta}_t(x)\right \|^2 - 2\cdot u^{\theta}_t(x)^{T}\cdot u^{target}_t(x) \right ] + C_1 \\
-& = \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left \| u^{\theta}_t(x)\right \|^2 - \int^{1}_{0} \int \int \left ( 2\cdot u^{\theta}_t(x)^{T}\cdot u^{target}_t(x) \right ) \cdot p_t(x|z) \cdot p_{data}(z) dz dx dt + C_1\\
 
-&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left \| u^{\theta}_t(x)\right \|^2 - \int^{1}_{0} \int \int 2\cdot u^{\theta}_t(x)^{T}\cdot \int u_t^{target}(x|z) \cdot \frac{p_t(x|z) \cdot p_{data}(z)}{p_t(x)}dz \cdot p_t(x|z) \cdot p_{data}(z) dz dx dt + C_1\\
+(\text{Sampling trick})&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left \| u^{\theta}_t(x) - u^{target}_t(x) \right \|^2\\
+
+(\left \| a - b\right \|^2 = a^2 - 2 a^T b + b^2)&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left [ \left \| u^{\theta}_t(x)\right \|^2 - 2\cdot u^{\theta}_t(x)^{T}\cdot u^{target}_t(x) + \underbrace{\left \| u^{target}_t(x)\right \|^2}_{\theta \text{-independent constant}} \right ] \\
+
+&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left [ \left \| u^{\theta}_t(x)\right \|^2 - 2\cdot u^{\theta}_t(x)^{T}\cdot u^{target}_t(x) \right ] + C_1 \\
+
+(\text{Expectation definition})& = \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left \| u^{\theta}_t(x)\right \|^2 - \int^{1}_{0} \int \int \left ( 2\cdot u^{\theta}_t(x)^{T}\cdot u^{target}_t(x) \right ) \cdot p_t(x|z) \cdot p_{data}(z) dz dx dt + C_1\\
+
+(\text{Lemma 1})&=\mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left \| u^{\theta}_t(x)\right \|^2 - \int^{1}_{0} \int \int 2\cdot u^{\theta}_t(x)^{T}\cdot \int u_t^{target}(x|z) \cdot \frac{p_t(x|z) \cdot p_{data}(z)}{p_t(x)}dz \cdot p_t(x|z) \cdot p_{data}(z) dz dx dt + C_1\\
 
 &=\mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left \| u^{\theta}_t(x)\right \|^2 - \int^{1}_{0} \int \int 2\cdot u^{\theta}_t(x)^{T}\cdot u_t^{target}(x|z) \cdot p_t(x|z) \cdot p_{data}(z) dz dx dt + C_1\\
 
