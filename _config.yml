@@ -108,6 +108,10 @@ incremental: false
 
 # Markdown Processing
 kramdown:
+  math_engine_opts:
+    preview: false
+  math_engine: mathjax
+  parse_block_html: true
   input: GFM
   hard_wrap: false
   auto_ids: true

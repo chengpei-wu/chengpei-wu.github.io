@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>{{ page.title }}</title>
@@ -11,25 +11,133 @@
 
   <!-- MathJax -->
   <script>
-    window.MathJax = {
-      tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
-      svg: { fontCache: 'global' }
-    };
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    },
+    svg: { fontCache: 'global' }
+  };
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 
   <style>
     body {
       font-family: 'STIX Two Text', serif;
-      max-width: 860px;
+      max-width: 1200px;
       margin: 2rem auto;
       padding: 1rem;
       background-color: #fefefe;
-      color: #1a1a1a;
+      color:rgb(0, 0, 0);
       line-height: 1.75;
+      display: flex;
     }
 
-    h1, h2, h3 {
+    /* 左侧目录区域 */
+    .sidebar {
+      width: 280px;
+      padding-right: 2rem;
+      position: sticky;
+      top: 2rem;
+      align-self: flex-start;
+    }
+
+    /* 右侧内容区域 */
+    .main-content {
+      flex: 1;
+      max-width: 800px;
+    }
+
+    /* 目录样式 - 核心修改部分 */
+    .toc {
+      border: 1px solid #e1e1e1;
+      padding: 1.5rem;
+      background: #f8f8f8;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    .toc h2 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      color: #333;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid #e1e1e1;
+    }
+
+    .toc ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .toc li {
+      margin: 0.5rem 0;
+      position: relative;
+    }
+
+    .toc li a {
+      display: block;
+      padding: 0.3rem 0;
+      color: #444;
+      text-decoration: none;
+      transition: all 0.2s;
+      border-left: 3px solid transparent;
+      padding-left: 12px;
+    }
+
+    .toc li a:hover {
+      color: #007acc;
+      border-left-color: #007acc;
+      background: rgba(0,122,204,0.05);
+    }
+
+    /* 一级标题 (h2) */
+    .toc > ul > li > a {
+      font-weight: 600;
+      color: #222;
+      padding-left: 0;
+      border-left: none;
+    }
+
+    /* 二级标题 (h3) */
+    .toc > ul > li > ul > li > a {
+      padding-left: 1.5rem;
+      font-weight: 500;
+      color: #444;
+      position: relative;
+    }
+
+    /* 三级标题 (h4) */
+    .toc > ul > li > ul > li > ul > li > a {
+      padding-left: 3rem;
+      font-size: 0.95em;
+      color: #666;
+    }
+
+    /* 添加小箭头指示 */
+    .toc > ul > li > ul > li > a:before {
+      content: "→";
+      position: absolute;
+      left: 0.5rem;
+      color: #999;
+      font-size: 0.8em;
+    }
+
+    /* 当前激活的目录项 */
+    .toc li a.active {
+      color: #d35400;
+      font-weight: 500;
+      border-left-color: #d35400;
+    }
+
+    /* 其他原有样式保持不变... */
+    h1, h2, h3, h4 {
       font-weight: bold;
       margin-top: 2rem;
       margin-bottom: 1rem;
@@ -38,6 +146,7 @@
     h1 { font-size: 2.2rem; }
     h2 { font-size: 1.6rem; }
     h3 { font-size: 1.3rem; }
+    h4 { font-size: 1.1rem; }
 
     pre, code {
       font-family: 'Fira Code', monospace;
@@ -49,22 +158,6 @@
     pre {
       overflow-x: auto;
       padding: 1em;
-    }
-
-    a {
-      color: #007acc;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    blockquote {
-      border-left: 4px solid #ccc;
-      padding-left: 1rem;
-      color: #555;
-      margin: 1.5rem 0;
     }
 
     .post-header {
@@ -80,30 +173,9 @@
       color: #888;
     }
 
-    .toc {
-      border: 1px solid #ccc;
-      padding: 1rem;
-      margin: 2rem 0;
-      background: #f9f9f9;
-    }
-
-    .toc h2 {
-      margin-top: 0;
-      font-size: 1.1rem;
-    }
-
-    .toc ul {
-      list-style-type: none;
-      padding-left: 0;
-    }
-
-    .toc li {
-      margin: 0.3rem 0;
-    }
-
     .return-link {
       display: inline-block;
-      margin-top: 2rem;
+      margin-bottom: 1.5rem;
       background: #007acc;
       color: white;
       padding: 0.5rem 1rem;
@@ -115,88 +187,119 @@
       background: #005fa3;
     }
 
-    .like-btn {
-      margin-top: 2rem;
-      cursor: pointer;
-      padding: 0.5rem 1rem;
-      background: #eee;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      display: inline-block;
-    }
-
-    .like-btn.liked {
-      background: #ffdaab;
-      border-color: #ffaa00;
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+        position: static;
+        padding-right: 0;
+      }
+      .main-content {
+        max-width: 100%;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="post-header">
-    <h1>{{ page.title }}</h1>
-    <div class="post-date">{{ page.date | date: "%Y-%m-%d" }}</div>
+  <!-- 左侧目录区域 -->
+  <div class="sidebar">
+    <a class="return-link" href="/post/">← Back to Posts</a>
+
+    <div class="toc" id="toc">
+      <h2>📑 Table of Contents</h2>
+      <ul id="toc-list"></ul>
+    </div>
   </div>
 
-  <!-- 自动目录 -->
-  <div class="toc" id="toc">
-    <h2>📑 Content</h2>
-    <ul id="toc-list"></ul>
+  <!-- 右侧内容区域 -->
+  <div class="main-content">
+    <div class="post-header">
+      <h1>{{ page.title }}</h1>
+      <div class="post-meta">
+        <span class="post-date">{{ page.date | date: "%Y-%m-%d" }}</span>
+        {% if page.author %} • <span class="post-author">{{ page.author }}</span>{% endif %}
+      </div>
+    </div>
+
+    <article>
+      {{ content }}
+    </article>
+
+    <script src="https://utteranc.es/client.js"
+      repo="chengpei-wu/chengpei-wu.github.io"
+      issue-term="title"
+      theme="github-light"
+      crossorigin="anonymous"
+      async>
+    </script>
   </div>
 
-  <!-- 正文内容 -->
-  <article>
-    {{ content }}
-  </article>
-
-  <!-- 点赞按钮 -->
-
-
-  <!-- 返回博客列表 -->
-  <a class="return-link" href="/post/">← Back</a>
-
-  <!-- 评论区：utterances -->
-  <script src="https://utteranc.es/client.js"
-    repo="chengpei-wu/chengpei-wu.github.io"
-    issue-term="title"
-    theme="github-light"
-    crossorigin="anonymous"
-    async>
-  </script>
-
-  <!-- 自动生成目录 JS -->
+  <!-- 增强版目录生成脚本 -->
   <script>
-    const tocList = document.getElementById('toc-list');
-    const headers = document.querySelectorAll('article h2, article h3');
-    headers.forEach((header, index) => {
-      const id = "toc_" + index;
-      header.id = id;
-      const li = document.createElement('li');
-      li.innerHTML = `<a href="#${id}">${header.innerText}</a>`;
-      tocList.appendChild(li);
+    document.addEventListener('DOMContentLoaded', function() {
+      const tocList = document.getElementById('toc-list');
+      const headers = document.querySelectorAll('article h2, article h3, article h4');
+      let currentUl = tocList;
+      let lastLevel = 2;
+      const tocItems = [];
+
+      // 生成层级目录
+      headers.forEach((header, index) => {
+        const id = "toc_" + index;
+        header.id = id;
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = `#${id}`;
+        a.textContent = header.textContent;
+        li.appendChild(a);
+        
+        const headerLevel = parseInt(header.tagName.substring(1));
+        tocItems.push({ id: id, element: a });
+
+        // 处理层级关系
+        if(headerLevel > lastLevel) {
+          const ul = document.createElement('ul');
+          currentUl.lastChild.appendChild(ul);
+          currentUl = ul;
+        } else if(headerLevel < lastLevel) {
+          const levelDiff = lastLevel - headerLevel;
+          for(let i = 0; i < levelDiff; i++) {
+            currentUl = currentUl.parentNode.parentNode;
+          }
+        }
+        
+        currentUl.appendChild(li);
+        lastLevel = headerLevel;
+      });
+
+      // 高亮当前阅读的章节
+      function highlightToc() {
+        const fromTop = window.scrollY + 100;
+        let currentActive = null;
+
+        // 反向遍历找到第一个出现在视口中的标题
+        for(let i = tocItems.length - 1; i >= 0; i--) {
+          const item = tocItems[i];
+          const target = document.getElementById(item.id);
+          if(target && target.offsetTop <= fromTop) {
+            currentActive = item;
+            break;
+          }
+        }
+
+        // 更新高亮状态
+        tocItems.forEach(item => {
+          item.element.classList.toggle('active', item === currentActive);
+        });
+      }
+
+      // 添加滚动监听
+      window.addEventListener('scroll', highlightToc);
+      highlightToc(); // 初始化高亮
     });
-  </script>
-
-  <!-- 点赞功能（本地） -->
-  <script>
-    const likeKey = "like_" + window.location.pathname;
-    const likeBtn = document.getElementById("likeBtn");
-    const likeCount = document.getElementById("likeCount");
-
-    let count = parseInt(localStorage.getItem(likeKey)) || 0;
-    let liked = localStorage.getItem(likeKey + "_voted") === "1";
-
-    likeCount.textContent = count;
-    if (liked) likeBtn.classList.add("liked");
-
-    likeBtn.onclick = function () {
-      if (liked) return;
-      count++;
-      localStorage.setItem(likeKey, count);
-      localStorage.setItem(likeKey + "_voted", "1");
-      likeCount.textContent = count;
-      likeBtn.classList.add("liked");
-    };
   </script>
 
 </body>
