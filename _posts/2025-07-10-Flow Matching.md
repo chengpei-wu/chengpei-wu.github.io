@@ -10,16 +10,16 @@ author: Chengpei Wu
 
 ## 1. what is generative modeling?
 
-Generative modeling is the process of learning how to sample from the data distribution. Generally, it aims to transform samples from a simple, known distribution (e.g., standard Gaussian) into samples from a complex, unknown data distribution (e.g., CIFAR-10).
+Generative modeling is the process of learning how to sample data from the real-world data distribution. Technically speaking, it aims to transform samples from a simple, known distribution (e.g., standard Gaussian) into samples from a complex, unknown data distribution (e.g., CIFAR-10).
 
 ## 2. what we have in generative modeling?
 
 - An image dataset (empirical distribution of data).
-- A neural network (can be seen as a function approximator).
+- A neural network (as a function approximator).
 
-## 3. how flow matching algorithm works?
+## 3. how flow matching algorithm works for generative modeling?
 
-Flow Matching learns a neural network to predict how a sample should move from noise to data, step by step, by simulating an ordinary differential equation (ODE).
+Flow Matching learns a neural network to predict how a sample should move from noise point to data point, step by step, by simulating an ordinary differential equation (ODE).
 
 ### 3.1. ODE, flow, and vector field
 In order to thoroughly understand flow matching, let us start by understanding ordinary differential equations (ODEs).
@@ -212,7 +212,7 @@ $$
 
 $$
 \begin{aligned}
-\frac{\partial p_t(x)}{\partial t} &\overset{i}{=} \partial \int p_t(x|z)p_{data}(z)dz\\
+\frac{\partial p_t(x)}{\partial t} &\overset{i}{=} \frac{\partial \int p_t(x|z)p_{data}(z)dz}{\partial t}\\
 &\overset{ii}{=} \int \frac{\partial p_t(x|z)}{\partial t} p_{data}(z) dz\\
 &\overset{iii}{=} \int (- \nabla_x \cdot (p_t(x|z)\cdot u_t(x|z))) p_{data}(z)dz\\
 &\overset{iv}{=} - \nabla_x \cdot \int (p_t(x|z)\cdot u_t(x|z)) p_{data}(z)dz\\
