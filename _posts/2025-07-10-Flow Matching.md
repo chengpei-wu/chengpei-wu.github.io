@@ -22,6 +22,7 @@ Generative modeling is the process of learning how to sample data from the real-
 Flow Matching learns a neural network to predict how a sample should move from noise point to data point, step by step, by simulating an ordinary differential equation (ODE).
 
 ### 3.1. ODE, flow, and vector field
+
 In order to thoroughly understand flow matching, let us start by understanding ordinary differential equations (ODEs).
 We can define a **trajectory** by a function $$X: [0,1] \to \mathbb{R}^d (t \to X_t)$$, which maps from time $$t \in [0,1]$$ to some location in $$\mathbb{R}^d$$. The trajectory is also a solution of the following **ODE**:
 
