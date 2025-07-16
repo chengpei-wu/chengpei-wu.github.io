@@ -14,8 +14,15 @@ Generative modeling is the process of learning how to sample data from the real-
 
 ## 2. what we have in generative modeling?
 
-- An image dataset (empirical distribution of data).
+- An image dataset (empirical distribution of real-world data).
 - A neural network (as a function approximator).
+
+## 2.5. Why Flow Matching?
+
+Traditional generative models like GANs and VAEs have their own strengths and limitations. Flow Matching offers a new perspective: instead of using adversarial training (like GAN) or encoders (like VAE), it directly learns a vector field guiding the data flow from noise to data.
+
+This view naturally connects with differential equations and leads us to the core idea of flow matching: learning a neural ODE to model data generation.
+
 
 ## 3. how flow matching algorithm works for generative modeling?
 
@@ -23,7 +30,7 @@ Flow Matching learns a neural network to predict how a sample should move from n
 
 ### 3.1. ODE, flow, and vector field
 
-In order to thoroughly understand flow matching, let us start by understanding ordinary differential equations (ODEs).
+In order to understand flow matching thoroughly, let us start by understanding ordinary differential equations (ODEs).
 We can define a **trajectory** by a function $$X: [0,1] \to \mathbb{R}^d (t \to X_t)$$, which maps from time $$t \in [0,1]$$ to some location in $$\mathbb{R}^d$$. The trajectory is also a solution of the following **ODE**:
 
 $$
@@ -197,6 +204,8 @@ $$
 
 Let us give a formal proof of the above result. 
 
+To prove the equivalence of FM and CFM loss, we apply the marginalization trick and rewrite expectations. The key idea is to decompose the marginal loss via the law of total expectation.
+
 First, let us introduce a key lemma, which reveals the relationship of conditional vector field 
 $$u_t(x|z)$$ and (marginal) vector field $$u_t(x)$$:
 
@@ -273,3 +282,12 @@ $$
 $$
 
 Q.E.D.
+
+## 4. Summary and Further Readings
+
+We introduced the principle of Flow Matching from the ground up: from vector fields and flows to the design of conditional paths and training loss. By understanding its mathematical foundation, we can better appreciate its connection to score-based models, diffusion, and neural ODEs.
+
+If you're interested in further exploring Flow Matching, you may want to check:
+- [Flow matching for generative modeling](https://arxiv.org/pdf/2210.02747).
+- [Flow Matching Guide and Code](https://arxiv.org/abs/2412.06264).
+- [An Introduction to Flow Matching and Diffusion Models](https://diffusion.csail.mit.edu/).
