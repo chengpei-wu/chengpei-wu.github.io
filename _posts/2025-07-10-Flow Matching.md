@@ -186,7 +186,7 @@ As described in section 3.2, we want to train a neural network $$u^{\theta}_t(x_
 $$
 \begin{aligned}
 \mathcal{L}_{FM} (\theta) &= \mathbb{E}_{t\sim U[0,1], x_t \sim p_t} \left \| u^{\theta}_t(x_t) - u^{target}_t(x_t) \right \|^2 \\
-&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x_t \sim p_t(\cdot|z=z)} \left \| u^{\theta}_t(x_t) - u^{target}_t(x_t) \right \|^2.
+&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x_t \sim p_t(\cdot|z)} \left \| u^{\theta}_t(x_t) - u^{target}_t(x_t) \right \|^2.
 \end{aligned}
 $$
 
@@ -195,8 +195,8 @@ $$u_t(x_t|z) = z-x_0 \quad (s.t. \quad x_t = (1-t) \cdot x_0 + t \cdot z)$$, a n
 
 $$
 \begin{aligned}
-\mathcal{L}_{CFM} (\theta) &= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x_t \sim p_t(\cdot|z=z)} \left \| u^{\theta}_t(x_t) - u^{target}_t(x_t|z) \right \|^2 \\
-&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x_t \sim p_t(\cdot|z=z)} \left \| u^{\theta}_t(x_t) - (z - x_0) \right \|^2.
+\mathcal{L}_{CFM} (\theta) &= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x_t \sim p_t(\cdot|z)} \left \| u^{\theta}_t(x_t) - u^{target}_t(x_t|z) \right \|^2 \\
+&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x_t \sim p_t(\cdot|z)} \left \| u^{\theta}_t(x_t) - (z - x_0) \right \|^2.
 \end{aligned}
 $$
 
@@ -256,25 +256,25 @@ $$
 \begin{aligned}
 \mathcal{L}_{FM} (\theta) &= \mathbb{E}_{t\sim U[0,1], x \sim p_t} \left \| u^{\theta}_t(x) - u^{target}_t(x) \right \|^2 \\
 
-(\text{Sampling trick})&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left \| u^{\theta}_t(x) - u^{target}_t(x) \right \|^2\\
+(\text{Sampling trick})&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z)} \left \| u^{\theta}_t(x) - u^{target}_t(x) \right \|^2\\
 
-(\left \| a - b\right \|^2 = a^2 - 2 a^T b + b^2)&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left [ \left \| u^{\theta}_t(x)\right \|^2 - 2\cdot u^{\theta}_t(x)^{T}\cdot u^{target}_t(x) + \underbrace{\left \| u^{target}_t(x)\right \|^2}_{\theta \text{-independent constant}} \right ] \\
+(\left \| a - b\right \|^2 = a^2 - 2 a^T b + b^2)&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z)} \left [ \left \| u^{\theta}_t(x)\right \|^2 - 2\cdot u^{\theta}_t(x)^{T}\cdot u^{target}_t(x) + \underbrace{\left \| u^{target}_t(x)\right \|^2}_{\theta \text{-independent constant}} \right ] \\
 
-&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left [ \left \| u^{\theta}_t(x)\right \|^2 - 2\cdot u^{\theta}_t(x)^{T}\cdot u^{target}_t(x) \right ] + C_1 \\
+&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z)} \left [ \left \| u^{\theta}_t(x)\right \|^2 - 2\cdot u^{\theta}_t(x)^{T}\cdot u^{target}_t(x) \right ] + C_1 \\
 
-(\text{Expectation definition})& = \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left \| u^{\theta}_t(x)\right \|^2 - \int^{1}_{0} \int \int \left ( 2\cdot u^{\theta}_t(x)^{T}\cdot u^{target}_t(x) \right ) \cdot p_t(x|z) \cdot p_{data}(z) dz dx dt + C_1\\
+(\text{Expectation definition})& = \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z)} \left \| u^{\theta}_t(x)\right \|^2 - \int^{1}_{0} \int \int \left ( 2\cdot u^{\theta}_t(x)^{T}\cdot u^{target}_t(x) \right ) \cdot p_t(x|z) \cdot p_{data}(z) dz dx dt + C_1\\
 
-(\text{Lemma 1})&=\mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left \| u^{\theta}_t(x)\right \|^2 - \int^{1}_{0} \int \int 2\cdot u^{\theta}_t(x)^{T}\cdot \int u_t^{target}(x|z) \cdot \frac{p_t(x|z) \cdot p_{data}(z)}{p_t(x)}dz \cdot p_t(x|z) \cdot p_{data}(z) dz dx dt + C_1\\
+(\text{Lemma 1})&=\mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z)} \left \| u^{\theta}_t(x)\right \|^2 - \int^{1}_{0} \int \int 2\cdot u^{\theta}_t(x)^{T}\cdot \int u_t^{target}(x|z) \cdot \frac{p_t(x|z) \cdot p_{data}(z)}{p_t(x)}dz \cdot p_t(x|z) \cdot p_{data}(z) dz dx dt + C_1\\
 
-&=\mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left \| u^{\theta}_t(x)\right \|^2 - \int^{1}_{0} \int \int 2\cdot u^{\theta}_t(x)^{T}\cdot u_t^{target}(x|z) \cdot p_t(x|z) \cdot p_{data}(z) dz dx dt + C_1\\
+&=\mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z)} \left \| u^{\theta}_t(x)\right \|^2 - \int^{1}_{0} \int \int 2\cdot u^{\theta}_t(x)^{T}\cdot u_t^{target}(x|z) \cdot p_t(x|z) \cdot p_{data}(z) dz dx dt + C_1\\
 
-&=\mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left \| u^{\theta}_t(x)\right \|^2 - \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left [2\cdot u^{\theta}_t(x)^{T}\cdot u_t^{target}(x|z) \right ]  + C_1\\
+&=\mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z)} \left \| u^{\theta}_t(x)\right \|^2 - \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z)} \left [2\cdot u^{\theta}_t(x)^{T}\cdot u_t^{target}(x|z) \right ]  + C_1\\
 
-&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left [ \left \| u^{\theta}_t(x)\right \|^2 - 2\cdot u^{\theta}_t(x)^{T}\cdot u_t^{target}(x|z) + \left \|u_t^{target}(x|z)\right \|^2 - \left \|u_t^{target}(x|z)\right \|^2 \right]  + C_1\\
+&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z)} \left [ \left \| u^{\theta}_t(x)\right \|^2 - 2\cdot u^{\theta}_t(x)^{T}\cdot u_t^{target}(x|z) + \left \|u_t^{target}(x|z)\right \|^2 - \left \|u_t^{target}(x|z)\right \|^2 \right]  + C_1\\
 
-&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left [ \left \| u^{\theta}_t(x) - u_t^{target}(x|z)\right \|^2 \right] - \underbrace{\mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left \|u_t^{target}(x|z)\right \|^2}_{\theta \text{-independent constant}}  + C_1\\
+&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z)} \left [ \left \| u^{\theta}_t(x) - u_t^{target}(x|z)\right \|^2 \right] - \underbrace{\mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z)} \left \|u_t^{target}(x|z)\right \|^2}_{\theta \text{-independent constant}}  + C_1\\
 
-&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z=z)} \left [ \left \| u^{\theta}_t(x) - u_t^{target}(x|z)\right \|^2 \right] + C\\
+&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z)} \left [ \left \| u^{\theta}_t(x) - u_t^{target}(x|z)\right \|^2 \right] + C\\
 
 &= \mathcal{L}_{CFM}(\theta) + C
 
