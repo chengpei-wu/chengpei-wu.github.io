@@ -56,7 +56,7 @@ $$
 
 Inductive Hypothesis: Assume that for natrual number $$n$$, $$n + (m++) = (n+m)++$$ is true.
 
-Inductive Step: we show that $$(n++)+(m++) = ((n++)+m)++$$ is true, under the assumption that the inductive hypothesis is true.  
+Inductive Step: we show that $$(n++)+(m++) = ((n++)+m)++$$ is true, under the assumption that the inductive hypothesis is true.
 
 $$
 \begin{aligned}
