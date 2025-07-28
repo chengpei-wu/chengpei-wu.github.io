@@ -19,7 +19,7 @@ Base Case ($$n=0$$):
 $$
 \begin{aligned}
 n+0 &= 0+0\\
-(\text{difinition})&=0\\
+(\text{definition})&=0\\
 &=n
 \end{aligned}
 $$
@@ -48,8 +48,8 @@ Base Case ($$n=0$$):
 $$
 \begin{aligned}
 n + (m++) &= 0 + (m++)\\
-(\text{difinition}) &= m++\\
-(\text{difinition})&= (0 + m)++\\
+(\text{definition}) &= m++\\
+(\text{definition})&= (0 + m)++\\
 (n=0)&= (n + m)++\\
 \end{aligned}
 $$
@@ -62,7 +62,7 @@ $$
 \begin{aligned}
 (n++) + (m++) &= (n + (m++))++\\
 (\text{inductive hypothesis}) &= ((n+m)++)++\\
-(\text{difinition})&= ((n++)+m)++\\
+(\text{definition})&= ((n++)+m)++\\
 \end{aligned}
 $$
 
