@@ -1,69 +1,46 @@
 ---
 layout: blog_post
-title: Proofs of Analysis I
+title: Exercises of Analysis I
 date: 2025-07-24
 tag: [real analysis, mathematics]
 author: Chengpei Wu
 ---
 
-## Section 2.2
+## Section 2
 
-### Lemma 2.2.2
+### 2.2.1 
+**Proposition 2.2.5 (Addition is associative). For any natural numbers $$a,b,c$$, we have $$(a+b)+c = a+(b+c)$$.**
 
-**For any natural number $$n$$, $$n+0=n$$.**
+We prove the statement by induction on $$c$$.
 
-**Proof.** We prove the statement by induction on $$n$$. 
-
-Base Case ($$n=0$$): 
-
-$$
-\begin{aligned}
-n+0 &= 0+0\\
-(\text{definition})&=0\\
-&=n
-\end{aligned}
-$$
-
-Inductive Hypothesis: Assume that for natrual number $$n$$, $$n+0=n$$ is true.
-
-Inductive Step: we show that $$(n++)+0 = n++$$ is true, under the assumption that the inductive hypothesis is true.  
+Base Case ($$c=0$$):
 
 $$
 \begin{aligned}
-(n++)+0 &= (n+0)++\\
-(\text{inductive hypothesis})&=n++ \\
+(a+b)+0 &\overset{(i)}{=} a+b\\
+&\overset{(i)}{=} a+(b+0)\\
+&= a+(b+c)\\
 \end{aligned}
 $$
 
-Q.E.D.
+where in $$(i)$$ we use Lemma 2.2.2 in the textbook.
 
-### Lemma 2.2.3
 
-**$$\forall n, m \in \mathcal{N}, n + (m++) = (n+m)++$$**
+Inductive Hypothesis: Assume that for natural number $$c$$, $$(a+b)+c = a+(b+c)$$ is true.
 
-**Proof.** We prove the statement by induction on $$n$$. 
-
-Base Case ($$n=0$$):
+Inductive Step: we show that $$(a+b)+(c++) = a+(b+(c++))$$ is true, under the assumption that the inductive hypothesis is true.
 
 $$
 \begin{aligned}
-n + (m++) &= 0 + (m++)\\
-(\text{definition}) &= m++\\
-(\text{definition})&= (0 + m)++\\
-(n=0)&= (n + m)++\\
+(a+b)+(c++) &\overset{(i)}{=} ((a+b)+c)++\\
+&\overset{(i)}{=} (a+(b+c)) ++ \\
+&\overset{(i)}{=} a + ((b+c)++) \\
+&\overset{(i)}{=} a + (b + (c++))
 \end{aligned}
 $$
 
-Inductive Hypothesis: Assume that for natrual number $$n$$, $$n + (m++) = (n+m)++$$ is true.
+where in $$(i)$$ we use Lemma 2.2.3 in the textbook, in $$(ii)$$ we use the inductive hypothesis.
+Thus, by the principle of induction, we conclude that for any natural numbers $$a,b,c$$, we have $$(a+b)+c = a+(b+c)$$.
 
-Inductive Step: we show that $$(n++)+(m++) = ((n++)+m)++$$ is true, under the assumption that the inductive hypothesis is true.
-
-$$
-\begin{aligned}
-(n++) + (m++) &= (n + (m++))++\\
-(\text{inductive hypothesis}) &= ((n+m)++)++\\
-(\text{definition})&= ((n++)+m)++\\
-\end{aligned}
-$$
 
 Q.E.D.
