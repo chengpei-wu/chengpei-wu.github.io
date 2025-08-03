@@ -54,6 +54,33 @@
       position: relative;
     }
 
+    /* assets/css/style.scss 或 style.css 中添加 */
+    .blog-image {
+      max-width: 100%;
+      width: 400px;         /* 或你希望的默认宽度 */
+      display: block;
+      margin: 1rem auto;    /* 居中对齐 */
+      border-radius: 8px;   /* 可选：圆角边框 */
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* 可选：阴影 */
+    }
+
+    .algorithm {
+      background-color: #f8f8f8;
+      border-left: 4px solid #888;
+      padding: 1em;
+      margin: 1.5em 0;
+      font-family: 'Courier New', monospace;
+    }
+    .alg-title {
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+    .algorithm pre {
+      margin: 0;
+      white-space: pre-wrap;
+    }
+
+
     article h1 strong::after, article h2 strong::after {
       content: "";
       position: absolute;

@@ -1,0 +1,14 @@
+{% if figure_counter %}
+  {% assign figure_number = figure_counter | plus: 1 %}
+{% else %}
+  {% assign figure_number = 1 %}
+{% endif %}
+{% capture figure_counter %}{{ figure_number }}{% endcapture %}
+
+<figure style="text-align: center; margin: 1.5em 0;">
+  <img src="{{ include.src }}" alt="{{ include.alt | default: '' }}"
+       style="width: {{ include.width | default: '100%' }};">
+  <figcaption>
+    Figure {{ figure_number }}. {{ include.caption }}
+  </figcaption>
+</figure>
