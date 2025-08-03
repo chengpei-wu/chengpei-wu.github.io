@@ -1,6 +1,6 @@
 ---
 layout: blog_post
-title: Understanding PAC Learnability on Rectangle Concepts
+title: Understanding PAC Learnability on Axis-aligned Rectangle Concepts
 date: 2025-08-03
 tag: [machine learning, mathematics, computational learning theory]
 author: Chengpei Wu
