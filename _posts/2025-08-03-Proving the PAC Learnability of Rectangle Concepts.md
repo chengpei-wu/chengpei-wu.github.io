@@ -14,6 +14,7 @@ This proof will illustrate key techniques commonly used in PAC learning proofs.
 
 ## 1. Simplified Definition of PAC Learnability (Sample Complexity Only)
 
+### 1.1. Generalization Error
 **Definition 1. (Generalization Error)**
 Given a hypothesis $$h \in \mathcal{H}$$, a target concept $$c \in \mathcal{C}$$, and an underlying distribution $$\mathcal{D}$$ over the input space $$\mathcal{X}$$, the generalization error (or risk) of $$h$$ with respect to $$c$$ is defined as:
 
@@ -21,6 +22,7 @@ $$
 Risk(h) = \mathbb{P}_{x \sim \mathcal{D}} [h(x) \neq c(x)] = \mathbb{E}_{x \sim \mathcal{D}} [\mathbb{I}(h(x) \neq c(x))]
 $$
 
+### 1.2. PAC Learnability
 
 **Definition 2. (PAC Learnability)**
 A concept class $$\mathcal{C}$$ is said to be PAC-learnable if there exists a learning algorithm $$\mathcal{A}$$ and a polynomial function $$poly(\cdot,\cdot)$$, such that for all distributions $$\mathcal{D}$$ over the input space $$\mathcal{X}$$, for any concept $$c \in \mathcal{C}$$, for any $$\epsilon, \delta > 0$$, the following holds for any sample size $$m \geq poly(\frac{1}{\epsilon}, \frac{1}{\delta})$$:
@@ -109,7 +111,7 @@ $$
 \end{aligned}
 $$
 
-where in (i) we use the fact that $$P \subseteq Q$$, in (ii) we use the fact that $$\mathbb{P}[P] = 1 - \mathbb{P}[\bar P]$$, in (iii) we rewrite the resentation, in (iv) we use the the union bound, in (v) we use the fact that $$\mathbb{P}[A_i] = (1 - \frac{\epsilon}{4})^m$$, and in (vi) we use the fact that $$1 - x \le exp(-x)$$ for any $$x > 0$$.
+where in (i) we use the fact that $$P \subseteq Q$$, in (ii) we use the fact that $$\mathbb{P}[P] = 1 - \mathbb{P}[\bar P]$$, in (iii) we rewrite the term, in (iv) we use the the union bound, in (v) we use the fact that $$\mathbb{P}[A_i] = (1 - \frac{\epsilon}{4})^m$$, and in (vi) we use the fact that $$1 - x \le exp(-x)$$ for any $$x > 0$$.
 
 If we impose that $$\mathbb{P}[Risk(R') \le \epsilon] = 1 - 4 exp(\frac{-m\cdot \epsilon}{4}) \ge 1 - \delta$$, which will be satisfied if:
 
