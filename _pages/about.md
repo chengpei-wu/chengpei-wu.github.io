@@ -25,7 +25,7 @@ In addition, I am also interested in graph foundation models, generative modelin
 
 <span class='anchor' id='news'></span>
 # News
-- [**05/2025**] one paper (co-authored) accepted by [IJCAI 2025](https://2025.ijcai.org/).
+<!-- - [**05/2025**] one paper (co-authored) accepted by [IJCAI 2025](https://2025.ijcai.org/). -->
 - [**04/2025**] one paper (co-authored) accepted by [CVPR 2025](https://cvpr.thecvf.com/).
 - [**06/2024**] one paper accepted by [*IEEE Transactions on Cybernetics*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?reload=true&punumber=6221036).
 - [**10/2023**] I have been awarded the National Scholarship for Graduate Students by the Chinese Ministry of Education.
