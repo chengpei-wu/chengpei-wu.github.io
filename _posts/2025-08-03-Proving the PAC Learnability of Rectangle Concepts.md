@@ -75,7 +75,6 @@ By definition, we know the following statement is true:
    caption="Illustration of the hypothesis R' returned by algorithm 1."
 %}
 
-
 For any fixed $$\epsilon > 0$$, we want to know the probability of generalization error $$Risk(R') \le \epsilon$$.
 If the probability of the target rectangle $$\mathbb{P}[R] \le \epsilon$$, then the generalization error $$Risk(R')$$ will never exceed $$\epsilon$$, which means $$\mathbb{P}[Risk(R') \le \epsilon] = 1$$, it is trivially true.
 So, we need assume that the target rectangle $$R$$ is not too small, i.e., $$\mathbb{P}[R] > \epsilon$$.
