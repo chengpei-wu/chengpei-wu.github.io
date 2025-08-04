@@ -77,11 +77,11 @@ By definition, we know the following statement is true:
 
 
 For any fixed $$\epsilon > 0$$, we want to know the probability of generalization error $$Risk(R') \le \epsilon$$.
-If the probability of the target rectangle $$\mathbb{P}[R] \le \epsilon$$, then the generalization error $$Risk(R')$$ will never exceed $$\epsilon$$, which means $$Risk(R') \le \epsilon = 1$$, it is trivially true.
+If the probability of the target rectangle $$\mathbb{P}[R] \le \epsilon$$, then the generalization error $$Risk(R')$$ will never exceed $$\epsilon$$, which means $$\mathbb{P}[Risk(R') \le \epsilon] = 1$$, it is trivially true.
 So, we need assume that the target rectangle $$R$$ is not too small, i.e., $$\mathbb{P}[R] > \epsilon$$.
 Now, since $$\mathbb{P}[R] > \epsilon$$, we proceed to bound the probability of the generalization error $$Risk(R')$$.
 
-**As shown in Figure 3, we define four rectangular regions $$r_1$$, $$r_2$$, $$r_3$$, and $$r_4$$ along each side of the target rectangle $$R$$, as shown in Figure 3. Moreover, we ensure the each of these regions with probability at least $$\frac{\epsilon}{4}$$, i.e., $$\forall i \in [4], \mathbb{P}[r_i] \ge \frac{\epsilon}{4}$$.
+**As shown in Figure 3, we define four rectangular regions $$r_1$$, $$r_2$$, $$r_3$$, and $$r_4$$ along each side of the target rectangle $$R$$, as shown in Figure 3. Moreover, we ensure each of these regions with probability at least $$\frac{\epsilon}{4}$$, i.e., $$\forall i \in [4], \mathbb{P}[r_i] \ge \frac{\epsilon}{4}$$.
 Meanwhile, $$\mathbb{P} [\bigcup_{i=1}^{4} r_i] < \epsilon$$.
 It is worth noting that these regions can indeed be constructed, as $$\mathbb{P}[R] > \epsilon$$. (one region can be constructed by starting with the full rectangle $$R$$ and then decreasing the size by moving one side as much as possible while keeping the probability at least $$\frac{\epsilon}{4}$$).**
 {% include figure.html
@@ -128,7 +128,7 @@ Q.E.D.
 ### 2.3. Tricks for PAC Learning Proofs
 - (1) Introduce the concept of "error region" is a common technique in PAC learning proofs.
 - (2) The union bound is a powerful tool to bound the probability of the union of events.
-- (3) Keep in mind the relationship between the probability of an event and its complement, i.e., $$\mathbb{P}[A] = 1 - \mathbb{P}[\bar A]$$, and the form $$1 - X$$ is our goal.
+- (3) Keep in mind the relationship between the probability of an event and its complement, i.e., $$\mathbb{P}[A] = 1 - \mathbb{P}[\bar A]$$, which is often used to construct "$$1 - X$$" form, such as step (ii) and (v) in our proof.
 - (4) The exponential bound $$1 - x \leq exp(-x)$$ is often used in the last step to simplify the expression and obtain a bound on the probability.
 
 ## 3. Aknowledgements
