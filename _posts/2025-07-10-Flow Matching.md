@@ -17,7 +17,7 @@ Generative modeling is the process of learning how to sample data from the real-
 - An image dataset (empirical distribution of real-world data).
 - A neural network (as a function approximator).
 
-## 2.5. Why Flow Matching?
+## 2.1. why using flow matching?
 
 Traditional generative models like GANs and VAEs have their own strengths and limitations. Flow Matching offers a new perspective: instead of using adversarial training (like GAN) or encoders (like VAE), it directly learns a vector field guiding the data flow from noise to data.
 
@@ -79,7 +79,7 @@ To provide an intuitive understanding of this equation, note that the left-hand 
 
 **That is to say, if we know $$u_t$$ and $$p_0$$, we can directly derive $$p_t$$; and if we just know $$p_t$$, we can solve the continuity equation to obtain a valid $$u_t$$ (the solution is not unique).**
 
-### 3.4. conditional probability path & conditional vector field
+### 3.4. conditional probability path and conditional vector field
 
 Now, let us consider to transform a sample from standard Gaussian distribution $$p_0 = \mathcal{N}(0,1)$$ into a sample from data distribution $$p_1=p_{data}$$, i.e., the probability path $$p_t$$ should satisfy: $$p_0=p_{Gaussian}$$, and $$p_1=p_{data}$$.
 If we can design a probability path $$p_t$$ with in a flow that satisfy the above two constraints (step 1), then we use a neural network to approximate the vector field $$u_t(\cdot)$$ (step 2), we will know how to generate data from noise!
@@ -89,7 +89,7 @@ If we can design a probability path $$p_t$$ with in a flow that satisfy the abov
 
 Fortunately, we have an image dataset, we can use it to learn $$u^{target}_t(\cdot)$$ implicitly.
 
-#### 3.4.1 conditional probability path
+#### 3.4.1. conditional probability path
 
 Although we can't design a probability path $$p_t$$, but we have an image dataset:
 
@@ -138,7 +138,7 @@ $$p_t(\cdot|z)$$, which induces a valid probability path
 $$p_t(\cdot)$$ we need. However, we can't access the analytic form of 
 $$p_t(\cdot)$$ as **the integral is intractable**.
 
-#### 3.4.2 conditional vector field
+#### 3.4.2. conditional vector field
 
 Now, let us construct a valid conditional vector field for the designed conditional probability path.
 The corresponding conditional vector field can, in principle, be obtained by solving the continuity equation.
@@ -179,7 +179,7 @@ is a valid conditional vector field, it defines an ODE which solution is the con
 $$\psi_t(x_0|z) = (1-t) \cdot x_0 + t\cdot z$$, and the flow induced a conditional probability path: 
 $$p_t(\cdot|z) = \mathcal{N}(t\cdot z, (1-t)^2 I_d)$$.
 
-### 3.5 approximation of vector field
+### 3.5. approximation of vector field
 
 As described in section 3.2, we want to train a neural network $$u^{\theta}_t(x_t)$$ to approximate the vector field $$u^{target}_t(x_t)$$, we can achieve this by optimizing the following loss function:
 
@@ -209,7 +209,7 @@ To prove the equivalence of FM and CFM loss, we apply the marginalization trick 
 First, let us introduce a key lemma, which reveals the relationship of conditional vector field 
 $$u_t(x|z)$$ and (marginal) vector field $$u_t(x)$$:
 
-**Lemma 1 (marginalization trick)**. For every data point 
+**Lemma 1. (marginalization trick)**. For every data point 
 $$z \in \mathbb{R}^d$$, let 
 $$u^{target}_{t}(\cdot|z)$$ denote a conditional vector field, defined so that the corresponding ODE yields the conditional probability path 
 $$p_t(\cdot|z)$$, we have:
@@ -222,11 +222,11 @@ $$
 
 $$
 \begin{aligned}
-\frac{\partial p_t(x)}{\partial t} &\overset{i}{=} \frac{\partial \int p_t(x|z)p_{data}(z)dz}{\partial t}\\
-&\overset{ii}{=} \int \frac{\partial p_t(x|z)}{\partial t} p_{data}(z) dz\\
-&\overset{iii}{=} \int (- \nabla_x \cdot (p_t(x|z)\cdot u_t(x|z))) p_{data}(z)dz\\
-&\overset{iv}{=} - \nabla_x \cdot \int (p_t(x|z)\cdot u_t(x|z)) p_{data}(z)dz\\
-&\overset{v}{=} - \nabla_x \cdot \left( p_t(x) \int u_t(x|z) \cdot \frac{p_t(x|z) \cdot p_{data}(z)}{p_t(x)}dz \right),\\
+\frac{\partial p_t(x)}{\partial t} &= \frac{\partial \int_z p_t(x|z)p_{data}(z)dz}{\partial t} && \text{(by definition)}\\
+&= \int_z \frac{\partial p_t(x|z)}{\partial t} p_{data}(z) dz && \text{(swap the order of integral and differential)}\\
+&= \int_z (- \nabla_x \cdot (p_t(x|z)\cdot u_t(x|z))) p_{data}(z)dz && \text{(continuity equation)}\\
+&= - \nabla_x \cdot \int_z (p_t(x|z)\cdot u_t(x|z)) p_{data}(z)dz && \text{(swap the order of integral and differential)}\\
+&= - \nabla_x \cdot \left( p_t(x) \int_z u_t(x|z) \cdot \frac{p_t(x|z) \cdot p_{data}(z)}{p_t(x)}dz \right),\\
 \end{aligned}
 $$
 
@@ -283,7 +283,7 @@ $$
 
 Q.E.D.
 
-## 4. Summary and Further Readings
+## 4. summary and further readings
 
 We introduced the principle of Flow Matching from the ground up: from vector fields and flows to the design of conditional paths and training loss. By understanding its mathematical foundation, we can better appreciate its connection to score-based models, diffusion, and neural ODEs.
 
