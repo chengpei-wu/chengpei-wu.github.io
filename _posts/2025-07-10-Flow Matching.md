@@ -1,6 +1,6 @@
 ---
 layout: blog_post
-title: Principle of Flow Matching
+title: Understanding Flow Matching
 date: 2025-07-08
 tag: [generative modeling, flow matching]
 author: Chengpei Wu
@@ -19,7 +19,7 @@ Generative modeling is the process of learning how to sample data from the real-
 
 ## 2.1. why using flow matching?
 
-Traditional generative models like GANs and VAEs have their own strengths and limitations. Flow Matching offers a new perspective: instead of using adversarial training (like GAN) or encoders (like VAE), it directly learns a vector field guiding the data flow from noise to data.
+Traditional generative models like GANs and VAEs have their own strengths and limitations. Flow Matching offers a new perspective: instead of using adversarial training (like GAN) or encoders (like VAE), it directly learns a vector field guiding the points flow from noise to data.
 
 This view naturally connects with differential equations and leads us to the core idea of flow matching: learning a neural ODE to model data generation.
 
@@ -29,6 +29,12 @@ This view naturally connects with differential equations and leads us to the cor
 Flow Matching learns a neural network to predict how a sample should move from noise point to data point, step by step, by simulating an ordinary differential equation (ODE).
 
 ### 3.1. ODE, flow, and vector field
+
+{% include figure.html
+   src="/images/b1-1.png"
+   width="400px"
+   caption="Illustration of vector field."
+%}
 
 In order to understand flow matching thoroughly, let us start by understanding ordinary differential equations (ODEs).
 We can define a **trajectory** by a function $$X: [0,1] \to \mathbb{R}^d (t \to X_t)$$, which maps from time $$t \in [0,1]$$ to some location in $$\mathbb{R}^d$$. The trajectory is also a solution of the following **ODE**:

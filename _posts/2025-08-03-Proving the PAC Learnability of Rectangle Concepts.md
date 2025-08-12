@@ -100,7 +100,7 @@ Then, We have:
 
 $$
 \begin{aligned}
-\mathbb{P}[Risk(R') \le \epsilon] &= \mathbb{P}[Q] && \text{right} \\
+\mathbb{P}[Risk(R') \le \epsilon] &= \mathbb{P}[Q] && \text{(by definition of Q)} \\
 &\overset{(i)}{\ge} \mathbb{P}[P] \\
 &\overset{(ii)}{=} 1 - \mathbb{P}[\bar P] \\
 &\overset{(iii)}{=} 1 - \mathbb{P}\left [\bigcup_{i=1}^{4} A_i \right ] \\
