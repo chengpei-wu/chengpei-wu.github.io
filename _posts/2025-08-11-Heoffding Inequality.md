@@ -22,7 +22,7 @@ $$
 and the following inequality holds for $$\bar{X}$$:
 
 $$
-P\left( \left| \bar{X} - \mu \right| \geq \epsilon \right) \leq 2 \exp\left( -\frac{2m \epsilon^2}{\sum_{i=1}^{n}(b_i - a_i)^2} \right)
+P\left( \left| \bar{X} - \mu \right| \geq \epsilon \right) \leq 2 \exp\left( -\frac{2n \epsilon^2}{\sum_{i=1}^{n}(b_i - a_i)^2} \right)
 $$
 
 where $$\mu = \mathbb{E}[X_i]$$ is the expected value of the random variables.
