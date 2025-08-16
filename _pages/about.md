@@ -25,7 +25,7 @@ In addition, I am also interested in graph foundation models, generative modelin
 
 <span class='anchor' id='news'></span>
 # News
-<!-- - [**05/2025**] one paper (co-authored) accepted by [IJCAI 2025](https://2025.ijcai.org/). -->
+- [**08/2025**] one paper (co-authored) accepted by [IEEE Computational Intelligence Magazine](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=10207).
 - [**04/2025**] one paper (co-authored) accepted by [CVPR 2025](https://cvpr.thecvf.com/).
 - [**06/2024**] one paper accepted by [*IEEE Transactions on Cybernetics*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?reload=true&punumber=6221036).
 - [**10/2023**] I have been awarded the National Scholarship for Graduate Students by the Chinese Ministry of Education.
@@ -36,15 +36,13 @@ In addition, I am also interested in graph foundation models, generative modelin
 <span class='anchor' id='publications'></span>
 # Selected Publications 
 
-[1] Yiyang Zhao, **Chengpei Wu**, Lilin Zhang, and Ning Yang "Negative Metric Learning for Graphs." IJCAI 2025.
+[1] **Chengpei Wu**, [Yang Lou](https://fylou.github.io/index.html), Junli Li, Lin Wang, Shengli Xie, and [Guanrong Chen](http://www.ee.cityu.edu.hk/~gchen/), "A Multitask Network Robustness Analysis System Based on the Graph Isomorphism Network." [*IEEE Transactions on Cybernetics (TCYB)*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?reload=true&punumber=6221036).
 
-[2] **Chengpei Wu**, [Yang Lou](https://fylou.github.io/index.html), Junli Li, Lin Wang, Shengli Xie, and [Guanrong Chen](http://www.ee.cityu.edu.hk/~gchen/), "A Multitask Network Robustness Analysis System Based on the Graph Isomorphism Network." [*IEEE Transactions on Cybernetics (TCYB)*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?reload=true&punumber=6221036).
+[2] **Chengpei Wu**, [Yang Lou](https://fylou.github.io/index.html), and Junli Li "Pyramid Pooling-Based Local Profiles for Graph Classification" [*IEEE International Conference on Systems, Man, and Cybernetics* (*SMC*)](https://ieeesmc2023.org/) October 1-4, 2023, Maui, Hawaii, USA.
 
-[3] **Chengpei Wu**, [Yang Lou](https://fylou.github.io/index.html), and Junli Li "Pyramid Pooling-Based Local Profiles for Graph Classification" [*IEEE International Conference on Systems, Man, and Cybernetics* (*SMC*)](https://ieeesmc2023.org/) October 1-4, 2023, Maui, Hawaii, USA.
+[3] **Chengpei Wu**, [Yang Lou](https://fylou.github.io/index.html), Lin Wang, Junli Li, and [Guanrong Chen](http://www.ee.cityu.edu.hk/~gchen/), "SPP-CNN: An Efficient Framework for Network Robustness Prediction," [*IEEE Transactions on Circuits and Systems I: Regular*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8919), doi:10.1109/TCSI.2023.3296602.
 
-[4] **Chengpei Wu**, [Yang Lou](https://fylou.github.io/index.html), Lin Wang, Junli Li, and [Guanrong Chen](http://www.ee.cityu.edu.hk/~gchen/), "SPP-CNN: An Efficient Framework for Network Robustness Prediction," [*IEEE Transactions on Circuits and Systems I: Regular*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8919), doi:10.1109/TCSI.2023.3296602.
-
-[5] [Yang Lou](https://fylou.github.io/index.html), **Chengpei Wu**, Junli Li, Lin Wang, and [Guanrong Chen](http://www.ee.cityu.edu.hk/~gchen/), "[Network Robustness Prediction: Influence of Training Data Distributions](https://ieeexplore.ieee.org/document/10130828)," [*IEEE Transactions on Neural Networks and Learning Systems*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5962385), doi:10.1109/TNNLS.2023.3269753.
+[4] [Yang Lou](https://fylou.github.io/index.html), **Chengpei Wu**, Junli Li, Lin Wang, and [Guanrong Chen](http://www.ee.cityu.edu.hk/~gchen/), "[Network Robustness Prediction: Influence of Training Data Distributions](https://ieeexplore.ieee.org/document/10130828)," [*IEEE Transactions on Neural Networks and Learning Systems*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5962385), doi:10.1109/TNNLS.2023.3269753.
 
 <span class='anchor' id='honors'></span>
 # Honors and Awards
