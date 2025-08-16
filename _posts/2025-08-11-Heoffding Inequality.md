@@ -118,7 +118,7 @@ $$
 
 $$
 \begin{aligned}
-\phi(t) 
+\phi^{'}(t) 
 &= a + \frac{-a\cdot e^{t(b-a)}}{\frac{b}{b-a} + \frac{-a}{b-a}e^{t(b-a)}} \\
 & = a - \frac{a}{\frac{b}{b-a}e^{t(b-a)} - \frac{a}{b-a}} && && ({\color{red} \phi^{'}(0) = 0})
 \end{aligned}
