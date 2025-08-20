@@ -5,7 +5,7 @@
   <title>{{ page.title }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Fonts: Latex Style -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
 
@@ -29,246 +29,158 @@
   <style>
     body {
       font-family: 'STIX Two Text', serif;
-      max-width: 1200px;
+      font-size: 16px; /* 字号缩小 */
+      max-width: 1100px;
       margin: 2rem auto;
       padding: 1rem;
       background-color: #fefefe;
-      color:rgb(0, 0, 0);
-      line-height: 1.75;
+      color: #111;
+      line-height: 1.7;
       display: flex;
     }
-    /* 主内容粗体 */
-    article strong, article b {
-      font-weight: 650;
-      color: #d35400; /* 橙色系更醒目 */
-      text-shadow: 0 0.5px 0 rgba(0,0,0,0.2);
-      @REM padding: 0.1em 0.2em;
-      @REM background: linear-gradient(to bottom, transparent 60%, #fff3bf 60%);
-    }
 
-    /* 标题粗体 */
-    article h1 strong, article h2 strong {
-      font-weight: 800;
-      color: #c0392b;
-      background: none;
-      position: relative;
-    }
-
-    /* assets/css/style.scss 或 style.css 中添加 */
-    .blog-image {
+    /* 数学公式容器 - 避免超出宽度 */
+    mjx-container {
+      overflow-x: auto;
+      overflow-y: hidden;
       max-width: 100%;
-      width: 400px;         /* 或你希望的默认宽度 */
-      display: block;
-      margin: 1rem auto;    /* 居中对齐 */
-      border-radius: 8px;   /* 可选：圆角边框 */
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15); /* 可选：阴影 */
+      padding: 0.25rem 0.5rem;
+    }
+    mjx-container[display="true"] {
+      margin: 1rem auto;
     }
 
-    .algorithm {
-      background-color: #f8f8f8;
-      border-left: 4px solid #888;
-      padding: 1em;
-      margin: 1.5em 0;
-      font-family: 'Courier New', monospace;
-    }
-    .alg-title {
+    /* 标题 */
+    h1, h2, h3, h4 {
       font-weight: bold;
-      margin-bottom: 0.5em;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      line-height: 1.3;
     }
-    .algorithm pre {
-      margin: 0;
-      white-space: pre-wrap;
-    }
+    h1 { font-size: 1.9rem; }
+    h2 { font-size: 1.5rem; }
+    h3 { font-size: 1.2rem; }
+    h4 { font-size: 1rem; color: #444; }
 
-
-    article h1 strong::after, article h2 strong::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -3px;
-      width: 100%;
-      height: 3px;
-      background: linear-gradient(90deg, #c0392b, #e74c3c);
+    /* 粗体文字 */
+    article strong, article b {
+      font-weight: 600;
+      color: #b33;
     }
 
-
-    /* 左侧目录区域 */
+    /* 左侧目录 */
     .sidebar {
-      width: 280px;
+      width: 260px;
       padding-right: 2rem;
       position: sticky;
       top: 2rem;
       align-self: flex-start;
     }
-
-    /* 右侧内容区域 */
-    .main-content {
-      flex: 1;
-      max-width: 800px;
-    }
-
-    /* 目录样式 - 核心修改部分 */
     .toc {
-      border: 1px solid #e1e1e1;
-      padding: 1.5rem;
-      background: #f8f8f8;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      border: 1px solid #e5e5e5;
+      padding: 1rem 1.2rem;
+      background: #fafafa;
+      border-radius: 6px;
+      font-size: 0.95rem;
     }
-
     .toc h2 {
       margin-top: 0;
-      font-size: 1.2rem;
-      color: #333;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid #e1e1e1;
+      font-size: 1.05rem;
+      font-weight: 600;
     }
-
     .toc ul {
       list-style-type: none;
       padding-left: 0;
       margin: 0;
     }
-
     .toc li {
-      margin: 0.5rem 0;
-      position: relative;
+      margin: 0.4rem 0;
     }
-
     .toc li a {
       display: block;
-      padding: 0.3rem 0;
       color: #444;
+      font-size: 0.92rem;
       text-decoration: none;
+      padding-left: 0.5rem;
+      border-left: 2px solid transparent;
       transition: all 0.2s;
-      border-left: 3px solid transparent;
-      padding-left: 12px;
     }
-
     .toc li a:hover {
-      color: #007acc;
-      border-left-color: #007acc;
-      background: rgba(0,122,204,0.05);
+      color: #2563eb;
+      border-left-color: #2563eb;
     }
-
-    /* 一级标题 (h2) */
-    .toc > ul > li > a {
-      font-weight: 600;
-      color: #222;
-      padding-left: 0;
-      border-left: none;
-    }
-
-    /* 二级标题 (h3) */
-    .toc > ul > li > ul > li > a {
-      padding-left: 1.5rem;
-      font-weight: 500;
-      color: #444;
-      position: relative;
-    }
-
-    /* 三级标题 (h4) */
-    .toc > ul > li > ul > li > ul > li > a {
-      padding-left: 3rem;
-      font-size: 0.95em;
-      color: #666;
-    }
-
-    /* 添加小箭头指示 */
-    .toc > ul > li > ul > li > a:before {
-      content: "→";
-      position: absolute;
-      left: 0.5rem;
-      color: #999;
-      font-size: 0.8em;
-    }
-
-    /* 当前激活的目录项 */
     .toc li a.active {
-      color: #d35400;
-      font-weight: 500;
-      border-left-color: #d35400;
+      color: #b33;
+      border-left-color: #b33;
     }
 
-    /* 其他原有样式保持不变... */
-    h1, h2, h3, h4 {
-      font-weight: bold;
-      margin-top: 2rem;
+    /* 返回链接 */
+    .return-link {
+      display: inline-block;
       margin-bottom: 1rem;
+      color: #2563eb;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    .return-link:hover {
+      text-decoration: underline;
     }
 
-    h1 { font-size: 2.2rem; }
-    h2 { font-size: 1.6rem; }
-    h3 { font-size: 1.3rem; }
-    h4 { font-size: 1.1rem; }
+    /* 右侧内容 */
+    .main-content {
+      flex: 1;
+      max-width: 800px;
+    }
 
+    .post-header h1 {
+      margin-bottom: 0.4rem;
+    }
+    .post-date {
+      font-size: 0.85rem;
+      color: #777;
+    }
+
+    /* 代码块 */
     pre, code {
       font-family: 'Fira Code', monospace;
-      background-color: #f4f4f4;
-      padding: 0.4em 0.6em;
+      background: #f8f8f8;
+      padding: 0.35em 0.6em;
       border-radius: 5px;
+      font-size: 0.9rem;
     }
-
     pre {
       overflow-x: auto;
       padding: 1em;
     }
 
-    .post-header {
-      margin-bottom: 2rem;
-    }
-
-    .post-header h1 {
-      margin-bottom: 0.2rem;
-    }
-
-    .post-date {
-      font-size: 0.9rem;
-      color: #888;
-    }
-
-    .return-link {
-      display: inline-block;
-      margin-bottom: 1.5rem;
-      background: #007acc;
-      color: white;
-      padding: 0.5rem 1rem;
-      text-decoration: none;
-      border-radius: 4px;
-    }
-
-    .return-link:hover {
-      background: #005fa3;
+    /* 图片 */
+    .blog-image {
+      max-width: 95%;
+      display: block;
+      margin: 1.5rem auto;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.15);
     }
 
     @media (max-width: 768px) {
-      body {
-        flex-direction: column;
-      }
-      .sidebar {
-        width: 100%;
-        position: static;
-        padding-right: 0;
-      }
-      .main-content {
-        max-width: 100%;
-      }
+      body { flex-direction: column; }
+      .sidebar { width: 100%; position: static; padding-right: 0; }
+      .main-content { max-width: 100%; }
     }
   </style>
 </head>
 <body>
 
-  <!-- 左侧目录区域 -->
+  <!-- 左侧目录 -->
   <div class="sidebar">
     <a class="return-link" href="/post/">← Back to Posts</a>
-
     <div class="toc" id="toc">
       <h2>📑 Table of Contents</h2>
       <ul id="toc-list"></ul>
     </div>
   </div>
 
-  <!-- 右侧内容区域 -->
+  <!-- 右侧正文 -->
   <div class="main-content">
     <div class="post-header">
       <h1>{{ page.title }}</h1>
@@ -282,6 +194,7 @@
       {{ content }}
     </article>
 
+    <!-- 评论区 -->
     <script src="https://utteranc.es/client.js"
       repo="chengpei-wu/chengpei-wu.github.io"
       issue-term="title"
@@ -291,7 +204,7 @@
     </script>
   </div>
 
-  <!-- 增强版目录生成脚本 -->
+  <!-- 动态生成目录 -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const tocList = document.getElementById('toc-list');
@@ -300,7 +213,6 @@
       let lastLevel = 2;
       const tocItems = [];
 
-      // 生成层级目录
       headers.forEach((header, index) => {
         const id = "toc_" + index;
         header.id = id;
@@ -309,11 +221,10 @@
         a.href = `#${id}`;
         a.textContent = header.textContent;
         li.appendChild(a);
-        
+
         const headerLevel = parseInt(header.tagName.substring(1));
         tocItems.push({ id: id, element: a });
 
-        // 处理层级关系
         if(headerLevel > lastLevel) {
           const ul = document.createElement('ul');
           currentUl.lastChild.appendChild(ul);
@@ -324,17 +235,13 @@
             currentUl = currentUl.parentNode.parentNode;
           }
         }
-        
         currentUl.appendChild(li);
         lastLevel = headerLevel;
       });
 
-      // 高亮当前阅读的章节
       function highlightToc() {
         const fromTop = window.scrollY + 100;
         let currentActive = null;
-
-        // 反向遍历找到第一个出现在视口中的标题
         for(let i = tocItems.length - 1; i >= 0; i--) {
           const item = tocItems[i];
           const target = document.getElementById(item.id);
@@ -343,16 +250,13 @@
             break;
           }
         }
-
-        // 更新高亮状态
         tocItems.forEach(item => {
           item.element.classList.toggle('active', item === currentActive);
         });
       }
 
-      // 添加滚动监听
       window.addEventListener('scroll', highlightToc);
-      highlightToc(); // 初始化高亮
+      highlightToc();
     });
   </script>
 

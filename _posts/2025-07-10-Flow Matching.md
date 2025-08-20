@@ -4,6 +4,7 @@ title: Understanding Flow Matching
 date: 2025-07-08
 tag: [generative modeling, flow matching]
 author: Chengpei Wu
+excerpt: This post provides a comprehensive introduction to flow matching algorithms.
 ---
 
 # Flow Matching

@@ -1,9 +1,10 @@
 ---
 layout: blog_post
-title: Heoffding inequality and its proof
+title: Heoffding Inequality And Its Proof
 date: 2025-08-11
 tag: [mathematics, statistics]
 author: Chengpei Wu
+excerpt: This post provides an overview of Hoeffding's Inequality and its proof.
 ---
 
 ## 1. Overview of Heoffding Inequality

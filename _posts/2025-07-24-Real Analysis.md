@@ -4,6 +4,7 @@ title: Exercises of Analysis I
 date: 2025-07-24
 tag: [real analysis, mathematics]
 author: Chengpei Wu
+excerpt: This post contains solutions to exercises from Real Analysis textbook.
 ---
 
 ## Section 2

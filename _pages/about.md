@@ -56,9 +56,11 @@ In addition, I am also interested in graph foundation models, generative modelin
 # Educations
 - 2017.09 - 2021.06, Undergraduate, Chengdu University, Chengdu.
 - 2021.09 - 2024.06, Master, Sichuan Normal University, Chengdu.
+- 2024.09 - 2025.06, ~~Ph.D. Student~~, Sichuan University, Chengdu.
 
 
-## Looking into
+---
+## I am looking into:
 
 - Real Analysis: [Analysis I](https://terrytao.wordpress.com/books/analysis-i/).
 - Flow Matching: [Flow Matching Guide and Code](https://arxiv.org/abs/2412.06264), [An Introduction to Flow Matching and Diffusion Models](https://diffusion.csail.mit.edu/).

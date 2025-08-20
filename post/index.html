@@ -11,122 +11,177 @@ permalink: /post/
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>My blogs</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC&display=swap" rel="stylesheet">
+  <!-- 字体 -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Noto+Sans+SC&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/lunr/lunr.min.js"></script>
 
   <style>
+    :root {
+      --primary: #103b80ff;
+      --primary-hover: #0c3094ff;
+      --bg-light: #f9fafb;
+      --text: #1f2937;
+      --text-light: #6b7280;
+      --border: #e5e7eb;
+    }
+
     body {
-      font-family: 'Noto Sans SC', sans-serif;
-      max-width: 850px;
+      font-family: 'Inter', 'Noto Sans SC', sans-serif;
+      max-width: 760px;
       margin: 2rem auto;
       padding: 1rem;
       background-color: #fff;
-      color: #333;
+      color: var(--text);
+      line-height: 1.6;
     }
 
     h1 {
       text-align: center;
+      margin-bottom: 1rem;
     }
 
     .nav-home {
-      display: inline-block;
+      display: block;
+      text-align: center;
       margin-bottom: 2rem;
-      padding: 0.5em 1em;
-      background-color: #007acc;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-
-    .post-item {
-      margin-bottom: 2rem;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 1rem;
-    }
-
-    .post-title {
-      font-size: 1.3rem;
-      color: #007acc;
+      font-size: 0.95rem;
+      color: var(--primary);
       text-decoration: none;
     }
-
-    .post-title:hover {
+    .nav-home:hover {
       text-decoration: underline;
     }
 
-    .post-date {
-      color: #888;
-      font-size: 0.9rem;
+    /* 搜索框 */
+    .search-input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border 0.2s;
+    }
+    .search-input:focus {
+      outline: none;
+      border-color: var(--primary);
     }
 
-    .post-tags {
-      margin-top: 0.5rem;
-      font-size: 0.85rem;
-    }
-
-    .post-tags span {
-      background: #eee;
-      padding: 0.2rem 0.4rem;
-      margin-right: 0.3rem;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
+    /* 标签筛选 */
     .filter-tags {
-      margin: 2rem 0;
+      margin: 1rem 0 2rem 0;
+      text-align: center;
     }
 
     .filter-tags span {
       margin: 0.3rem;
-      padding: 0.3rem 0.6rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
+      padding: 0.35rem 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: 9999px;
       cursor: pointer;
       display: inline-block;
+      font-size: 0.85rem;
+      color: var(--text-light);
+      transition: all 0.2s;
+    }
+
+    .filter-tags span:hover {
+      background: var(--bg-light);
     }
 
     .filter-tags span.active {
-      background: #007acc;
+      background: var(--primary);
       color: white;
+      border-color: var(--primary);
     }
 
-    .search-input {
-      width: 100%;
-      padding: 0.6rem;
-      margin-bottom: 2rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 1rem;
+    /* 文章列表 */
+    .post-item {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.2rem 1.5rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      transition: all 0.2s ease;
     }
 
+    .post-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      background: var(--bg-light);
+    }
+
+    .post-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .post-title:hover {
+      color: var(--primary-hover);
+    }
+
+    .post-date {
+      margin-top: 0.3rem;
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    .post-excerpt {
+      margin-top: 0.8rem;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    .post-tags {
+      margin-top: 0.8rem;
+    }
+
+    .post-tags span {
+      background: var(--bg-light);
+      padding: 0.25rem 0.7rem;
+      margin-right: 0.4rem;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+
+    /* 分页 */
     .pagination {
       margin-top: 2rem;
       text-align: center;
     }
 
     .pagination button {
-      margin: 0.2rem;
-      padding: 0.4rem 0.8rem;
-      font-size: 1rem;
+      margin: 0.3rem;
+      padding: 0.45rem 0.85rem;
+      font-size: 0.95rem;
       cursor: pointer;
-      background-color: #007acc;
+      background-color: var(--primary);
       color: white;
       border: none;
-      border-radius: 4px;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+
+    .pagination button:hover:not(:disabled) {
+      background-color: var(--primary-hover);
     }
 
     .pagination button:disabled {
-      background: #ccc;
+      background: #d1d5db;
       cursor: not-allowed;
     }
   </style>
 </head>
 <body>
 
-  <h1>📝 My blogs</h1>
-  <a class="nav-home" href="/">← Back</a>
+  <h1>📝 My Blogs</h1>
+  <a class="nav-home" href="/">← Back to Home</a>
 
-  <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search...">
+  <input type="text" id="searchInput" class="search-input" placeholder="🔍 Search posts...">
 
   <div class="filter-tags" id="tagFilter">
     <!-- 动态填充标签 -->
@@ -148,7 +203,7 @@ permalink: /post/
         date: "{{ post.date | date: "%Y-%m-%d" }}",
         url: "{{ post.url }}",
         content: {{ post.content | strip_html | jsonify }},
-        excerpt: {{ post.excerpt | strip_html | truncate: 140 | jsonify }},
+        excerpt: {{ post.excerpt | strip_html | truncate: 250 | jsonify }},
         tags: [{% for tag in post.tags %}"{{ tag }}"{% if forloop.last == false %}, {% endif %}{% endfor %}]
       },
       {% endfor %}
