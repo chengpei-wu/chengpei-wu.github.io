@@ -65,5 +65,4 @@ In addition, I am also interested in graph foundation models, generative modelin
 - Real Analysis: [Analysis I](https://terrytao.wordpress.com/books/analysis-i/).
 - Flow Matching: [Flow Matching Guide and Code](https://arxiv.org/abs/2412.06264), [An Introduction to Flow Matching and Diffusion Models](https://diffusion.csail.mit.edu/).
 - Computational Learning Theory: [Computational Learning Theory - University of Oxford](https://www.cs.ox.ac.uk/people/varun.kanade/teaching/CLT-MT2023/).
-- Japanese.
 
