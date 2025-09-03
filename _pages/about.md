@@ -56,7 +56,7 @@ In addition, I am also interested in graph foundation models, generative modelin
 # Educations
 - 2017.09 - 2021.06, Undergraduate, Chengdu University, Chengdu.
 - 2021.09 - 2024.06, Master, Sichuan Normal University, Chengdu.
-- 2024.09 - 2025.06, ~~Ph.D. Student~~, Sichuan University, Chengdu.
+
 
 
 ---
