@@ -18,7 +18,7 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 # About Me
-Hi, My research interests include machine learning and graph representation learning. Recently, my work has primarily focused on unsupervised graph representation learning, including topics such as graph pre-training and graph contrastive learning. Previously, I explored deep learning methods for efficient and accurate robustness estimation in complex networks.
+Hi, my research interests include machine learning and graph representation learning. Recently, my work has primarily focused on unsupervised graph representation learning, including topics such as graph pre-training and graph contrastive learning. Previously, I explored deep learning methods for efficient and accurate robustness estimation in complex networks.
 
 In addition, I am also interested in graph foundation models, generative modeling, and large language models.
 

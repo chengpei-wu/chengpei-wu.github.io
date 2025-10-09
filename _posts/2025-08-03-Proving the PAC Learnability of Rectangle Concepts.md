@@ -8,7 +8,7 @@ excerpt: This post explores the PAC learnability of axis-aligned rectangles in 2
 ---
 <!-- {% assign page.figure_counter = 0 %} -->
 
-# Overview
+## Overview
 In this post, we will explore the concept of PAC (Probably Approximately Correct) learnability, specifically focusing on the learnability of axis-aligned rectangles in a two-dimensional space. 
 We will provide a simplified definition of PAC learnability, describe the rectangle concept class, and prove that it is PAC-learnable using a specific learning algorithm. 
 This proof will illustrate key techniques commonly used in PAC learning proofs.

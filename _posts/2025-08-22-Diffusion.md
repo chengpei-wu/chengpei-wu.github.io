@@ -7,12 +7,21 @@ author: Chengpei Wu
 excerpt: This post provides an introduction to Diffusion Models.
 ---
 
-# Diffusion Models
+## 1. Diffusion Models
 
-Diffusion models are a class of generative models that learn to generate data by reversing a diffusion process. The key idea is to model the gradual transformation of data into noise and then learn to reverse this process to generate new samples.
+Diffusion models are a class of generative models that learn to generate data by reversing a diffusion process. 
+The central concept behind diffusion models is to progressively corrupt data by adding noise over several steps, and then train a model to reverse this process, reconstructing the original data from pure noise. 
+
+
+### 1.1. Forward and Reverse Diffusion process
 
 ## 2. Understanding diffusion model (take 1, ELBO Perspective)
 
-## 3. Understanding diffusion model (take 2, Tweedie Formula Perspective)
+### 2.1. Variational Lower Bound
 
-## 4. Understanding diffusion model (take 3, SDE Perspective)
+### 2.2. Loss
+
+### 2.3. Predicting X_0, predicting noise, and predicting score.
+
+## 3. Understanding diffusion model (take 2, SDE Perspective)
+

@@ -7,29 +7,29 @@ author: Chengpei Wu
 excerpt: This post provides a comprehensive introduction to flow matching algorithms.
 ---
 
-# Flow Matching
+## 1. Generative Modeling and Flow Matching
 
-## 1. what is generative modeling?
+### 1.1. What is Generative Modeling?
 
 Generative modeling is the process of learning how to sample data from the real-world data distribution. Technically speaking, it aims to transform samples from a simple, known distribution (e.g., standard Gaussian) into samples from a complex, unknown data distribution (e.g., CIFAR-10).
 
-## 2. what we have in generative modeling?
+### 1.2. What We Have in Generative Modeling?
 
 - An image dataset (empirical distribution of real-world data).
 - A neural network (as a function approximator).
 
-## 2.1. why using flow matching?
+### 1.3. Why Using Flow Matching?
 
 Traditional generative models like GANs and VAEs have their own strengths and limitations. Flow Matching offers a new perspective: instead of using adversarial training (like GAN) or encoders (like VAE), it directly learns a vector field guiding the points flow from noise to data.
 
 This view naturally connects with differential equations and leads us to the core idea of flow matching: learning a neural ODE to model data generation.
 
 
-## 3. how flow matching algorithm works for generative modeling?
+## 2. How Flow Matching Works for Generative Modeling?
 
 Flow Matching learns a neural network to predict how a sample should move from noise point to data point, step by step, by simulating an ordinary differential equation (ODE).
 
-### 3.1. ODE, flow, and vector field
+### 2.1. ODE, Flow, and Vector Field
 
 {% include figure.html
    src="/images/b1-1.png"
@@ -56,7 +56,7 @@ $$
 $$u_t(\cdot)$$ defines a **vector feild** in $$\mathbb{R}^d$$ at time $$t$$ (at time $$t$$, for any point $$\psi_t(x_0)\in \mathbb{R}^d$$, $$u_t(\psi_t(x_0))$$ gives a velocity vector to tell the move direction).  
 In other word, **vector fields defines ODEs whose solutions are flows!**
 
-### 3.2. image generation process is a flow
+### 2.2. Image Generation Process is a Flow
 
 **The process of transforming a noise sample $$x_0$$ into a data sample $$x_1$$ can be naturally interpreted as a flow -- a continuous path governed by a vector field.**
 
@@ -70,7 +70,7 @@ $$\psi_{0}(x_0)$$ we already know is a noise, we can use the Euler Method to get
 
 In other words, if we know the direction in which each pixel should move at every moment during the continuous transformation from noise to data, we can transform any new noise sample into data sample. This is because we have learned the underlying 'rule' of the transformation — the velocity vector field.
 
-### 3.3. probability path and continuity equation
+### 2.3. Probability Path and Continuity Equation
 
 Don't forget our goal is transform samples from a known distribution (e.g., standard Gaussian) into samples from an unknown data distribution (e.g., CIFAR-10).
 
@@ -86,7 +86,7 @@ To provide an intuitive understanding of this equation, note that the left-hand 
 
 **That is to say, if we know $$u_t$$ and $$p_0$$, we can directly derive $$p_t$$; and if we just know $$p_t$$, we can solve the continuity equation to obtain a valid $$u_t$$ (the solution is not unique).**
 
-### 3.4. conditional probability path and conditional vector field
+### 2.4. Conditional Probability Path and Conditional Vector Field
 
 Now, let us consider to transform a sample from standard Gaussian distribution $$p_0 = \mathcal{N}(0,1)$$ into a sample from data distribution $$p_1=p_{data}$$, i.e., the probability path $$p_t$$ should satisfy: $$p_0=p_{Gaussian}$$, and $$p_1=p_{data}$$.
 If we can design a probability path $$p_t$$ with in a flow that satisfy the above two constraints (step 1), then we use a neural network to approximate the vector field $$u_t(\cdot)$$ (step 2), we will know how to generate data from noise!
@@ -96,7 +96,7 @@ If we can design a probability path $$p_t$$ with in a flow that satisfy the abov
 
 Fortunately, we have an image dataset, we can use it to learn $$u^{target}_t(\cdot)$$ implicitly.
 
-#### 3.4.1. conditional probability path
+#### 2.4.1. Conditional Probability Path
 
 Although we can't design a probability path $$p_t$$, but we have an image dataset:
 
@@ -145,7 +145,7 @@ $$p_t(\cdot|z)$$, which induces a valid probability path
 $$p_t(\cdot)$$ we need. However, we can't access the analytic form of 
 $$p_t(\cdot)$$ as **the integral is intractable**.
 
-#### 3.4.2. conditional vector field
+#### 2.4.2. Conditional Vector Field
 
 Now, let us construct a valid conditional vector field for the designed conditional probability path.
 The corresponding conditional vector field can, in principle, be obtained by solving the continuity equation.
@@ -186,9 +186,9 @@ is a valid conditional vector field, it defines an ODE which solution is the con
 $$\psi_t(x_0|z) = (1-t) \cdot x_0 + t\cdot z$$, and the flow induced a conditional probability path: 
 $$p_t(\cdot|z) = \mathcal{N}(t\cdot z, (1-t)^2 I_d)$$.
 
-### 3.5. approximation of vector field
+### 2.5. Approximation of Vector Field
 
-As described in section 3.2, we want to train a neural network $$u^{\theta}_t(x_t)$$ to approximate the vector field $$u^{target}_t(x_t)$$, we can achieve this by optimizing the following loss function:
+As described in section 2.2, we want to train a neural network $$u^{\theta}_t(x_t)$$ to approximate the vector field $$u^{target}_t(x_t)$$, we can achieve this by optimizing the following loss function:
 
 $$
 \begin{aligned}
@@ -290,7 +290,7 @@ $$
 
 Q.E.D.
 
-## 4. summary and further readings
+## 3. Summary and Further Readings
 
 We introduced the principle of Flow Matching from the ground up: from vector fields and flows to the design of conditional paths and training loss. By understanding its mathematical foundation, we can better appreciate its connection to score-based models, diffusion, and neural ODEs.
 
