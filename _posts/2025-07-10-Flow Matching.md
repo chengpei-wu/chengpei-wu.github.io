@@ -207,7 +207,7 @@ $$
 \end{aligned}
 $$
 
-**The answer is that optimizing $$\mathcal{L}_{FM} (\theta)$$ is equivalent to optimizing $$\mathcal{L}_{CFM} (\theta)$$.**
+**The answer is: optimizing $$\mathcal{L}_{FM} (\theta)$$ is equivalent to optimizing $$\mathcal{L}_{CFM} (\theta)$$.**
 
 Let us give a formal proof of the above result. 
 
