@@ -18,9 +18,9 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 # About Me
-Hi, my research interests include machine learning and graph representation learning. Recently, my work has primarily focused on unsupervised graph representation learning, including topics such as graph pre-training and graph contrastive learning. Previously, I explored deep learning methods for efficient and accurate robustness estimation in complex networks.
+Hi, my research interests include machine learning and graph representation learning. Recently, my work has primarily focused on unsupervised graph representation learning, including topics such as graph contrastive learning. Previously, I explored deep learning methods for efficient and accurate robustness estimation in complex networks.
 
-In addition, I am also interested in graph foundation models, generative modeling, and large language models.
+In addition, I am also interested in robust machine learning, generative modeling, and large language models.
 
 
 <span class='anchor' id='news'></span>
@@ -63,6 +63,5 @@ In addition, I am also interested in graph foundation models, generative modelin
 ## I am looking into:
 
 - Real Analysis: [Analysis I](https://terrytao.wordpress.com/books/analysis-i/).
-- Flow Matching: [Flow Matching Guide and Code](https://arxiv.org/abs/2412.06264), [An Introduction to Flow Matching and Diffusion Models](https://diffusion.csail.mit.edu/).
+- Generative Modeling: [Flow Matching Guide and Code](https://arxiv.org/abs/2412.06264), [An Introduction to Flow Matching and Diffusion Models](https://diffusion.csail.mit.edu/).
 - Computational Learning Theory: [Computational Learning Theory - University of Oxford](https://www.cs.ox.ac.uk/people/varun.kanade/teaching/CLT-MT2023/).
-

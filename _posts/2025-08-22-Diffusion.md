@@ -260,7 +260,7 @@ $$q(x_t|x_0)$$, and we have the closed-form expression of it). Then we can use t
 
 ### 2.4. Equivalent Training Objectives
 
-We can name the above training objective as **Predicting Expectation**, which can be formally written as:
+We name the above training objective as **Predicting Expectation**, which can be formally written as:
 
 $$
 \theta^* = \arg \min_\theta \mathbb{E}_{t\sim U[2, T], x_0 \sim q(x_0), x_t \sim q(x_t|x_0)} \left[ ||\mu_\theta(x_t, t) - \frac{1-\bar{\alpha}_{t-1} \sqrt{\alpha_t} x_t + (1-\alpha_t) \sqrt{\bar{\alpha}_{t-1}} x_0}{1-\bar{\alpha}_t}||^2_2 \right].
@@ -312,7 +312,7 @@ we name the above training objective as **Predicting Noise**, which is equivalen
 
 There is another equivalent training objective called **Predicting Score**, which is to train a neural network 
 $$s_\theta(x_t, t)$$ to approximate the score function 
-$$\nabla_{x_t} \log q(x_t|x_0)$$. The score function is derived from the **Tweedie Equation**:
+$$\nabla_{x_t} \log p(x_t)$$. The score function is derived from the **Tweedie Equation**:
 
 $$
 \mathbb{E}[\mu|z] = z + \Sigma \nabla_z \log p(z), \quad z \sim \mathcal{N}(\mu, \Sigma),
