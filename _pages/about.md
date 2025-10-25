@@ -8,12 +8,12 @@ redirect_from:
   - /about.html
 ---
 
-{% if site.google_scholar_stats_use_cdn %}
+<!-- {% if site.google_scholar_stats_use_cdn %}
 {% assign gsDataBaseUrl = "https://cdn.jsdelivr.net/gh/" | append: site.repository | append: "@" %}
 {% else %}
 {% assign gsDataBaseUrl = "https://raw.githubusercontent.com/" | append: site.repository | append: "/" %}
 {% endif %}
-{% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %}
+{% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %} -->
 
 <span class='anchor' id='about-me'></span>
 
@@ -58,10 +58,15 @@ In addition, I am also interested in robust machine learning, generative modelin
 - 2021.09 - 2024.06, Master, Sichuan Normal University, Chengdu.
 
 
+---
+## Academic Services
+- Reviewer for [IEEE Transactions on Neural Networks and Learning Systems (TNNLS)](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5962385), [IEEE Transactions on Cybernetics (TCYB)](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6221036), [Reliability Engineering and System Safety](https://www.journals.elsevier.com/reliability-engineering-and-system-safety), WWW, etc.
+
 
 ---
 ## I am looking into:
 
-- Real Analysis: [Analysis I](https://terrytao.wordpress.com/books/analysis-i/).
+- Analysis and Statistics: [Analysis I](https://terrytao.wordpress.com/books/analysis-i/), [All of Statistics](https://www.stat.cmu.edu/~larry/).
 - Generative Modeling: [Flow Matching Guide and Code](https://arxiv.org/abs/2412.06264), [An Introduction to Flow Matching and Diffusion Models](https://diffusion.csail.mit.edu/).
 - Computational Learning Theory: [Computational Learning Theory - University of Oxford](https://www.cs.ox.ac.uk/people/varun.kanade/teaching/CLT-MT2023/).
+- Robustness Machine Learning: [Robustness in Machine Learning.](https://jerryzli.github.io/robust-ml-fall19.html)
