@@ -14,7 +14,7 @@ Diffusion models are a class of generative models that learn to generate data by
 In this post, we introduce the fundamental concepts of diffusion models, including the forward and reverse diffusion processes, the training objectives, and how these models generate new data. 
 
 We explore diffusion models from two complementary perspectives:
-1. **Variational Inference Perspective:** We discuss how diffusion models relate to variational autoencoders (VAEs), and explain the equivalence between different training objectives for maximizing the evidence lower bound (ELBO), such as predicting expectation, predicting the original data, predicting noise, and predicting the score function.
+1. **Variational Inference Perspective:** We discuss how diffusion models relate to variational autoencoders (VAEs), and explain the equivalence between different training objectives for maximizing the evidence lower bound (ELBO), such as expectation-prediction, $$x$$-prediction, $$\epsilon$$-prediction, and score-prediction.
 2. **Stochastic Differential Equation (SDE) Perspective:** We present the interpretation of diffusion models through reversed SDEs, offering a unified framework for understanding denoising diffusion models.
 
 
