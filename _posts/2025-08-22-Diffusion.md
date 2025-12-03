@@ -323,7 +323,7 @@ $$q(x_t|x_0) = \mathcal{N}(\sqrt{\bar{\alpha}_t} x_0, (1 - \bar{\alpha}_t) \math
 
 $$
 \begin{aligned}
-&\mathbb{E}[x_0|x_t] = \sqrt{\bar{\alpha}_t} x_0 = x_t + (1 - \bar{\alpha}_t) \nabla_{x_t} \log p(x_t)\\
+&\mathbb{E}[\mu|x_t] = \sqrt{\bar{\alpha}_t} x_0 = x_t + (1 - \bar{\alpha}_t) \nabla_{x_t} \log p(x_t)\\
 &\Rightarrow x_0 = \frac{x_t}{\sqrt{\bar{\alpha}_t}} + \frac{(1 - \bar{\alpha}_t)}{\sqrt{\bar{\alpha}_t}} \nabla_{x_t} \log p(x_t).\\
 \end{aligned}
 $$
@@ -346,4 +346,48 @@ $$
 $$
 
 
-## 3. Understanding Diffusion Model (Take 2, SDE Perspective)
+## 3. Understanding Diffusion Model (Take 2, ODE\SDE Perspective)
+
+### 3.1. Notations
+
+Let us first define some notations that will be used in this section:
+- Let $$X_t$$ be a continuous-time random variable, where $$t \in [0, 1]$$.
+- Let $$d, \nabla, \nabla \cdot, \Delta$$ are the differential, gradient, divergence, and Laplacian operators respectively.
+- Let $$W_t$$ be a standard Wiener process (Brownian motion).
+
+### 3.2. Discrete process to Continuous process
+
+As we already defined, the forward diffusion process is a discrete-time Markov process:
+
+$$
+x_0 \rightarrow x_1 \rightarrow x_2 \rightarrow \cdots \rightarrow x_T,
+$$
+
+let us now consider the continuous-time limit of this process as $$T \rightarrow \infty$$. We can convert the discrete process $$\{x_i \}_{i=0}^{T}$$ to a continuous process $$\{ x_t \}_{t=0}^{1}$$ by defining:
+
+$$
+t = \frac{i}{T}, \quad \text{for } i = 0, 1, \ldots, T.
+$$
+
+Then, we can rewrite the forward diffusion process as:
+$$
+x_{t_0} \rightarrow x_{t_1} \rightarrow x_{t_2} \rightarrow \cdots \rightarrow x_{t_T},
+$$where $$x_{t_i} = x_i$$. As $$T \rightarrow \infty$$, the time step $$\Delta t = \frac{1}{T} \rightarrow 0$$, and the discrete-time Markov process converges to a continuous-time stochastic process.
+
+Recall that in Eq. (2), we defined the discrete forward diffusion process as:
+
+$$
+x_i = \sqrt{1 - \beta_i} x_{i-1} + \sqrt{\beta_i} \epsilon, \quad i=1,2,\ldots, T.
+$$
+
+Let $$\beta(t) = \beta(\frac{i}{T}) := T \times \beta_i$$, the continuous-time limit of this equation can be derived as follows: substituting $$t$$ with $$t + \Delta t$$, we have:
+
+$$
+\begin{aligned}
+x_{t+\Delta t} &\overset{(i)}{=} \sqrt{1 - \beta(t+\Delta t) \Delta t} x_{t} + \sqrt{\beta(t+\Delta t) \Delta t} \epsilon\\
+& \overset{(ii)}{=} (1 - \frac{1}{2} \beta_{t+\Delta t} \Delta t) x_t + \sqrt{\beta_{t+\Delta t} \Delta t} \epsilon\\
+\Rightarrow x_{t+\Delta t} - x_t &\overset{(iii)}{=} - \frac{1}{2} \beta_{t+\Delta t} x_t \cdot \Delta t + \sqrt{\beta_{t+\Delta t}} \sqrt{\Delta t} \epsilon\\
+\Rightarrow \frac{x_{t+\Delta t} - x_t}{\Delta t} &\overset{(iv)}{=} - \frac{1}{2} \frac{\beta_{t+\Delta t}}{\Delta t} x_t + \sqrt{\frac{\beta_{t+\Delta t}}{\Delta t}} \cdot \frac{\epsilon}{\sqrt{\Delta t}},\\   
+
+\end{aligned} 
+$$  
