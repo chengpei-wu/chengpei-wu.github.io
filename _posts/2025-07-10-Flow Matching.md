@@ -22,7 +22,7 @@ Generative modeling is the process of learning how to sample data from the real-
 
 Traditional generative models like GANs and VAEs have their own strengths and limitations. Flow Matching offers a new perspective: instead of using adversarial training (like GAN) or encoders (like VAE), it directly learns a vector field guiding the points flow from noise to data.
 
-This view naturally connects with differential equations and leads us to the core idea of flow matching: learning a neural ODE to model data generation. Flow Matching is also closely related to SDE-based diffusion models, as both methods involve transforming noise into data through continuous processes.
+This view naturally connects with differential equations and leads us to the core idea of flow matching: learning a neural ODE to model data generation. **Flow Matching is also closely related to SDE-based diffusion models, as both methods involve transforming noise into data through continuous processes.**
 
 ## 2. How Flow Matching Works for Generative Modeling?
 
