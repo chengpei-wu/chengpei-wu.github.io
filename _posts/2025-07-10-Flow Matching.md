@@ -104,36 +104,36 @@ $$
 $$
 
 for a give data $z$, we can define the conditional probability path 
-$p_t(\cdot|z)$, and we know:
+$p_t(\cdot \mid z)$, and we know:
 
 $$
-p_t(\cdot) = \mathbb{E}_{z\sim p_{data}}[p_t(\cdot|z)] = \int p_t(x|z) \cdot p_{data}(z) dz
+p_t(\cdot) = \mathbb{E}_{z\sim p_{data}}[p_t(\cdot \mid z)] = \int p_t(x \mid z) \cdot p_{data}(z) dz
 $$
 
-If we set $p_0(\cdot|z) = \mathcal{N}(0, 1)$, then 
+If we set $p_0(\cdot \mid z) = \mathcal{N}(0, 1)$, then 
 
 $$
-p_0(\cdot) = \mathbb{E}_{z\sim p_{data}}[p_0(\cdot|z)] = p_0(\cdot|z)=\mathcal{N}(0, 1)
+p_0(\cdot) = \mathbb{E}_{z\sim p_{data}}[p_0(\cdot \mid z)] = p_0(\cdot \mid z)=\mathcal{N}(0, 1)
 $$
 
 is also a standard Gaussian distribution.
 
-Similarly, we can set $p_1(\cdot|z) = \delta_z$ (Dirac delta distribution, sampling from $\delta_z$ always returns $z$), then
+Similarly, we can set $p_1(\cdot \mid z) = \delta_z$ (Dirac delta distribution, sampling from $\delta_z$ always returns $z$), then
 
 $$
-p_1(\cdot) = \mathbb{E}_{z\sim p_{data}}[p_1(\cdot|z)] = p_{data}(z)=p_{data}
+p_1(\cdot) = \mathbb{E}_{z\sim p_{data}}[p_1(\cdot \mid z)] = p_{data}(z)=p_{data}
 $$
 
-Such a conditional probability path $p_t(\cdot|z)$ is easy to design, for example, we can use a linear interpolation between $\mathcal{N}(0,1)$ and $\delta(z)$:
+Such a conditional probability path $p_t(\cdot \mid z)$ is easy to design, for example, we can use a linear interpolation between $\mathcal{N}(0,1)$ and $\delta(z)$:
 
 $$
-p_t(x|z) = (1-t) \cdot \mathcal{N}(0, 1) + t \cdot \delta_z(x) = \mathcal{N}(t\cdot z, (1-t)^2 I_d), \quad t\in[0,1].
+p_t(x \mid z) = (1-t) \cdot \mathcal{N}(0, 1) + t \cdot \delta_z(x) = \mathcal{N}(t\cdot z, (1-t)^2 I_d), \quad t\in[0,1].
 $$
 
 As you can see, if we design such a conditional probability path 
-$p_t(\cdot|z)$, the marginal probability path $p_t(\cdot)$ will satisfy the constraints we need.
-And we can sample from $p_t(\cdot)$ by first sampling a data point $z$ from $p_{data}$, and then sample a point $x$ from $p_t(\cdot|z)$.
-We have designed an conditional probability path $p_t(\cdot|z)$, which induces a valid probability path $p_t(\cdot)$ we need. However, we can't access the analytic form of $p_t(\cdot)$ as **the integral is intractable**.
+$p_t(\cdot \mid z)$, the marginal probability path $p_t(\cdot)$ will satisfy the constraints we need.
+And we can sample from $p_t(\cdot)$ by first sampling a data point $z$ from $p_{data}$, and then sample a point $x$ from $p_t(\cdot \mid z)$.
+We have designed an conditional probability path $p_t(\cdot \mid z)$, which induces a valid probability path $p_t(\cdot)$ we need. However, we can't access the analytic form of $p_t(\cdot)$ as **the integral is intractable**.
 
 #### 2.4.2. Conditional Vector Field
 
@@ -142,22 +142,22 @@ The corresponding conditional vector field can, in principle, be obtained by sol
 However, in this example, we can easily observe that our conditional probability path can be induced by the following simple **conditional flow** directly (the valid conditional flow is not unique):
 
 $$
-\psi_t(x_0|z) = (1-t) \cdot x_0 + t\cdot z.
+\psi_t(x_0 \mid z) = (1-t) \cdot x_0 + t\cdot z.
 $$
 
-if $X_0 \sim \mathcal{N}(0,1)$, then $X_t \sim \mathcal{N}(t\cdot z, (1-t)^2 I_d)=p_t(\cdot|z)$.
+if $X_0 \sim \mathcal{N}(0,1)$, then $X_t \sim \mathcal{N}(t\cdot z, (1-t)^2 I_d)=p_t(\cdot \mid z)$.
 
 Therefore, by definition, we can extract the target conditional vector field:
 
 $$
-\frac{d}{d t} \psi_t(x_0|z) = u_t(\psi_t(x_0|z)|z), \forall x, z \in \mathbb{R}^d
+\frac{d}{d t} \psi_t(x_0 \mid z) = u_t(\psi_t(x_0 \mid z) \mid z), \forall x, z \in \mathbb{R}^d
 $$
 
-let $x_t = \psi_t(x_0|z) = (1-t) \cdot x_0 + t\cdot z$, we have:
+let $x_t = \psi_t(x_0 \mid z) = (1-t) \cdot x_0 + t\cdot z$, we have:
 
 $$
 \begin{aligned}
-\frac{d}{d t} \psi_t(x_0|z) = u_t(x_t|z) &= \frac{d}{d t} \left ((1-t) \cdot x_0 + t\cdot z \right )  \\
+\frac{d}{d t} \psi_t(x_0 \mid z) = u_t(x_t \mid z) &= \frac{d}{d t} \left ((1-t) \cdot x_0 + t\cdot z \right )  \\
 & = z - x_0.
 \end{aligned}
 $$
@@ -166,11 +166,11 @@ That is to say:
 
 $$
 \begin{aligned}
-u_t(x_t|z) &= z-x_0, \quad s.t. \quad x_t = (1-t) \cdot x_0 + t \cdot z
+u_t(x_t \mid z) &= z-x_0, \quad s.t. \quad x_t = (1-t) \cdot x_0 + t \cdot z
 \end{aligned}
 $$
 
-is a valid conditional vector field, it defines an ODE which solution is the conditional flow: $\psi_t(x_0|z) = (1-t) \cdot x_0 + t\cdot z$, and the flow induced a conditional probability path: $p_t(\cdot|z) = \mathcal{N}(t\cdot z, (1-t)^2 I_d)$.
+is a valid conditional vector field, it defines an ODE which solution is the conditional flow: $\psi_t(x_0 \mid z) = (1-t) \cdot x_0 + t\cdot z$, and the flow induced a conditional probability path: $p_t(\cdot \mid z) = \mathcal{N}(t\cdot z, (1-t)^2 I_d)$.
 
 ### 2.5. Approximation of Vector Field
 
@@ -179,17 +179,17 @@ As described in section 2.2, we want to train a neural network $u^{\theta}_t(x_t
 $$
 \begin{aligned}
 \mathcal{L}_{FM} (\theta) &= \mathbb{E}_{t\sim U[0,1], x_t \sim p_t} \left \| u^{\theta}_t(x_t) - u^{target}_t(x_t) \right \|^2 \\
-&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x_t \sim p_t(\cdot|z)} \left \| u^{\theta}_t(x_t) - u^{target}_t(x_t) \right \|^2.
+&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x_t \sim p_t(\cdot \mid z)} \left \| u^{\theta}_t(x_t) - u^{target}_t(x_t) \right \|^2.
 \end{aligned}
 $$
 
 Unfortunately, As discussed earlier, the ground truth $u^{target}_t(x_t)$ is unknown, we only have an conditional ground truth vector field: 
-$u_t(x_t|z) = z-x_0 \quad (s.t. \quad x_t = (1-t) \cdot x_0 + t \cdot z)$, a natural question is: what will happen if we optimize the following loss function:
+$u_t(x_t \mid z) = z-x_0 \quad (s.t. \quad x_t = (1-t) \cdot x_0 + t \cdot z)$, a natural question is: what will happen if we optimize the following loss function:
 
 $$
 \begin{aligned}
-\mathcal{L}_{CFM} (\theta) &= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x_t \sim p_t(\cdot|z)} \left \| u^{\theta}_t(x_t) - u^{target}_t(x_t|z) \right \|^2 \\
-&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x_t \sim p_t(\cdot|z)} \left \| u^{\theta}_t(x_t) - (z - x_0) \right \|^2.
+\mathcal{L}_{CFM} (\theta) &= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x_t \sim p_t(\cdot \mid z)} \left \| u^{\theta}_t(x_t) - u^{target}_t(x_t \mid z) \right \|^2 \\
+&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x_t \sim p_t(\cdot \mid z)} \left \| u^{\theta}_t(x_t) - (z - x_0) \right \|^2.
 \end{aligned}
 $$
 
@@ -199,26 +199,26 @@ Let us give a formal proof of the above result.
 
 To prove the equivalence of FM and CFM loss, we apply the marginalization trick and rewrite expectations. The key idea is to decompose the marginal loss via the law of total expectation.
 
-First, let us introduce a key lemma, which reveals the relationship of conditional vector field $u_t(x|z)$ and (marginal) vector field $u_t(x)$:
+First, let us introduce a key lemma, which reveals the relationship of conditional vector field $u_t(x \mid z)$ and (marginal) vector field $u_t(x)$:
 
 **Lemma 1. (marginalization trick)**. For every data point 
 $z \in \mathbb{R}^d$, let 
-$u^{target}_{t}(\cdot|z)$ denote a conditional vector field, defined so that the corresponding ODE yields the conditional probability path 
-$p_t(\cdot|z)$, we have:
+$u^{target}_{t}(\cdot \mid z)$ denote a conditional vector field, defined so that the corresponding ODE yields the conditional probability path 
+$p_t(\cdot \mid z)$, we have:
 
 $$
-u^{target}_t(x) = \int u^{target}_{t}(x|z) \cdot \frac{p_t(x|z)\cdot p_{data}(z)}{p_t(x)}dz.
+u^{target}_t(x) = \int u^{target}_{t}(x \mid z) \cdot \frac{p_t(x \mid z)\cdot p_{data}(z)}{p_t(x)}dz.
 $$
 
 **Proof.** 
 
 $$
 \begin{aligned}
-\frac{\partial p_t(x)}{\partial t} &= \frac{\partial \int_z p_t(x|z)p_{data}(z)dz}{\partial t} && \text{(by definition)}\\
-&= \int_z \frac{\partial p_t(x|z)}{\partial t} p_{data}(z) dz && \text{(swap the order of integral and differential)}\\
-&= \int_z (- \nabla_x \cdot (p_t(x|z)\cdot u_t(x|z))) p_{data}(z)dz && \text{(continuity equation)}\\
-&= - \nabla_x \cdot \int_z (p_t(x|z)\cdot u_t(x|z)) p_{data}(z)dz && \text{(swap the order of integral and differential)}\\
-&= - \nabla_x \cdot \left( p_t(x) \int_z u_t(x|z) \cdot \frac{p_t(x|z) \cdot p_{data}(z)}{p_t(x)}dz \right),\\
+\frac{\partial p_t(x)}{\partial t} &= \frac{\partial \int_z p_t(x \mid z)p_{data}(z)dz}{\partial t} && \text{(by definition)}\\
+&= \int_z \frac{\partial p_t(x \mid z)}{\partial t} p_{data}(z) dz && \text{(swap the order of integral and differential)}\\
+&= \int_z (- \nabla_x \cdot (p_t(x \mid z)\cdot u_t(x \mid z))) p_{data}(z)dz && \text{(continuity equation)}\\
+&= - \nabla_x \cdot \int_z (p_t(x \mid z)\cdot u_t(x \mid z)) p_{data}(z)dz && \text{(swap the order of integral and differential)}\\
+&= - \nabla_x \cdot \left( p_t(x) \int_z u_t(x \mid z) \cdot \frac{p_t(x \mid z) \cdot p_{data}(z)}{p_t(x)}dz \right),\\
 \end{aligned}
 $$
 
@@ -226,8 +226,8 @@ as we kown (continuity equation): $\frac{\partial p_t(x)}{\partial t} = - \nabla
 
 $$
 \begin{aligned}
-- \nabla_x \cdot \left( p_t(x) \int u_t(x|z) \cdot \frac{p_t(x|z) \cdot p_{data}(z)}{p_t(x)}dz \right) &= - \nabla_x \cdot (p_t(x) \cdot u_t(x)) \\
-\Rightarrow \int u_t(x|z) \cdot \frac{p_t(x|z) \cdot p_{data}(z)}{p_t(x)}dz &= u_t(x).
+- \nabla_x \cdot \left( p_t(x) \int u_t(x \mid z) \cdot \frac{p_t(x \mid z) \cdot p_{data}(z)}{p_t(x)}dz \right) &= - \nabla_x \cdot (p_t(x) \cdot u_t(x)) \\
+\Rightarrow \int u_t(x \mid z) \cdot \frac{p_t(x \mid z) \cdot p_{data}(z)}{p_t(x)}dz &= u_t(x).
 \end{aligned}
 $$
 
@@ -247,25 +247,25 @@ $$
 \begin{aligned}
 \mathcal{L}_{FM} (\theta) &= \mathbb{E}_{t\sim U[0,1], x \sim p_t} \left \| u^{\theta}_t(x) - u^{target}_t(x) \right \|^2 \\
 
-(\text{Sampling trick})&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z)} \left \| u^{\theta}_t(x) - u^{target}_t(x) \right \|^2\\
+(\text{Sampling trick})&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot \mid z)} \left \| u^{\theta}_t(x) - u^{target}_t(x) \right \|^2\\
 
-(\left \| a - b\right \|^2 = a^2 - 2 a^T b + b^2)&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z)} \left [ \left \| u^{\theta}_t(x)\right \|^2 - 2\cdot u^{\theta}_t(x)^{T}\cdot u^{target}_t(x) + \underbrace{\left \| u^{target}_t(x)\right \|^2}_{\theta \text{-independent constant}} \right ] \\
+(\left \| a - b\right \|^2 = a^2 - 2 a^T b + b^2)&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot \mid z)} \left [ \left \| u^{\theta}_t(x)\right \|^2 - 2\cdot u^{\theta}_t(x)^{T}\cdot u^{target}_t(x) + \underbrace{\left \| u^{target}_t(x)\right \|^2}_{\theta \text{-independent constant}} \right ] \\
 
-&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z)} \left [ \left \| u^{\theta}_t(x)\right \|^2 - 2\cdot u^{\theta}_t(x)^{T}\cdot u^{target}_t(x) \right ] + C_1 \\
+&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot \mid z)} \left [ \left \| u^{\theta}_t(x)\right \|^2 - 2\cdot u^{\theta}_t(x)^{T}\cdot u^{target}_t(x) \right ] + C_1 \\
 
-(\text{Expectation definition})& = \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z)} \left \| u^{\theta}_t(x)\right \|^2 - \int^{1}_{0} \int \int \left ( 2\cdot u^{\theta}_t(x)^{T}\cdot u^{target}_t(x) \right ) \cdot p_t(x|z) \cdot p_{data}(z) dz dx dt + C_1\\
+(\text{Expectation definition})& = \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot \mid z)} \left \| u^{\theta}_t(x)\right \|^2 - \int^{1}_{0} \int \int \left ( 2\cdot u^{\theta}_t(x)^{T}\cdot u^{target}_t(x) \right ) \cdot p_t(x \mid z) \cdot p_{data}(z) dz dx dt + C_1\\
 
-(\text{Lemma 1})&=\mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z)} \left \| u^{\theta}_t(x)\right \|^2 - \int^{1}_{0} \int \int 2\cdot u^{\theta}_t(x)^{T}\cdot \int u_t^{target}(x|z) \cdot \frac{p_t(x|z) \cdot p_{data}(z)}{p_t(x)}dz \cdot p_t(x|z) \cdot p_{data}(z) dz dx dt + C_1\\
+(\text{Lemma 1})&=\mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot \mid z)} \left \| u^{\theta}_t(x)\right \|^2 - \int^{1}_{0} \int \int 2\cdot u^{\theta}_t(x)^{T}\cdot \int u_t^{target}(x \mid z) \cdot \frac{p_t(x \mid z) \cdot p_{data}(z)}{p_t(x)}dz \cdot p_t(x \mid z) \cdot p_{data}(z) dz dx dt + C_1\\
 
-&=\mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z)} \left \| u^{\theta}_t(x)\right \|^2 - \int^{1}_{0} \int \int 2\cdot u^{\theta}_t(x)^{T}\cdot u_t^{target}(x|z) \cdot p_t(x|z) \cdot p_{data}(z) dz dx dt + C_1\\
+&=\mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot \mid z)} \left \| u^{\theta}_t(x)\right \|^2 - \int^{1}_{0} \int \int 2\cdot u^{\theta}_t(x)^{T}\cdot u_t^{target}(x \mid z) \cdot p_t(x \mid z) \cdot p_{data}(z) dz dx dt + C_1\\
 
-&=\mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z)} \left \| u^{\theta}_t(x)\right \|^2 - \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z)} \left [2\cdot u^{\theta}_t(x)^{T}\cdot u_t^{target}(x|z) \right ]  + C_1\\
+&=\mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot \mid z)} \left \| u^{\theta}_t(x)\right \|^2 - \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot \mid z)} \left [2\cdot u^{\theta}_t(x)^{T}\cdot u_t^{target}(x \mid z) \right ]  + C_1\\
 
-&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z)} \left [ \left \| u^{\theta}_t(x)\right \|^2 - 2\cdot u^{\theta}_t(x)^{T}\cdot u_t^{target}(x|z) + \left \|u_t^{target}(x|z)\right \|^2 - \left \|u_t^{target}(x|z)\right \|^2 \right]  + C_1\\
+&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot \mid z)} \left [ \left \| u^{\theta}_t(x)\right \|^2 - 2\cdot u^{\theta}_t(x)^{T}\cdot u_t^{target}(x \mid z) + \left \|u_t^{target}(x \mid z)\right \|^2 - \left \|u_t^{target}(x \mid z)\right \|^2 \right]  + C_1\\
 
-&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z)} \left [ \left \| u^{\theta}_t(x) - u_t^{target}(x|z)\right \|^2 \right] - \underbrace{\mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z)} \left \|u_t^{target}(x|z)\right \|^2}_{\theta \text{-independent constant}}  + C_1\\
+&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot \mid z)} \left [ \left \| u^{\theta}_t(x) - u_t^{target}(x \mid z)\right \|^2 \right] - \underbrace{\mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot \mid z)} \left \|u_t^{target}(x \mid z)\right \|^2}_{\theta \text{-independent constant}}  + C_1\\
 
-&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot|z)} \left [ \left \| u^{\theta}_t(x) - u_t^{target}(x|z)\right \|^2 \right] + C\\
+&= \mathbb{E}_{t\sim U[0,1], z \sim p_{data}, x \sim p_t(\cdot \mid z)} \left [ \left \| u^{\theta}_t(x) - u_t^{target}(x \mid z)\right \|^2 \right] + C\\
 
 &= \mathcal{L}_{CFM}(\theta) + C
 
