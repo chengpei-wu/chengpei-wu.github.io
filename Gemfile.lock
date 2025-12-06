@@ -270,6 +270,7 @@ GEM
       unf_ext
     unf_ext (0.0.7.7)
     unicode-display_width (1.7.0)
+    wdm (0.1.1)
     webrick (1.9.1)
     zeitwerk (2.4.2)
 
@@ -284,7 +285,8 @@ DEPENDENCIES
   hawkins
   jekyll-feed
   jekyll-sitemap
+  wdm (~> 0.1.0)
   webrick (~> 1.9)
 
 BUNDLED WITH
-   2.6.9
+   2.5.23
