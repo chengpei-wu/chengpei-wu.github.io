@@ -12,28 +12,28 @@ excerpt: This post provides an overview of Hoeffding's Inequality and its proof.
 The Hoeffding Inequality is a fundamental result in probability theory that **provides a bound on the sum (or average) of bounded independent random variables.** It is particularly useful in the fields of statistics and machine learning.
 
 ## 2. Statement of Hoeffding's Inequality
-**Hoeffding's Inequality**: Let $$X_1, X_2, \ldots, X_n$$ be independent random variables such that for each $$i$$, $$X_i$$ takes values in the interval $$[a_i, b_i]$$. Define the sample sum as:
-$$S_n = \sum_{i=1}^{n} X_i$$, and sample mean as: $$\bar{X} = \frac{1}{n} S_n$$.
-Then, for any $$\epsilon > 0$$, the following inequality holds for $$S_n$$:
+**Hoeffding's Inequality**: Let $X_1, X_2, \ldots, X_n$ be independent random variables such that for each $i$, $X_i$ takes values in the interval $[a_i, b_i]$. Define the sample sum as:
+$S_n = \sum_{i=1}^{n} X_i$, and sample mean as: $\bar{X} = \frac{1}{n} S_n$.
+Then, for any $\epsilon > 0$, the following inequality holds for $S_n$:
 
 $$
 P\left( \left| S_n - \mathbb{E}[S_n] \right| \geq \epsilon \right) \leq 2 \exp\left( -\frac{2 \epsilon^2}{\sum_{i=1}^{n}(b_i - a_i)^2} \right)
 $$
 
-and the following inequality holds for $$\bar{X}$$:
+and the following inequality holds for $\bar{X}$:
 
 $$
 P\left( \left| \bar{X} - \mu \right| \geq \epsilon \right) \leq 2 \exp\left( -\frac{2n \epsilon^2}{\sum_{i=1}^{n}(b_i - a_i)^2} \right)
 $$
 
-where $$\mu = \mathbb{E}[X_i]$$ is the expected value of the random variables.
+where $\mu = \mathbb{E}[X_i]$ is the expected value of the random variables.
 
 ## 3. Proof
 
 The proof of Hoeffding's inequality makes use of **Markov's inequality** and **Hoeffding lemma**.
 
 ### 3.1. Markov's inequality
-**Markov's Inequality:** Let $$X$$ be a non-negative random variable and $$t > 0$$. Then,
+**Markov's Inequality:** Let $X$ be a non-negative random variable and $t > 0$. Then,
 
 $$
 P(X \ge t\mathbb{E}[X]) \le \frac{1}{t},
@@ -54,13 +54,13 @@ $$
 
 Q.E.D.
 
-**Corollary 1**: Let $$X$$ be a non-negative random variable and $$\epsilon = t\mathbb{E}[X] > 0$$. Then,
+**Corollary 1**: Let $X$ be a non-negative random variable and $\epsilon = t\mathbb{E}[X] > 0$. Then,
 
 $$
 P(X \ge \epsilon) \le \epsilon^{-1} \mathbb{E}[X].
 $$
 
-**Corollary 2**: Let $$X$$ be a random variable, $$t>0$$, and $$\epsilon > 0$$, then we have:
+**Corollary 2**: Let $X$ be a random variable, $t>0$, and $\epsilon > 0$, then we have:
 
 $$
 \begin{aligned}
@@ -76,8 +76,8 @@ $$
 
 ### 3.2. Heoffding lemma
 
-**Heoffding Lemma**: Let $$X$$ be a bounded random variable with $$\mathbb{E}[X] = 0$$ and $$a \leq X \leq b$$, $$a < b$$.
-Then, for any $$t > 0$$, the following inequality holds:
+**Heoffding Lemma**: Let $X$ be a bounded random variable with $\mathbb{E}[X] = 0$ and $a \leq X \leq b$, $a < b$.
+Then, for any $t > 0$, the following inequality holds:
 
 $$
 \mathbb{E}[e^{tX}] \leq e^{\frac{t^2(b - a)^2}{8}}.
@@ -102,9 +102,9 @@ $$
 \mathbb{E}[e^{tX}] \le e^{\phi(t)},
 $$
 
-where we can bound $$e^{\phi(t)}$$ by bound $$\phi(t)$$:
+where we can bound $e^{\phi(t)}$ by bound $\phi(t)$:
 
-(1) For $$\phi(t)$$ we have:
+(1) For $\phi(t)$ we have:
 
 $$
 \begin{aligned}
@@ -115,7 +115,7 @@ $$
 \end{aligned}
 $$
 
-(2) For $$\phi^{'}(t)$$, we have:
+(2) For $\phi^{'}(t)$, we have:
 
 $$
 \begin{aligned}
@@ -125,7 +125,7 @@ $$
 \end{aligned}
 $$
 
-(3) For $$\phi^{''}(t)$$, we have:
+(3) For $\phi^{''}(t)$, we have:
 
 $$
 \begin{aligned}
@@ -143,7 +143,7 @@ $$
 \phi(t) = \phi(0) + t\phi^{'}(0) + \frac{t^2}{2}\phi^{''}(\theta) \le t^2\frac{(b-a)^2}{8},
 $$
 
-where $$\theta \in [0,t]$$.
+where $\theta \in [0,t]$.
 
 Thus, we have:
 
@@ -167,7 +167,7 @@ P\left( S_m - \mathbb{E}[S_m] \geq \epsilon \right)
 \end{aligned}
 $$
 
-now we choose $$t = \frac{4\epsilon}{\sum_{i=1}^{n} (b_i-a_i)^2}$$ to minimize the upper bound:
+now we choose $t = \frac{4\epsilon}{\sum_{i=1}^{n} (b_i-a_i)^2}$ to minimize the upper bound:
 
 $$
 \begin{aligned}
@@ -177,7 +177,7 @@ P\left( S_m - \mathbb{E}[S_m] \geq \epsilon \right)
 \end{aligned}
 $$
 
-The above technique is known as **Chernoff bounding technique**, and this result is constant for $$P\left( S_m - \mathbb{E}[S_m] \leq \epsilon \right)$$. 
+The above technique is known as **Chernoff bounding technique**, and this result is constant for $P\left( S_m - \mathbb{E}[S_m] \leq \epsilon \right)$. 
 Therefore, we have:
 
 $$
