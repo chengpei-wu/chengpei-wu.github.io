@@ -178,7 +178,8 @@ x_t &= \sqrt{1 - \beta_t} x_{t-1} + \sqrt{\beta_t} \epsilon_{t-1}\\
 \end{aligned}
 $$
 
-where $\bar{\alpha}_t = \prod_{s=1}^{t} \alpha_s$. Therefore, we have:
+where 
+$\bar{\alpha}_t = \prod_{s=1}^{t} \alpha_s$. Therefore, we have:
 
 $$
 {\color{red}q(x_t \mid x_0)} = \mathcal{N}(\sqrt{\bar{\alpha}_t} x_0, (1 - \bar{\alpha}_t) \mathbf{I}),
