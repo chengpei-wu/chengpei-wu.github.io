@@ -110,8 +110,16 @@ incremental: false
 kramdown:
   math_engine_opts:
     preview: false
+  math_delimiters:
+    inline:
+      - '$'
+      - '$'
+    display:
+      - '$$'
+      - '$$'
   math_engine: mathjax
   parse_block_html: true
+  syntax_highlighter: rouge
   input: GFM
   hard_wrap: false
   auto_ids: true
