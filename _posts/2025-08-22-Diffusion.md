@@ -178,8 +178,7 @@ x_t &= \sqrt{1 - \beta_t} x_{t-1} + \sqrt{\beta_t} \epsilon_{t-1}\\
 \end{aligned}
 $$
 
-where 
-$\bar{\alpha}_t = \prod_{s=1}^{t} \alpha_s$. Therefore, we have:
+where $$\bar{\alpha}_t = \prod_{s=1}^{t} \alpha_s$$. Therefore, we have:
 
 $$
 {\color{red}q(x_t \mid x_0)} = \mathcal{N}(\sqrt{\bar{\alpha}_t} x_0, (1 - \bar{\alpha}_t) \mathbf{I}),
@@ -215,9 +214,12 @@ q(x_{t-1} \mid x_t,x_0) &= \frac{ \mathcal{N}(\sqrt{\alpha_t} x_{t-1}, (1-\alpha
 \end{aligned}
 $$
 
-Let $\mu_q = \frac{1-\bar{\alpha}_{t-1} \sqrt{\alpha_t} x_t + (1-\alpha_t) \sqrt{\bar{\alpha}_{t-1}} x_0}{1-\bar{\alpha}_t}$ and $\Sigma_q = \frac{1-\bar{\alpha}_{t}}{(1-\alpha_t)(1-\bar{\alpha}_{t-1})} \mathbf{I}$.
+Let $$\mu_q = \frac{1-\bar{\alpha}_{t-1} \sqrt{\alpha_t} x_t + (1-\alpha_t) \sqrt{\bar{\alpha}_{t-1}} x_0}{1-\bar{\alpha}_t}$$ and $$\Sigma_q = \frac{1-\bar{\alpha}_{t}}{(1-\alpha_t)(1-\bar{\alpha}_{t-1})} \mathbf{I}$$.
 We have shown that 
-$x_{t-1} \sim q(x_{t-1} \mid x_t,x_0) = \mathcal{N}\left( \frac{1-\bar{\alpha}_{t-1} \sqrt{\alpha_t} x_t + (1-\alpha_t) \sqrt{\bar{\alpha}_{t-1}} x_0}{1-\bar{\alpha}_t}, \frac{1-\bar{\alpha}_{t}}{(1-\alpha_t)(1-\bar{\alpha}_{t-1})} \mathbf{I} \right)$ is also a Gaussian distribution. In addition, we can see that the variance of
+
+$$x_{t-1} \sim q(x_{t-1} \mid x_t,x_0) = \mathcal{N}\left( \frac{1-\bar{\alpha}_{t-1} \sqrt{\alpha_t} x_t + (1-\alpha_t) \sqrt{\bar{\alpha}_{t-1}} x_0}{1-\bar{\alpha}_t}, \frac{1-\bar{\alpha}_{t}}{(1-\alpha_t)(1-\bar{\alpha}_{t-1})} \mathbf{I} \right)$$
+
+is also a Gaussian distribution. In addition, we can see that the variance of
 $q(x_{t-1} \mid x_t,x_0)$ is a function of the variance schedule $\beta_t$, which is predefined and fixed during training.
 
 Recall that the KL Divergence between two Gaussian distributions is:
@@ -364,7 +366,7 @@ $$
 x_0 \rightarrow x_1 \rightarrow x_2 \rightarrow \cdots \rightarrow x_T,
 $$
 
-let us now consider the continuous-time limit of this process as $T \rightarrow \infty$. We can convert the discrete process $\{x_i \}_{i=0}^{T}$ to a continuous process $\{ x_t \}_{t=0}^{1}$ by defining:
+let us now consider the continuous-time limit of this process as $T \rightarrow \infty$. We can convert the discrete process $$\{x_i \}_{i=0}^{T}$$ to a continuous process $\{ x_t \}_{t=0}^{1}$ by defining:
 
 $$
 t = \frac{i}{T}, \quad \text{for } i = 0, 1, \ldots, T.
