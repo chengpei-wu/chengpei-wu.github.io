@@ -1,6 +1,6 @@
 ---
 layout: blog_post
-title: Heoffding Inequality And Its Proof
+title: Hoeffding's Inequality And Its Proof
 date: 2025-08-11
 tag: [mathematics, statistics]
 author: Chengpei Wu
@@ -23,7 +23,7 @@ $$
 and the following inequality holds for $\bar{X}$:
 
 $$
-P\left( \left| \bar{X} - \mu \right| \geq \epsilon \right) \leq 2 \exp\left( -\frac{2n \epsilon^2}{\sum_{i=1}^{n}(b_i - a_i)^2} \right)
+P\left( \left| \bar{X} - \mu \right| \geq \epsilon \right) \leq 2 \exp\left( -\frac{2n^2 \epsilon^2}{\sum_{i=1}^{n}(b_i - a_i)^2} \right)
 $$
 
 where $\mu = \mathbb{E}[X_i]$ is the expected value of the random variables.
@@ -115,21 +115,21 @@ $$
 \end{aligned}
 $$
 
-(2) For $\phi^{'}(t)$, we have:
+(2) For $\phi'(t)$, we have:
 
 $$
 \begin{aligned}
-\phi^{'}(t) 
+\phi'(t) 
 &= a + \frac{-a\cdot e^{t(b-a)}}{\frac{b}{b-a} + \frac{-a}{b-a}e^{t(b-a)}} \\
-& = a - \frac{a}{\frac{b}{b-a}e^{t(b-a)} - \frac{a}{b-a}} && && ({\color{red} \phi^{'}(0) = 0})
+& = a - \frac{a}{\frac{b}{b-a}e^{t(b-a)} - \frac{a}{b-a}} && && ({\color{red} \phi'(0) = 0})
 \end{aligned}
 $$
 
-(3) For $\phi^{''}(t)$, we have:
+(3) For $\phi''(t)$, we have:
 
 $$
 \begin{aligned}
-\phi^{''}(t) 
+\phi''(t) 
 &= \frac{-ab\cdot e^{-t(b-a)}}{\left(\frac{b}{b-a}\cdot e^{-t(b-a)} + \frac{-a}{b-a}\right)^2} \\
 &= \frac{\frac{b}{b-a}\cdot \frac{-a}{b-a} \cdot e^{-t(b-a)}}{\left(\frac{b}{b-a}\cdot e^{-t(b-a)} + \frac{-a}{b-a}\right)^2} \cdot (b-a)^2\\
 &= \frac{m\cdot n}{(m+n)^2} * (b-a)^2 && (m = \frac{b}{b-a}\cdot e^{-t(b-a)}, n = \frac{-a}{b-a})\\
@@ -140,7 +140,7 @@ $$
 Therefore, we have:
 
 $$
-\phi(t) = \phi(0) + t\phi^{'}(0) + \frac{t^2}{2}\phi^{''}(\theta) \le t^2\frac{(b-a)^2}{8},
+\phi(t) = \phi(0) + t\phi'(0) + \frac{t^2}{2}\phi''(\theta) \le t^2\frac{(b-a)^2}{8},
 $$
 
 where $\theta \in [0,t]$.
@@ -184,4 +184,49 @@ $$
 P\left( \left| S_n - \mathbb{E}[S_n] \right| \geq \epsilon \right) \leq 2 \exp\left( -\frac{2 \epsilon^2}{\sum_{i=1}^{n}(b_i - a_i)^2} \right)
 $$
 
+where we can similarly derive the result for $\bar{X}$, as $S_n = n\bar{X}$ and $\mathbb{E}[S_n] = n\mu$, we have:
+
+$$
+P\left( \left| n\bar{X} - n\mu \right| \geq \epsilon \right) \leq 2 \exp\left( -\frac{2 \epsilon^2}{\sum_{i=1}^{n}(b_i - a_i)^2} \right),
+$$
+
+let $\epsilon = n\cdot t$, we have:
+
+$$
+P\left( \left| \bar{X} - \mu \right| \geq t \right) \leq 2 \exp\left( -\frac{2 n^2 t^2}{\sum_{i=1}^{n}(b_i - a_i)^2} \right),
+$$
+
 Q.E.D.
+
+## 4. Generalization Bound
+
+As Hoeffding's Inequality provides a way to bound the probability that the sum (or average) of bounded independent random variables deviates from its expected value, it is widely used in statistical learning theory to derive generalization bounds for machine learning algorithms.
+
+Given a data distribution $\mathcal{D}$ over input space $\mathcal{X}$ and output space $\mathcal{Y}$, a hypothesis class $\mathcal{H}$, and a loss function $\mathcal{L}: \mathcal{Y} \times \mathcal{Y} \to [0,1]$, we define the true risk of a hypothesis $h \in \mathcal{H}$ as:
+
+$$
+R(h) = \mathbb{E}_{(x,y) \sim \mathcal{D}}[\mathcal{L}(h(x), y)],
+$$
+
+where the loss function is defined as:
+
+$$
+\mathcal{L}(h(x), y) = \begin{cases}1, & \text{if } h(x) \neq y \\ 0, & \text{if } h(x) = y \end{cases}.
+$$
+
+And the empirical risk on a training set $S = \{(x_i, y_i)\}_{i=1}^{m}$ as:
+
+$$
+\hat{R}_S(h) = \frac{1}{m} \sum_{i=1}^{m} \mathcal{L}(h(x_i), y_i).
+$$
+Using Hoeffding's inequality, we can derive a generalization bound that relates the true risk and empirical risk of a hypothesis. For a hypothesis $h \in \mathcal{H}$ and any $\epsilon > 0$, the following inequality holds:
+
+$$
+P\left( |R(h) - \hat{R}_S(h)| \geq \epsilon \right) \leq 2 \exp(-2m\epsilon^2),
+$$
+
+which is equivalent to that for any $\delta > 0$, with probability at least $1 - \delta$, the following holds: 
+
+$$
+R(h) \leq \hat{R}_S(h) + \sqrt{\frac{1}{2m} \log \left( \frac{2}{\delta} \right)}.
+$$
