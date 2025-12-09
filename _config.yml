@@ -23,7 +23,7 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 author:
   name             : "Chengpei Wu"
   avatar           : "images/headphoto.jpg"
-  bio              : "Interested in graph learning, generative modeling, and large language models."
+  bio              : ""
   location         : "Chengdu, China"
   employer         :
   pubmed           : 

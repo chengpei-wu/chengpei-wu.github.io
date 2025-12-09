@@ -17,16 +17,15 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-# About Me
-Hi, my research interests include machine learning and graph representation learning. Recently, my work has primarily focused on unsupervised graph representation learning, including topics such as graph contrastive learning. Previously, I explored deep learning methods for efficient and accurate robustness estimation in complex networks.
+# About
+Hi, this is Wu-Chengpei, my research interests include machine learning and graph representation learning. Recently, my work has primarily focused on unsupervised graph representation learning, including topics such as graph contrastive learning. Previously, I explored deep learning methods for efficient and accurate robustness estimation in complex networks. In addition, I am also interested in robust machine learning, generative modeling, and large language models.
 
-In addition, I am also interested in robust machine learning, generative modeling, and large language models.
-
+You can find my full [CV here](https://chengpei-wu.github.io/files/english.pdf). I also maintain a [personal blog here](https://chengpei-wu.github.io/post/), where I write about topics related to machine learning.
 
 <span class='anchor' id='news'></span>
 # News
 - [**08/2025**] one paper (co-authored) accepted by [IEEE Computational Intelligence Magazine](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=10207).
-- [**04/2025**] one paper (co-authored) accepted by [CVPR 2025](https://cvpr.thecvf.com/).
+- [**04/2025**] two papers (co-authored) accepted by [CVPR 2025](https://cvpr.thecvf.com/) and [IJCAI 2025](https://2025.ijcai.org/).
 - [**06/2024**] one paper accepted by [*IEEE Transactions on Cybernetics*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?reload=true&punumber=6221036).
 - [**10/2023**] I have been awarded the National Scholarship for Graduate Students by the Chinese Ministry of Education.
 - [**07/2023**] one paper accepted by [*IEEE Transactions on Circuits and Systems I: Regular
@@ -71,4 +70,4 @@ In addition, I am also interested in robust machine learning, generative modelin
 - Analysis and Statistics: [Analysis I](https://terrytao.wordpress.com/books/analysis-i/), [All of Statistics](https://www.stat.cmu.edu/~larry/).
 - Generative Modeling: [Flow Matching Guide and Code](https://arxiv.org/abs/2412.06264), [An Introduction to Flow Matching and Diffusion Models](https://diffusion.csail.mit.edu/).
 - Computational Learning Theory: [Computational Learning Theory - University of Oxford](https://www.cs.ox.ac.uk/people/varun.kanade/teaching/CLT-MT2023/).
-- Robust Machine Learning: [Robustness in Machine Learning.](https://jerryzli.github.io/robust-ml-fall19.html).
+- Robust Machine Learning: [Robustness in Machine Learning](https://jerryzli.github.io/robust-ml-fall19.html).
