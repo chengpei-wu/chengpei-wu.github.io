@@ -34,10 +34,11 @@ $$
 q(x_t \mid x_{t-1}) = \mathcal{N}(x_t; \sqrt{1 - \beta_t} x_{t-1}, \beta_t \mathbf{I}),
 $$
 
-**Reverse Diffusion Process**: reverse process is a learned Markov chain that aims to remove the added noise and recover the original data distribution. The reverse process can be defined as:
+**Reverse Diffusion Process**: The reverse process is a Markov chain whose transition kernels $p_\theta(x_{t-1} \mid x_t)$ are parameterized by a neural network with 
+parameters $\theta$.
 
 $$
-x_{t-1} = \mu_\theta(x_t, t) + \Sigma_\theta(x_t, t) \epsilon, \quad \epsilon \sim \mathcal{N}(0, \mathbf{I}),
+x_{t-1} = \mu_\theta(x_t, t) + \Sigma^{1/2}_\theta(x_t, t) \epsilon, \quad \epsilon \sim \mathcal{N}(0, \mathbf{I}),
 $$
 
 where $\mu_\theta(x_t, t)$ and $\Sigma_\theta(x_t, t)$ are the mean and covariance functions. The conditional distribution of $x_{t-1}$ given $x_t$ is:
@@ -47,15 +48,15 @@ p_\theta(x_{t-1} \mid x_t) = \mathcal{N}(x_{t-1}; \mu_\theta(x_t, t), \Sigma_\th
 $$
 
 assuming that for each time step $t$, we konw the mean $\mu_\theta(x_t, t)$ and covariance $\Sigma_\theta(x_t, t)$ of the reverse process (parameterized by a neural network with parameters $\theta$), and prior distribution $p(x_T)=\mathcal{N}(x_T;0,\mathbf{I})$.  
-Then, we can sample $x_0 \sim p_\theta(x_0)$ by iteratively applying the reverse process starting from sampling pure noise $x_T \sim \mathcal{N}(0,\mathbf{I})$ as follows:
+Then, we can sample $x_0$ by iteratively applying the reverse process starting from sampling pure noise $x_T \sim \mathcal{N}(0,\mathbf{I})$ as follows:
 
 $$
 \begin{aligned}
 &\text{sample noise:} \quad & x_T \sim \mathcal{N}(0, \mathbf{I}), \\
-&\text{sample } x_{T-1}: \quad & x_{T-1} = \mu_\theta(x_T, T) + \Sigma_\theta(x_T, T) \epsilon, \quad \epsilon \sim \mathcal{N}(0, \mathbf{I}), \\ 
-&\text{sample } x_{T-2}: \quad & x_{T-2} = \mu_\theta(x_{T-1}, T-1) + \Sigma_\theta(x_{T-1}, T-1) \epsilon, \quad \epsilon \sim \mathcal{N}(0, \mathbf{I}), \\
+&\text{sample } x_{T-1}: \quad & x_{T-1} = \mu_\theta(x_T, T) + \Sigma^{1/2}_\theta(x_T, T) \epsilon, \quad \epsilon \sim \mathcal{N}(0, \mathbf{I}), \\ 
+&\text{sample } x_{T-2}: \quad & x_{T-2} = \mu_\theta(x_{T-1}, T-1) + \Sigma^{1/2}_\theta(x_{T-1}, T-1) \epsilon, \quad \epsilon \sim \mathcal{N}(0, \mathbf{I}), \\
 &\cdots \\
-&\text{sample } x_0: \quad & x_0 = \mu_\theta(x_1, 1) + \Sigma_\theta(x_1, 1) \epsilon, \quad \epsilon \sim \mathcal{N}(0, \mathbf{I}).
+&\text{sample } x_0: \quad & x_0 = \mu_\theta(x_1, 1) + \Sigma^{1/2}_\theta(x_1, 1) \epsilon, \quad \epsilon \sim \mathcal{N}(0, \mathbf{I}).
 
 \end{aligned}
 $$
@@ -263,7 +264,7 @@ $q(x_t \mid x_0)$, and we have the closed-form expression of it). Then we can us
 
 ### 2.4. Equivalent Training Objectives
 
-We name the above training objective as **Predicting Expectation**, which can be formally written as:
+We name the above training objective as **Expectation-Prediction**, which can be formally written as:
 
 $$
 \theta^* = \arg \min_\theta \mathbb{E}_{t\sim U[2, T], x_0 \sim q(x_0), x_t \sim q(x_t \mid x_0)} \left[ ||\mu_\theta(x_t, t) - \frac{1-\bar{\alpha}_{t-1} \sqrt{\alpha_t} x_t + (1-\alpha_t) \sqrt{\bar{\alpha}_{t-1}} x_0}{1-\bar{\alpha}_t}||^2_2 \right].
@@ -287,7 +288,7 @@ $$
 \end{aligned}
 $$
 
-we name the above training objective as **Predicting $x_0$**, which is equivalent to the previous objective **Predicting Expectation**.
+we name the above training objective as $x$-**Prediction**, which is equivalent to the previous objective **Expectation-Prediction**.
 
 As shown in Eq. (12), $x_0$ also can be formulated as a function of $x_t$ and a noise $\epsilon$ as:
 
@@ -311,9 +312,9 @@ $$
 \end{aligned}
 $$
 
-we name the above training objective as **Predicting Noise**, which is equivalent to the previous two objectives **Predicting $x_0$** and **Predicting Expectation**.
+we name the above training objective as $\epsilon$-**Prediction**, which is equivalent to the previous two objectives $x$-**Prediction** and **Expectation-Prediction**.
 
-There is another equivalent training objective called **Predicting Score**, which is to train a neural network 
+There is another equivalent training objective called **Score-Prediction**, which is to train a neural network 
 $s_\theta(x_t, t)$ to approximate the score function 
 $\nabla_{x_t} \log p(x_t)$. The score function is derived from the **Tweedie Equation**:
 
