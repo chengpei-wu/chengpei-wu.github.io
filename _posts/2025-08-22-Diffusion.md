@@ -284,7 +284,7 @@ $$
 \begin{aligned}
 \theta^* &= \arg \min_\theta \mathbb{E}_{t\sim U[2, T], x_0 \sim q(x_0), x_t \sim q(x_t \mid x_0)} \left[ ||\frac{1-\bar{\alpha}_{t-1} \sqrt{\alpha_t} x_t + (1-\alpha_t) \sqrt{\bar{\alpha}_{t-1}} x_\theta(x_t, t)}{1-\bar{\alpha}_t} - \frac{1-\bar{\alpha}_{t-1} \sqrt{\alpha_t} x_t + (1-\alpha_t) \sqrt{\bar{\alpha}_{t-1}} x_0}{1-\bar{\alpha}_t}||^2_2 \right]\\
 &= \arg \min_\theta \mathbb{E}_{t\sim U[2, T], x_0 \sim q(x_0), x_t \sim q(x_t \mid x_0)} \left[ \frac{(1-\alpha_t) \sqrt{\bar{\alpha}_{t-1}} }{1-\bar{\alpha}_t} ||(x_\theta(x_t, t) - x_0)||^2_2 \right],\\
-&= \arg \min_\theta \mathbb{E}_{t\sim U[2, T], x_0 \sim q(x_0), x_t \sim q(x_t \mid x_0)} \left[ ||x_\theta(x_t, t) - x_0||^2_2 \right],\\
+&\approx \arg \min_\theta \mathbb{E}_{t\sim U[2, T], x_0 \sim q(x_0), x_t \sim q(x_t \mid x_0)} \left[ ||x_\theta(x_t, t) - x_0||^2_2 \right],\\
 \end{aligned}
 $$
 
@@ -308,7 +308,7 @@ $$
 \begin{aligned}
 \theta^* &= \arg \min_\theta \mathbb{E}_{t\sim U[2, T], x_0 \sim q(x_0), x_t \sim q(x_t \mid x_0)} \left[ ||\frac{x_t- \sqrt{1-\bar{\alpha}_t} \cdot \epsilon_\theta(x_t, t)}{\sqrt{\bar{\alpha}_t}} - \frac{x_t- \sqrt{1-\bar{\alpha}_t} \cdot \epsilon}{\sqrt{\bar{\alpha}_t}}||^2_2 \right]\\
 &= \arg \min_\theta \mathbb{E}_{t\sim U[2, T], x_0 \sim q(x_0), x_t \sim q(x_t \mid x_0)} \left[ \frac{\sqrt{1-\bar{\alpha}_t}}{\sqrt{\bar{\alpha}_t}} ||\epsilon_\theta(x_t, t) - \epsilon||^2_2 \right],\\
-&= \arg \min_\theta \mathbb{E}_{t\sim U[2, T], x_0 \sim q(x_0), x_t \sim q(x_t \mid x_0)} \left[ ||\epsilon_\theta(x_t, t) - \epsilon||^2_2 \right],\\
+&\approx \arg \min_\theta \mathbb{E}_{t\sim U[2, T], x_0 \sim q(x_0), x_t \sim q(x_t \mid x_0)} \left[ ||\epsilon_\theta(x_t, t) - \epsilon||^2_2 \right],\\
 \end{aligned}
 $$
 
@@ -345,7 +345,7 @@ $$
 \begin{aligned}
 \theta^* &= \arg \min_\theta \mathbb{E}_{t\sim U[2, T], x_0 \sim q(x_0), x_t \sim q(x_t \mid x_0)} \left[ ||\frac{x_t}{\sqrt{\bar{\alpha}_t}} + \frac{(1 - \bar{\alpha}_t)}{\sqrt{\bar{\alpha}_t}} s_\theta(x_t, t) - \frac{x_t}{\sqrt{\bar{\alpha}_t}} - \frac{(1 - \bar{\alpha}_t)}{\sqrt{\bar{\alpha}_t}} \nabla_{x_t} \log p(x_t)||^2_2 \right]\\
 &= \arg \min_\theta \mathbb{E}_{t\sim U[2, T], x_0 \sim q(x_0), x_t \sim q(x_t \mid x_0)} \left[ \frac{(1 - \bar{\alpha}_t)}{\sqrt{\bar{\alpha}_t}} ||s_\theta(x_t, t) - \nabla_{x_t} \log p(x_t)||^2_2 \right],\\
-&= \arg \min_\theta \mathbb{E}_{t\sim U[2, T], x_0 \sim q(x_0), x_t \sim q(x_t \mid x_0)} \left[||s_\theta(x_t, t) - \nabla_{x_t} \log p(x_t)||^2_2 \right].\\
+&\approx \arg \min_\theta \mathbb{E}_{t\sim U[2, T], x_0 \sim q(x_0), x_t \sim q(x_t \mid x_0)} \left[||s_\theta(x_t, t) - \nabla_{x_t} \log p(x_t)||^2_2 \right].\\
 \end{aligned}
 $$
 
