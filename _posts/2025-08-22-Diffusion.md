@@ -359,7 +359,11 @@ Let us first define some notations that will be used in this section:
 - Let $d, \nabla, \nabla \cdot, \Delta$ are the differential, gradient, divergence, and Laplacian operators respectively.
 - Let $W_t$ be a standard Wiener process (Brownian motion).
 
-### 3.2. Discrete process to Continuous process
+### ODE
+
+### SDE
+
+### 3.2. Discrete Markov process to Continuous SDE process
 
 As we already defined, the forward diffusion process is a discrete-time Markov process:
 
@@ -395,3 +399,5 @@ x_{t+\Delta t} &\overset{(i)}{=} \sqrt{1 - \beta(t+\Delta t) \Delta t} x_{t} + \
 
 \end{aligned} 
 $$  
+
+### Conversion between ODE and SDE
