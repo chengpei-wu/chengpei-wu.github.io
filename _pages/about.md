@@ -71,3 +71,4 @@ You can find my full [CV here](https://chengpei-wu.github.io/files/english.pdf).
 - Generative Modeling: [Flow Matching Guide and Code](https://arxiv.org/abs/2412.06264), [An Introduction to Flow Matching and Diffusion Models](https://diffusion.csail.mit.edu/).
 - Computational Learning Theory: [Computational Learning Theory - University of Oxford](https://www.cs.ox.ac.uk/people/varun.kanade/teaching/CLT-MT2023/).
 - Robust Machine Learning: [Robustness in Machine Learning](https://jerryzli.github.io/robust-ml-fall19.html).
+- Deep Reinforcement Learning: [CS 224R - Stanford University](https://cs224r.stanford.edu)
