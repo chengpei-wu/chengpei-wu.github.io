@@ -354,16 +354,18 @@ $$
 
 ### 3.1. Notations
 
-Let us first define some notations that will be used in this section:
-- Let $X_t$ be a continuous-time random variable, where $t \in [0, 1]$.
-- Let $d, \nabla, \nabla \cdot, \Delta$ are the differential, gradient, divergence, and Laplacian operators respectively.
+Let us introduce some notations that will be used in this section:
+- Let $X_t$ be continuous-time random variables, where $t \in [0, 1]$.
+- $d, \nabla, \nabla \cdot, \Delta$ are the differential, gradient, divergence, and Laplacian operators respectively.
 - Let $W_t$ be a standard Wiener process (Brownian motion).
 
-### ODE
+### 3.2. Mathmatical Preliminaries
 
-### SDE
+#### 3.2.1. ODE
 
-### 3.2. Discrete Markov process to Continuous SDE process
+#### 3.2.2. SDE
+
+### 3.3. Discrete Markov Process to Continuous SDE Process
 
 As we already defined, the forward diffusion process is a discrete-time Markov process:
 
@@ -400,4 +402,4 @@ x_{t+\Delta t} &\overset{(i)}{=} \sqrt{1 - \beta(t+\Delta t) \Delta t} x_{t} + \
 \end{aligned} 
 $$  
 
-### Conversion between ODE and SDE
+### 3.4. Conversion between ODE and SDE
