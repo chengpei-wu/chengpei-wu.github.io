@@ -16,4 +16,4 @@ main:
     url: "/#educations"
 
   - title: "Posts"
-    url: "/post/"
+    url: "/#posts"

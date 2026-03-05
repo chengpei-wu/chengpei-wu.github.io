@@ -15,12 +15,13 @@ redirect_from:
 {% endif %}
 {% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %} -->
 
+<div class="about-main-section">
 <span class='anchor' id='about-me'></span>
 
 # About
 Hi, this is Wu-Chengpei, my research interests include machine learning and graph representation learning. Recently, my work has primarily focused on unsupervised graph representation learning, including topics such as graph contrastive learning. Previously, I explored deep learning methods for efficient and accurate robustness estimation in complex networks. In addition, I am also interested in robust machine learning, generative modeling, and large language models.
 
-You can find my full [CV here](https://chengpei-wu.github.io/files/english.pdf). I also maintain a [personal blog here](https://chengpei-wu.github.io/post/), where I write about topics related to machine learning.
+You can find my full [CV here](https://chengpei-wu.github.io/files/english.pdf). I also maintain a [personal blog here](https://chengpei-wu.github.io/#posts), where I write about topics related to machine learning.
 
 <span class='anchor' id='news'></span>
 # News
@@ -72,3 +73,29 @@ You can find my full [CV here](https://chengpei-wu.github.io/files/english.pdf).
 - Computational Learning Theory: [Computational Learning Theory - University of Oxford](https://www.cs.ox.ac.uk/people/varun.kanade/teaching/CLT-MT2023/).
 - Robust Machine Learning: [Robustness in Machine Learning](https://jerryzli.github.io/robust-ml-fall19.html).
 - Deep Reinforcement Learning: [CS 224R - Stanford University](https://cs224r.stanford.edu)
+</div>
+
+<div class="posts-only-section">
+<span class='anchor' id='posts'></span>
+
+<div class="posts-embedded">
+<h1>📝 My Blogs</h1>
+
+<div class="posts-controls-row">
+<input type="text" id="postsSearchInput" class="posts-search-input" placeholder="🔍 Search posts...">
+<select id="postsSortSelect" class="posts-sort-select" aria-label="Sort posts">
+<option value="newest">Newest First</option>
+<option value="oldest">Oldest First</option>
+</select>
+</div>
+
+<div id="postsStats" class="posts-stats" aria-live="polite"></div>
+
+<div class="posts-filter-tags" id="postsTagFilter"></div>
+
+<div id="postsPostList"></div>
+<div id="postsEmptyState" class="posts-empty-state">No posts found. Try clearing search or selecting "All".</div>
+
+<div class="posts-pagination" id="postsPagination"></div>
+</div>
+</div>
