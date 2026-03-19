@@ -25,13 +25,14 @@ You can find my full [CV here](https://chengpei-wu.github.io/files/english.pdf).
 
 <span class='anchor' id='news'></span>
 # News
-- [**08/2025**] one paper (co-authored) accepted by [IEEE Computational Intelligence Magazine](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=10207).
-- [**04/2025**] two papers (co-authored) accepted by [CVPR 2025](https://cvpr.thecvf.com/) and [IJCAI 2025](https://2025.ijcai.org/).
-- [**06/2024**] one paper accepted by [*IEEE Transactions on Cybernetics*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?reload=true&punumber=6221036).
-- [**10/2023**] I have been awarded the National Scholarship for Graduate Students by the Chinese Ministry of Education.
-- [**07/2023**] one paper accepted by [*IEEE Transactions on Circuits and Systems I: Regular
+- [**03/2026**] Awarded the [JST BOOST Fellowship](https://www.jst.go.jp/jisedai/boost-s/index.html) (Next-Generation AI Fellow) at Hiroshima University.
+- [**08/2025**] Paper (co-authored) accepted by [IEEE Computational Intelligence Magazine](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=10207).
+- [**04/2025**] Two papers (co-authored) accepted by [CVPR 2025](https://cvpr.thecvf.com/) and [IJCAI 2025](https://2025.ijcai.org/).
+- [**06/2024**] Paper accepted by [*IEEE Transactions on Cybernetics*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?reload=true&punumber=6221036).
+- [**10/2023**] Awarded the National Scholarship for Graduate Students by the Chinese Ministry of Education.
+- [**07/2023**] Paper accepted by [*IEEE Transactions on Circuits and Systems I: Regular
   Papers*](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=8919).
-- [**06/2023**] one paper accepted by [*IEEE International Conference on Systems, Man, and Cybernetics* (*SMC*) 2023](https://ieeesmc2023.org/).
+- [**06/2023**] Paper accepted by [*IEEE International Conference on Systems, Man, and Cybernetics* (*SMC*) 2023](https://ieeesmc2023.org/).
 
 <span class='anchor' id='publications'></span>
 # Selected Publications 
