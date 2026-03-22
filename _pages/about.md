@@ -19,9 +19,9 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 # About
-Hi, this is Wu-Chengpei, my research interests include machine learning and graph representation learning. Recently, my work has primarily focused on unsupervised graph representation learning, including topics such as graph contrastive learning. Previously, I explored deep learning methods for efficient and accurate robustness estimation in complex networks. In addition, I am also interested in robust machine learning, generative modeling, and large language models.
+Hi, this is Wu-Chengpei, I am pursuing my PhD at the Graduate School of Advanced Science and Engineering, Hiroshima University, under the supervision of [Yang Lou](https://fylou.github.io/index.html) and co-supervision of [Yi Yu](https://home.hiroshima-u.ac.jp/yiyu/index.html). My research interests include machine learning and graph representation learning. Recently, my work has primarily focused on unsupervised graph representation learning, including topics such as graph contrastive learning. Previously, I explored deep learning methods for efficient and accurate robustness estimation in complex networks. In addition, I am also interested in robust machine learning, generative modeling, and large language models.
 
-You can find my full [CV here](https://chengpei-wu.github.io/files/english.pdf). I also maintain a [personal blog here](https://chengpei-wu.github.io/#posts), where I write about topics related to machine learning.
+I also maintain a <a href="#posts" class="js-inline-posts-link">personal blog here</a>, where I write about topics related to machine learning.
 
 <span class='anchor' id='news'></span>
 # News
@@ -76,12 +76,11 @@ You can find my full [CV here](https://chengpei-wu.github.io/files/english.pdf).
 - Deep Reinforcement Learning: [CS 224R - Stanford University](https://cs224r.stanford.edu)
 </div>
 
-<div class="posts-only-section">
+<div class="posts-only-section" markdown="0">
 <span class='anchor' id='posts'></span>
 
 <div class="posts-embedded">
-<h1>📝 My Blogs</h1>
-
+<div class="posts-toolbar">
 <div class="posts-controls-row">
 <input type="text" id="postsSearchInput" class="posts-search-input" placeholder="🔍 Search posts...">
 <select id="postsSortSelect" class="posts-sort-select" aria-label="Sort posts">
@@ -93,6 +92,7 @@ You can find my full [CV here](https://chengpei-wu.github.io/files/english.pdf).
 <div id="postsStats" class="posts-stats" aria-live="polite"></div>
 
 <div class="posts-filter-tags" id="postsTagFilter"></div>
+</div>
 
 <div id="postsPostList"></div>
 <div id="postsEmptyState" class="posts-empty-state">No posts found. Try clearing search or selecting "All".</div>

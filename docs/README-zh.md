@@ -58,6 +58,11 @@ AcadHomepage
 1. 安装Jekyll的构建环境，包括`Ruby`、`RubyGems`、`GCC`和`Make`。可参考[该教程](https://jekyllrb.com/docs/installation/#requirements)。
 1. 运行 `bash run_server.sh` 来启动Jekyll实时重载服务器。
 1. 在浏览器里打开 [http://127.0.0.1:4000](http://127.0.0.1:4000)。如果你修改了网页的源码，服务器会自动重新编译并刷新页面。
+1. 博客写作建议使用目录约定：
+   1. 已完成并准备发布的文章放在`_posts/`。
+   1. 未写完的文章放在`_drafts/`，它们默认不会出现在主页的Posts列表中。
+   1. 如果你想在本地预览草稿，运行 `bash run_server.sh --drafts`。
+   1. 草稿写完后，再将文件移动到`_posts/`并按发布日期重命名，例如 `YYYY-MM-DD-title.md`。
 1. 当你修改完毕你的页面以后, 使用`git`命令，`commit`你的改动并`push`到你的github仓库中。
 
 # Acknowledges

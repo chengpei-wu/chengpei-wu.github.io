@@ -37,20 +37,24 @@
       : parseDate(b.date) - parseDate(a.date);
   }
 
-  function updateMastheadActive(isPostsView) {
-    document.querySelectorAll(".masthead .posts-nav-active").forEach((el) => {
-      el.classList.remove("posts-nav-active");
+  function updateMastheadActiveByHash(currentHash) {
+    document.querySelectorAll(".masthead .nav-active").forEach((el) => {
+      el.classList.remove("nav-active");
     });
 
-    if (!isPostsView) {
+    if (!currentHash) {
       return;
     }
 
-    document.querySelectorAll('.masthead a[href$="#posts"]').forEach((link) => {
-      link.classList.add("posts-nav-active");
+    document.querySelectorAll(".masthead a[href]").forEach((link) => {
+      const hash = extractLocalHash(link.getAttribute("href"));
+      if (hash !== currentHash) {
+        return;
+      }
+      link.classList.add("nav-active");
       const item = link.closest(".masthead__menu-item");
       if (item) {
-        item.classList.add("posts-nav-active");
+        item.classList.add("nav-active");
       }
     });
   }
@@ -59,7 +63,7 @@
     const hash = window.location.hash;
     const isPostsView = hash === "#posts";
     document.body.classList.toggle("posts-view", isPostsView);
-    updateMastheadActive(isPostsView);
+    updateMastheadActiveByHash(hash);
 
     if (hash) {
       const target = document.getElementById(hash.slice(1));
@@ -114,11 +118,37 @@
         if (!hash) {
           // Any non-hash masthead navigation should leave posts view.
           document.body.classList.remove("posts-view");
-          updateMastheadActive(false);
+          updateMastheadActiveByHash("");
           return;
         }
         event.preventDefault();
+        event.stopPropagation();
         history.pushState(null, "", hash);
+        syncViewWithHash();
+      },
+      true
+    );
+  }
+
+  function bindInlinePostsLink() {
+    document.addEventListener(
+      "click",
+      (event) => {
+        const origin = event.target && event.target.nodeType === 1
+          ? event.target
+          : event.target && event.target.parentElement
+            ? event.target.parentElement
+            : null;
+        if (!origin || !origin.closest) {
+          return;
+        }
+        const link = origin.closest("a.js-inline-posts-link[href]");
+        if (!link) {
+          return;
+        }
+        event.preventDefault();
+        event.stopPropagation();
+        history.pushState(null, "", "#posts");
         syncViewWithHash();
       },
       true
@@ -183,15 +213,36 @@
       </div>
     `).join("");
 
-    const totalPages = Math.ceil(filteredPosts.length / perPage);
-    pagination.innerHTML = "";
-    pagination.style.display = totalPages > 1 ? "block" : "none";
+    const totalPages = Math.max(1, Math.ceil(filteredPosts.length / perPage));
+    renderPaginationBar(pagination, totalPages);
+  }
+
+  function renderPaginationBar(container, totalPages) {
+    container.innerHTML = "";
+    container.style.display = "flex";
+
+    if (totalPages > 1) {
+      const prev = document.createElement("button");
+      prev.textContent = "Prev";
+      prev.disabled = currentPage <= 1;
+      prev.onclick = () => renderPage(currentPage - 1);
+      container.appendChild(prev);
+    }
+
     for (let i = 1; i <= totalPages; i++) {
       const btn = document.createElement("button");
       btn.textContent = i;
       btn.disabled = i === currentPage;
       btn.onclick = () => renderPage(i);
-      pagination.appendChild(btn);
+      container.appendChild(btn);
+    }
+
+    if (totalPages > 1) {
+      const next = document.createElement("button");
+      next.textContent = "Next";
+      next.disabled = currentPage >= totalPages;
+      next.onclick = () => renderPage(currentPage + 1);
+      container.appendChild(next);
     }
   }
 
@@ -201,10 +252,19 @@
     }
     const total = posts.length;
     const filtered = filteredPosts.length;
-    const tagLabel = currentTag === "All" ? "All tags" : `Tag: ${currentTag}`;
-    const queryLabel = currentQuery ? `Search: \"${currentQuery}\"` : "Search: none";
+    const totalPages = Math.max(1, Math.ceil(filtered / perPage));
     const sortLabel = currentSort === "oldest" ? "Oldest" : "Newest";
-    stats.textContent = `${filtered} / ${total} posts • ${tagLabel} • ${queryLabel} • Sort: ${sortLabel}`;
+    const parts = [`${filtered} of ${total} posts`, `${totalPages} page${totalPages > 1 ? "s" : ""}`, `${sortLabel} first`];
+
+    if (currentTag !== "All") {
+      parts.push(currentTag);
+    }
+
+    if (currentQuery) {
+      parts.push(`"${currentQuery}"`);
+    }
+
+    stats.textContent = parts.join(" · ");
   }
 
   function applyFiltersAndRender(page) {
@@ -276,11 +336,13 @@
   }
 
   window.addEventListener("hashchange", syncViewWithHash);
+  window.addEventListener("popstate", syncViewWithHash);
   window.addEventListener("pageshow", () => {
     syncViewWithHash();
   });
 
   bindMastheadHashSwitch();
+  bindInlinePostsLink();
   syncViewWithHash();
   if (hasPostsUI) {
     renderTags();
