@@ -49,6 +49,9 @@
 }
 
 .page__content {
+  max-width: 54rem;
+  color: $text-color;
+
   #about-me{
     margin-top: -10em;
       &:before { 
@@ -66,8 +69,131 @@
     border-bottom: 1px solid $border-color;
   }
 
+  .about-main-section > h2 {
+    margin-top: 2.4rem;
+    margin-bottom: 0.85rem;
+    padding-bottom: 0.55rem;
+    border-bottom: 1px solid $border-color;
+    font-size: 1.35rem;
+
+    &:first-of-type {
+      margin-top: 0.75rem;
+    }
+
+    &:before {
+      content: '';
+      display: block;
+      position: relative;
+      width: 0;
+      height: 2em;
+      margin-top: -2em;
+    }
+  }
+
+  .learning-status {
+    margin: 2.5rem 0 0;
+    padding: 1.35rem 1.45rem;
+    border: 1px solid $border-color;
+    border-left: 3px solid $primary-color;
+    border-radius: $border-radius;
+    background: #f8fafc;
+    box-shadow: none;
+  }
+
+  .learning-status__header {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .learning-status__indicator {
+    flex: 0 0 auto;
+    width: 0.65rem;
+    height: 0.65rem;
+    margin-top: 0.45rem;
+    border-radius: 50%;
+    background: $primary-color;
+    box-shadow: 0 0 0 4px mix(#fff, $primary-color, 78%);
+  }
+
+  .learning-status__eyebrow {
+    margin: 0 0 0.15rem;
+    color: $primary-color;
+    font-family: $sans-serif;
+    font-size: $type-size-7;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .learning-status h2 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: $type-size-3;
+  }
+
+  .learning-status__intro {
+    margin: 0.4rem 0 0;
+    color: #66727d;
+  }
+
+  .learning-status__topics {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+    margin: 1rem 0 0;
+    padding: 0;
+    list-style: none;
+
+    @include breakpoint($medium) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    li {
+      margin: 0;
+      padding: 0.85rem 0.95rem;
+      border: 1px solid $border-color;
+      border-radius: $border-radius;
+      background: #fff;
+    }
+
+    strong,
+    span {
+      display: block;
+    }
+
+    strong {
+      margin-bottom: 0.2rem;
+      color: #17212b;
+      font-family: $sans-serif;
+      font-size: $type-size-6;
+    }
+
+    span {
+      color: #66727d;
+      font-size: $type-size-7;
+      line-height: 1.5;
+    }
+  }
+
+  .homepage-end-divider {
+    width: min(72%, 34rem);
+    height: 1px;
+    margin: 3rem auto 1.5rem;
+    border: 0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      mix(#fff, $gray, 62%) 22%,
+      mix(#fff, $gray, 62%) 78%,
+      transparent
+    );
+  }
+
   p, li, dl {
     font-size: 1em;
+    line-height: 1.65;
   }
 
   /* paragraph indents */
@@ -85,9 +211,13 @@
 
   a {
     text-decoration: underline;
+    text-decoration-color: mix(#fff, $link-color, 45%);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.16em;
 
     &:hover {
       text-decoration: underline;
+      text-decoration-color: currentColor;
 
       img {
         box-shadow: 0 0 10px rgba(#000, 0.25);

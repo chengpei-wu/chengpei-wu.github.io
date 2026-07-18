@@ -5,9 +5,11 @@ date: 2025-08-11
 tag: [mathematics, statistics]
 author: Chengpei Wu
 excerpt: This post provides an overview of Hoeffding's Inequality and its proof.
+redirect_from:
+  - /Heoffding-Inequality/
 ---
 
-## 1. Overview of Heoffding Inequality
+## 1. Overview of Hoeffding Inequality
 
 The Hoeffding Inequality is a fundamental result in probability theory that **provides a bound on the sum (or average) of bounded independent random variables.** It is particularly useful in the fields of statistics and machine learning.
 
@@ -74,9 +76,9 @@ P(X \ge \epsilon) &= P\left ( e^{tX} \ge e^{t\epsilon} \right) \\
 \end{aligned}
 $$
 
-### 3.2. Heoffding lemma
+### 3.2. Hoeffding lemma
 
-**Heoffding Lemma**: Let $X$ be a bounded random variable with $\mathbb{E}[X] = 0$ and $a \leq X \leq b$, $a < b$.
+**Hoeffding Lemma**: Let $X$ be a bounded random variable with $\mathbb{E}[X] = 0$ and $a \leq X \leq b$, $a < b$.
 Then, for any $t > 0$, the following inequality holds:
 
 $$
