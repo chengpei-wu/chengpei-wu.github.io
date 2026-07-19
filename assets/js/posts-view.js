@@ -37,6 +37,11 @@
       : parseDate(b.date) - parseDate(a.date);
   }
 
+  function estimateReadingTime(content) {
+    const words = String(content || "").trim().split(/\s+/).filter(Boolean).length;
+    return Math.max(1, Math.ceil(words / 220));
+  }
+
   function updateMastheadActiveByHash(currentHash) {
     document.querySelectorAll(".masthead .nav-active").forEach((el) => {
       el.classList.remove("nav-active");
@@ -201,16 +206,20 @@
     const pagePosts = filteredPosts.slice(start, end);
 
     postList.innerHTML = pagePosts.map((post) => `
-      <div class="posts-post-item">
-        <a class="posts-post-title" href="${post.url}">${post.title}</a>
+      <article class="posts-post-item">
         <div class="posts-post-meta">
-          <span class="posts-post-date">${post.date}</span>
+          <time class="posts-post-date" datetime="${post.date}">${post.date}</time>
           <span class="posts-post-tags">
             ${(post.tags || []).map((t) => `<span>${t}</span>`).join(" ")}
           </span>
         </div>
+        <a class="posts-post-title" href="${post.url}" target="_self">${post.title}</a>
         <div class="posts-post-excerpt">${post.excerpt}</div>
-      </div>
+        <div class="posts-post-footer">
+          <span>${estimateReadingTime(post.content)} min read</span>
+          <span class="posts-post-read">Read note <span aria-hidden="true">→</span></span>
+        </div>
+      </article>
     `).join("");
 
     const totalPages = Math.max(1, Math.ceil(filteredPosts.length / perPage));

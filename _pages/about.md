@@ -22,7 +22,7 @@ redirect_from:
 ## About
 Hi, I'm Chengpei Wu. I am pursuing my Ph.D. at the Graduate School of Advanced Science and Engineering, Hiroshima University, under the supervision of [Yang Lou](https://fylou.github.io/index.html) and co-supervision of [Yi Yu](https://home.hiroshima-u.ac.jp/yiyu/index.html). My research interests include machine learning and graph representation learning. Recently, my work has primarily focused on unsupervised graph representation learning, including topics such as graph contrastive learning. Previously, I explored deep learning methods for efficient and accurate robustness estimation in complex networks. In addition, I am also interested in robust machine learning, generative modeling, and large language models.
 
-I also maintain a <a href="#posts" class="js-inline-posts-link">personal blog here</a>, where I write about topics related to machine learning.
+I also maintain a <a href="/blog/">personal research blog</a>, where I write about topics related to machine learning.
 
 ## News
 - [**03/2026**] Awarded the [JST BOOST Fellowship](https://www.jst.go.jp/jisedai/boost-s/index.html) (Next-Generation AI Fellow) at Hiroshima University.

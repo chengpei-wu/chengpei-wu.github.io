@@ -1,0 +1,53 @@
+---
+layout: default
+title: "Research Notes"
+permalink: /blog/
+author_profile: false
+body_class: blog-page
+description: "Research notes by Chengpei Wu on machine learning, statistical learning theory, generative modeling, and related topics."
+---
+
+<div class="blog-landing">
+  <header class="blog-site-header">
+    <a class="blog-brand" href="{{ '/blog/' | relative_url }}" target="_self" aria-label="CW Research Notes home">
+      <span class="blog-brand__mark" aria-hidden="true">CW</span>
+      <span class="blog-brand__text">
+        <strong>Research Notes</strong>
+        <small>by Chengpei Wu</small>
+      </span>
+    </a>
+    <nav class="blog-site-nav" aria-label="Blog navigation">
+      <a href="{{ '/' | relative_url }}" target="_self">Homepage</a>
+    </nav>
+  </header>
+
+  <section class="blog-hero" aria-labelledby="blog-title">
+    <h1 id="blog-title">Research Notes</h1>
+    <p class="blog-hero__intro">Notes on machine learning, mathematics, and topics I am currently studying.</p>
+  </section>
+
+  <section class="posts-embedded" aria-labelledby="all-notes-title">
+    <div class="blog-section-heading">
+      <div>
+        <h2 id="all-notes-title">Notes</h2>
+      </div>
+    </div>
+
+    <div class="posts-toolbar">
+      <div class="posts-controls-row">
+        <input type="search" id="postsSearchInput" class="posts-search-input" placeholder="Search notes..." aria-label="Search research notes">
+        <select id="postsSortSelect" class="posts-sort-select" aria-label="Sort research notes">
+          <option value="newest">Newest First</option>
+          <option value="oldest">Oldest First</option>
+        </select>
+      </div>
+      <div id="postsStats" class="posts-stats" aria-live="polite"></div>
+      <div class="posts-filter-tags" id="postsTagFilter" aria-label="Filter by topic"></div>
+    </div>
+
+    <div id="postsPostList" class="posts-list"></div>
+    <div id="postsEmptyState" class="posts-empty-state">No notes found. Try clearing the search or selecting “All”.</div>
+    <div class="posts-pagination" id="postsPagination"></div>
+  </section>
+
+</div>

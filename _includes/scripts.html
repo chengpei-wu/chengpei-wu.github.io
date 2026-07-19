@@ -1,6 +1,6 @@
-<script src="assets/js/main.min.js"></script>
-<script src="assets/js/navigation-accessibility.js"></script>
-{% if page.url == "/" %}
+<script src="{{ '/assets/js/main.min.js' | relative_url }}"></script>
+<script src="{{ '/assets/js/navigation-accessibility.js' | relative_url }}"></script>
+{% if page.url == "/blog/" %}
   <script src="https://cdn.jsdelivr.net/npm/lunr/lunr.min.js"></script>
   <script>
     window.homePostsData = [
@@ -16,7 +16,7 @@
       {% endfor %}
     ];
   </script>
-  <script src="assets/js/posts-view.js"></script>
+  <script src="{{ '/assets/js/posts-view.js' | relative_url }}"></script>
 {% endif %}
 
 {% include analytics.html %}

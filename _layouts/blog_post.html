@@ -37,6 +37,44 @@
       background-color: #fefefe;
       color: #111;
       line-height: 1.7;
+      display: block;
+    }
+
+    .blog-post-brand {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    .blog-post-brand a {
+      color: #111;
+      text-decoration: none;
+    }
+    .blog-post-brand__identity {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.7rem;
+      font-weight: 600;
+    }
+    .blog-post-brand__mark {
+      display: inline-grid;
+      width: 2.2rem;
+      height: 2.2rem;
+      place-items: center;
+      border-radius: 6px;
+      background: #245c8f;
+      color: #fff;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+    }
+    .blog-post-brand__home {
+      color: #2563eb !important;
+      font-size: 0.9rem;
+    }
+    .blog-post-shell {
       display: flex;
     }
 
@@ -164,7 +202,7 @@
     }
 
     @media (max-width: 768px) {
-      body { flex-direction: column; }
+      .blog-post-shell { flex-direction: column; }
       .sidebar { width: 100%; position: static; padding-right: 0; }
       .main-content { max-width: 100%; }
     }
@@ -172,11 +210,21 @@
 </head>
 <body>
 
+  <header class="blog-post-brand">
+    <a class="blog-post-brand__identity" href="/blog/">
+      <span class="blog-post-brand__mark" aria-hidden="true">CW</span>
+      <span>Research Notes</span>
+    </a>
+    <a class="blog-post-brand__home" href="/">Academic Homepage</a>
+  </header>
+
+  <div class="blog-post-shell">
+
   <!-- 左侧目录 -->
   <div class="sidebar">
-    <a class="return-link" href="/#posts">← Back to Posts</a>
+    <a class="return-link" href="/blog/">&larr; Back to Research Notes</a>
     <div class="toc" id="toc">
-      <h2>📑 Table of Contents</h2>
+      <h2>Table of Contents</h2>
       <ul id="toc-list"></ul>
     </div>
   </div>
@@ -203,6 +251,7 @@
       crossorigin="anonymous"
       async>
     </script>
+  </div>
   </div>
 
   <!-- 动态生成目录 -->
