@@ -9,40 +9,38 @@ description: "Research notes by Chengpei Wu on machine learning, statistical lea
 
 <div class="blog-landing">
   <header class="blog-site-header">
-    <a class="blog-brand" href="{{ '/blog/' | relative_url }}" target="_self" aria-label="CW Research Notes home">
-      <span class="blog-brand__mark" aria-hidden="true">CW</span>
+    <a class="blog-brand" href="{{ '/blog/' | relative_url }}" target="_self" aria-label="Blogs home">
       <span class="blog-brand__text">
-        <strong>Research Notes</strong>
+        <strong>Blogs</strong>
         <small>by Chengpei Wu</small>
       </span>
     </a>
     <nav class="blog-site-nav" aria-label="Blog navigation">
+      {% include theme-toggle.html %}
       <a href="{{ '/' | relative_url }}" target="_self">Homepage</a>
     </nav>
   </header>
 
-  <section class="blog-hero" aria-labelledby="blog-title">
-    <h1 id="blog-title">Research Notes</h1>
-    <p class="blog-hero__intro">Notes on machine learning, mathematics, and topics I am currently studying.</p>
-  </section>
-
-  <section class="posts-embedded" aria-labelledby="all-notes-title">
-    <div class="blog-section-heading">
-      <div>
-        <h2 id="all-notes-title">Notes</h2>
-      </div>
-    </div>
-
+  <section class="posts-embedded" aria-label="Research notes">
     <div class="posts-toolbar">
       <div class="posts-controls-row">
-        <input type="search" id="postsSearchInput" class="posts-search-input" placeholder="Search notes..." aria-label="Search research notes">
-        <select id="postsSortSelect" class="posts-sort-select" aria-label="Sort research notes">
-          <option value="newest">Newest First</option>
-          <option value="oldest">Oldest First</option>
-        </select>
+        <label class="posts-control posts-control--search" for="postsSearchInput">
+          <span class="posts-control__label">Search</span>
+          <input type="search" id="postsSearchInput" class="posts-search-input" placeholder="Title, topic, or keyword">
+        </label>
+        <label class="posts-control posts-control--sort" for="postsSortSelect">
+          <span class="posts-control__label">Sort by</span>
+          <select id="postsSortSelect" class="posts-sort-select">
+            <option value="newest">Newest first</option>
+            <option value="oldest">Oldest first</option>
+          </select>
+        </label>
       </div>
       <div id="postsStats" class="posts-stats" aria-live="polite"></div>
-      <div class="posts-filter-tags" id="postsTagFilter" aria-label="Filter by topic"></div>
+      <div class="posts-filter-group">
+        <span class="posts-filter-label">Topics</span>
+        <div class="posts-filter-tags" id="postsTagFilter" aria-label="Filter by topic"></div>
+      </div>
     </div>
 
     <div id="postsPostList" class="posts-list"></div>

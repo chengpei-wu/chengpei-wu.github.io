@@ -1,0 +1,322 @@
+/* Shared light/dark theme controls */
+.site-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.32rem 0.58rem;
+  border: 1px solid #dce2e7;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.76);
+  color: #52606c;
+  font: inherit;
+  font-size: 0.76rem;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+}
+
+.site-theme-toggle:hover {
+  border-color: #9db6cc;
+  background: #fff;
+  color: #2563eb;
+}
+
+.site-theme-toggle:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.18);
+  outline-offset: 2px;
+}
+
+.masthead__menu {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.masthead__menu .greedy-nav {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.masthead__theme {
+  flex: 0 0 auto;
+}
+
+html[data-theme="dark"] {
+  background: #0f1419;
+  color-scheme: dark;
+}
+
+html[data-theme="dark"] body {
+  background: #0f1419;
+  color: #dce3e9;
+}
+
+html[data-theme="dark"] h1,
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3,
+html[data-theme="dark"] h4,
+html[data-theme="dark"] h5,
+html[data-theme="dark"] h6,
+html[data-theme="dark"] .page__content,
+html[data-theme="dark"] .sidebar .author__name {
+  color: #e7edf2;
+}
+
+html[data-theme="dark"] a,
+html[data-theme="dark"] a:visited {
+  color: #78b7f0;
+}
+
+html[data-theme="dark"] .masthead {
+  border-bottom-color: #2b343d;
+  background: #141a20;
+}
+
+html[data-theme="dark"] .greedy-nav {
+  background: #141a20;
+}
+
+html[data-theme="dark"] .greedy-nav a {
+  color: #c4ced7;
+}
+
+html[data-theme="dark"] .greedy-nav a:hover {
+  color: #78b7f0;
+}
+
+html[data-theme="dark"] .greedy-nav .hidden-links,
+html[data-theme="dark"] .author__urls {
+  border-color: #2b343d;
+  background: #171d24;
+  color: #dce3e9;
+}
+
+html[data-theme="dark"] .site-theme-toggle {
+  border-color: #34404a;
+  background: #171d24;
+  color: #b9c4ce;
+}
+
+html[data-theme="dark"] .site-theme-toggle:hover {
+  border-color: #52708a;
+  background: #1b232b;
+  color: #78b7f0;
+}
+
+html[data-theme="dark"] .author__bio,
+html[data-theme="dark"] .page__content .learning-status__intro,
+html[data-theme="dark"] .page__content .learning-status__topics span {
+  color: #aab6c0;
+}
+
+html[data-theme="dark"] .author__avatar img,
+html[data-theme="dark"] .page__content .about-main-section > h2,
+html[data-theme="dark"] hr {
+  border-color: #2b343d;
+}
+
+html[data-theme="dark"] .page__content .learning-status {
+  border-color: #2b343d;
+  border-left-color: #528fc3;
+  background: #141a20;
+}
+
+html[data-theme="dark"] .page__content .learning-status__topics li {
+  border-color: #2b343d;
+  background: #171d24;
+}
+
+html[data-theme="dark"] .page__content .learning-status__topics strong {
+  color: #dce3e9;
+}
+
+html[data-theme="dark"] code,
+html[data-theme="dark"] pre {
+  border-color: #2b343d;
+  background: #10161c;
+  color: #dce3e9;
+}
+
+html[data-theme="dark"] .posts-embedded {
+  background: transparent;
+  color: #dce3e9;
+}
+
+html[data-theme="dark"] .posts-toolbar {
+  border-color: #2b343d;
+  background: linear-gradient(180deg, #171d24 0%, #141a20 100%);
+}
+
+html[data-theme="dark"] .posts-search-input,
+html[data-theme="dark"] .posts-sort-select {
+  border-color: #34404a;
+  background: #10161c;
+  color: #dce3e9;
+}
+
+html[data-theme="dark"] .posts-stats {
+  color: #93a0ab;
+}
+
+html[data-theme="dark"] .posts-filter-tags button,
+html[data-theme="dark"] .posts-filter-tags span {
+  border-color: #34404a;
+  background: #171d24;
+  color: #b6c1ca;
+}
+
+html[data-theme="dark"] .posts-filter-tags button.active,
+html[data-theme="dark"] .posts-filter-tags span.active {
+  border-color: #528fc3;
+  background: #356f9f;
+  color: #fff;
+}
+
+html[data-theme="dark"] .posts-post-item {
+  border-color: #2b343d;
+  background: #171d24;
+}
+
+html[data-theme="dark"] .posts-post-item:hover {
+  border-color: #3a4650;
+  background: #1a2128;
+}
+
+html[data-theme="dark"] .posts-post-title {
+  color: #e7edf2;
+}
+
+html[data-theme="dark"] .posts-post-excerpt,
+html[data-theme="dark"] .posts-post-date,
+html[data-theme="dark"] .posts-post-tags span {
+  color: #aab6c0;
+}
+
+html[data-theme="dark"] .posts-post-tags span {
+  background: #1a2128;
+}
+
+html[data-theme="dark"] .posts-empty-state {
+  border-color: #3a4650;
+  color: #aab6c0;
+}
+
+/* Blog listing */
+html[data-theme="dark"] body.blog-page,
+html[data-theme="dark"] .blog-landing {
+  background: #0f1419;
+  color: #dce3e9;
+}
+
+html[data-theme="dark"] .blog-site-header {
+  border-bottom-color: #2b343d;
+}
+
+html[data-theme="dark"] .blog-brand,
+html[data-theme="dark"] .blog-site-nav a {
+  color: #e7edf2 !important;
+}
+
+html[data-theme="dark"] .blog-site-nav a:hover {
+  color: #78b7f0 !important;
+}
+
+html[data-theme="dark"] .blog-page .posts-toolbar {
+  border-color: #2b343d;
+  background: linear-gradient(145deg, #171d24 0%, #141a20 100%);
+  box-shadow: 0 0.3rem 1.2rem rgba(0, 0, 0, 0.12);
+}
+
+html[data-theme="dark"] .blog-page .posts-control__label,
+html[data-theme="dark"] .blog-page .posts-filter-label {
+  color: #aab6c0;
+}
+
+html[data-theme="dark"] .blog-page .posts-search-input,
+html[data-theme="dark"] .blog-page .posts-sort-select {
+  border-color: #34404a;
+  background: #10161c;
+  color: #dce3e9;
+}
+
+html[data-theme="dark"] .blog-page .posts-search-input::placeholder {
+  color: #74818d;
+}
+
+html[data-theme="dark"] .blog-page .posts-stats {
+  border-bottom-color: #2b343d;
+  color: #93a0ab;
+}
+
+html[data-theme="dark"] .blog-page .posts-filter-tags button,
+html[data-theme="dark"] .blog-page .posts-filter-tags span {
+  border-color: #34404a;
+  background: #171d24;
+  color: #b6c1ca;
+}
+
+html[data-theme="dark"] .blog-page .posts-filter-tags button:hover,
+html[data-theme="dark"] .blog-page .posts-filter-tags span:hover {
+  border-color: #52708a;
+  background: #1b232b;
+  color: #78b7f0;
+}
+
+html[data-theme="dark"] .blog-page .posts-filter-tags button.active,
+html[data-theme="dark"] .blog-page .posts-filter-tags span.active {
+  border-color: #528fc3;
+  background: #356f9f;
+  color: #fff;
+}
+
+html[data-theme="dark"] .blog-page .posts-post-item {
+  border-bottom-color: #2b343d;
+  background: transparent;
+}
+
+html[data-theme="dark"] .blog-page .posts-post-item:hover {
+  border-bottom-color: #3a4650;
+  background: #141a20;
+}
+
+html[data-theme="dark"] .blog-page .posts-post-title {
+  color: #e7edf2;
+}
+
+html[data-theme="dark"] .blog-page .posts-post-title:hover {
+  color: #78b7f0;
+}
+
+html[data-theme="dark"] .blog-page .posts-post-excerpt,
+html[data-theme="dark"] .blog-page .posts-post-tags span,
+html[data-theme="dark"] .blog-page .posts-post-date,
+html[data-theme="dark"] .blog-page .posts-post-footer {
+  color: #aab6c0;
+}
+
+html[data-theme="dark"] .blog-page .posts-post-tags span {
+  border-color: #303b45;
+  background: #171d24;
+}
+
+html[data-theme="dark"] .blog-page .posts-pagination button {
+  border-color: #34404a;
+  background: #171d24;
+  color: #78b7f0;
+}
+
+html[data-theme="dark"] .blog-page .posts-pagination button:disabled {
+  border-color: #528fc3;
+  background: #356f9f;
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  .site-theme-toggle [data-theme-label] {
+    display: none;
+  }
+  .site-theme-toggle {
+    padding: 0.4rem;
+  }
+}

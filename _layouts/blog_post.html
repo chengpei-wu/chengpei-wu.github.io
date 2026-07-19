@@ -26,16 +26,37 @@
   };
   </script>
   <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+  <script>
+    (function () {
+      const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      let preference = 'auto';
+      try {
+        const saved = localStorage.getItem('blog-theme-preference');
+        if (saved === 'light' || saved === 'dark') preference = saved;
+      } catch (error) {}
+      document.documentElement.dataset.themePreference = preference;
+      document.documentElement.dataset.theme = preference === 'auto'
+        ? (systemDark ? 'dark' : 'light')
+        : preference;
+    })();
+  </script>
 
   <style>
+    html {
+      background-color: #f4f6f8;
+    }
+
     body {
+      box-sizing: border-box;
       font-family: 'STIX Two Text', serif;
-      font-size: 16px; /* 字号缩小 */
-      max-width: 1100px;
-      margin: 2rem auto;
-      padding: 1rem;
-      background-color: #fefefe;
-      color: #111;
+      font-size: 16px;
+      width: 100%;
+      max-width: 1240px;
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: 1.5rem 2rem 3rem;
+      background: transparent;
+      color: #17212b;
       line-height: 1.7;
       display: block;
     }
@@ -45,13 +66,17 @@
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
-      margin-bottom: 2rem;
+      margin-bottom: 2.25rem;
       padding-bottom: 1rem;
       border-bottom: 1px solid #e5e5e5;
     }
     .blog-post-brand a {
       color: #111;
       text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .blog-post-brand a:hover {
+      color: #2563eb !important;
     }
     .blog-post-brand__identity {
       display: inline-flex;
@@ -59,34 +84,75 @@
       gap: 0.7rem;
       font-weight: 600;
     }
-    .blog-post-brand__mark {
-      display: inline-grid;
-      width: 2.2rem;
-      height: 2.2rem;
-      place-items: center;
-      border-radius: 6px;
-      background: #245c8f;
-      color: #fff;
-      font-size: 0.78rem;
-      letter-spacing: 0.04em;
-    }
     .blog-post-brand__home {
-      color: #2563eb !important;
-      font-size: 0.9rem;
+      color: #111 !important;
+      font-size: inherit;
+      font-weight: 600;
+    }
+    .blog-post-brand__actions {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .theme-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.3rem 0.55rem;
+      border: 1px solid #dce2e7;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.7);
+      color: #52606c;
+      font: inherit;
+      font-size: 0.76rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
+    }
+    .theme-toggle:hover {
+      border-color: #9db6cc;
+      background: #fff;
+      color: #2563eb;
+    }
+    .theme-toggle:focus-visible {
+      outline: 3px solid rgba(37, 99, 235, 0.18);
+      outline-offset: 2px;
     }
     .blog-post-shell {
-      display: flex;
+      display: grid;
+      grid-template-columns: minmax(13rem, 15rem) minmax(0, 51rem);
+      gap: 2.5rem;
+      align-items: start;
+      justify-content: center;
     }
 
     /* 数学公式容器 - 避免超出宽度 */
     mjx-container {
-      overflow-x: auto;
-      overflow-y: hidden;
+      box-sizing: border-box;
+      min-width: 0 !important;
+      width: 100% !important;
       max-width: 100%;
-      /* padding: 0.25rem 0.5rem; */
     }
     mjx-container[display="true"] {
-      margin: 1rem auto;
+      display: block !important;
+      margin: 1.25rem 0;
+      padding: 0.25rem 0 0.55rem;
+      overflow-x: auto !important;
+      overflow-y: hidden;
+      overscroll-behavior-x: contain;
+      scrollbar-color: #c4cdd5 transparent;
+      scrollbar-width: thin;
+      -webkit-overflow-scrolling: touch;
+    }
+    mjx-container[display="true"] > svg {
+      max-width: none !important;
+    }
+    mjx-container[display="true"]::-webkit-scrollbar {
+      height: 6px;
+    }
+    mjx-container[display="true"]::-webkit-scrollbar-thumb {
+      border-radius: 999px;
+      background: #c4cdd5;
     }
 
     /* 标题 */
@@ -109,18 +175,24 @@
 
     /* 左侧目录 */
     .sidebar {
-      width: 260px;
-      padding-right: 2rem;
+      width: auto;
+      min-width: 0;
       position: sticky;
-      top: 2rem;
+      top: 1.5rem;
       align-self: flex-start;
     }
     .toc {
-      border: 1px solid #e5e5e5;
-      padding: 1rem 1.2rem;
-      background: #fafafa;
-      border-radius: 6px;
-      font-size: 0.95rem;
+      box-sizing: border-box;
+      max-height: calc(100vh - 3rem);
+      margin: 0;
+      padding: 1.15rem 1.2rem 1.25rem;
+      overflow-y: auto;
+      border: 1px solid #e1e6ea;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 4px 18px rgba(23, 33, 43, 0.035);
+      font-size: 0.92rem;
+      scrollbar-width: thin;
     }
     .toc h2 {
       margin-top: 0;
@@ -131,6 +203,12 @@
       list-style-type: none;
       padding-left: 0;
       margin: 0;
+    }
+    .toc ul ul {
+      padding-left: 1rem;
+    }
+    .toc ul ul ul {
+      padding-left: 0.85rem;
     }
     .toc li {
       margin: 0.4rem 0;
@@ -153,30 +231,30 @@
       border-left-color: #b33;
     }
 
-    /* 返回链接 */
-    .return-link {
-      display: inline-block;
-      margin-bottom: 1rem;
-      color: #2563eb;
-      text-decoration: none;
-      font-size: 0.95rem;
-    }
-    .return-link:hover {
-      text-decoration: underline;
-    }
-
     /* 右侧内容 */
     .main-content {
-      flex: 1;
-      max-width: 800px;
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 51rem;
+      padding: 2.6rem 3rem 3.25rem;
+      border: 1px solid #e1e6ea;
+      border-radius: 12px;
+      background: #fff;
+      box-shadow: 0 8px 28px rgba(23, 33, 43, 0.045);
     }
 
     .post-header h1 {
+      margin-top: 0;
       margin-bottom: 0.4rem;
     }
     .post-date {
       font-size: 0.85rem;
       color: #777;
+    }
+
+    article {
+      font-size: 1.04rem;
+      line-height: 1.78;
     }
 
     /* 代码块 */
@@ -202,9 +280,105 @@
     }
 
     @media (max-width: 768px) {
-      .blog-post-shell { flex-direction: column; }
-      .sidebar { width: 100%; position: static; padding-right: 0; }
-      .main-content { max-width: 100%; }
+      html {
+        background: #fff;
+      }
+      body {
+        padding: 1rem;
+      }
+      .blog-post-brand {
+        margin-bottom: 1.5rem;
+      }
+      .blog-post-shell {
+        display: block;
+      }
+      .sidebar {
+        width: 100%;
+        position: static;
+        padding: 0;
+      }
+      .toc {
+        max-height: none;
+        margin: 0 0 1.5rem;
+        box-shadow: none;
+      }
+      .main-content {
+        max-width: 100%;
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+      }
+    }
+
+    html[data-theme="dark"] {
+      background: #0f1419;
+      color-scheme: dark;
+    }
+    html[data-theme="dark"] body {
+      color: #dce3e9;
+    }
+    html[data-theme="dark"] .blog-post-brand {
+      border-bottom-color: #2b343d;
+    }
+    html[data-theme="dark"] .blog-post-brand a,
+    html[data-theme="dark"] .blog-post-brand__home {
+      color: #e7edf2 !important;
+    }
+    html[data-theme="dark"] .theme-toggle {
+      border-color: #34404a;
+      background: rgba(23, 29, 36, 0.85);
+      color: #b9c4ce;
+    }
+    html[data-theme="dark"] .theme-toggle:hover {
+      border-color: #52708a;
+      background: #1b232b;
+      color: #78b7f0;
+    }
+    html[data-theme="dark"] .toc,
+    html[data-theme="dark"] .main-content {
+      border-color: #2a343d;
+      background: #171d24;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.16);
+    }
+    html[data-theme="dark"] .toc li a {
+      color: #b7c1ca;
+    }
+    html[data-theme="dark"] .toc li a:hover {
+      color: #78b7f0;
+      border-left-color: #78b7f0;
+    }
+    html[data-theme="dark"] .toc li a.active {
+      color: #ff718b;
+      border-left-color: #ff718b;
+    }
+    html[data-theme="dark"] .post-date {
+      color: #99a6b2;
+    }
+    html[data-theme="dark"] h4 {
+      color: #bdc7cf;
+    }
+    html[data-theme="dark"] article strong,
+    html[data-theme="dark"] article b {
+      color: #ff718b;
+    }
+    html[data-theme="dark"] pre,
+    html[data-theme="dark"] code {
+      background: #10161c;
+      color: #dce3e9;
+    }
+    html[data-theme="dark"] mjx-container[display="true"] {
+      scrollbar-color: #53616d transparent;
+    }
+    html[data-theme="dark"] mjx-container[display="true"]::-webkit-scrollbar-thumb {
+      background: #53616d;
+    }
+
+    @media (max-width: 768px) {
+      html[data-theme="dark"] .main-content {
+        background: transparent;
+        box-shadow: none;
+      }
     }
   </style>
 </head>
@@ -212,17 +386,21 @@
 
   <header class="blog-post-brand">
     <a class="blog-post-brand__identity" href="/blog/">
-      <span class="blog-post-brand__mark" aria-hidden="true">CW</span>
-      <span>Research Notes</span>
+      <span>Blogs</span>
     </a>
-    <a class="blog-post-brand__home" href="/">Academic Homepage</a>
+    <div class="blog-post-brand__actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Theme: Auto" title="Change color theme">
+        <span id="themeIcon" aria-hidden="true">◐</span>
+        <span id="themeLabel">Auto</span>
+      </button>
+      <a class="blog-post-brand__home" href="/">Homepage</a>
+    </div>
   </header>
 
   <div class="blog-post-shell">
 
   <!-- 左侧目录 -->
   <div class="sidebar">
-    <a class="return-link" href="/blog/">&larr; Back to Research Notes</a>
     <div class="toc" id="toc">
       <h2>Table of Contents</h2>
       <ul id="toc-list"></ul>
@@ -253,6 +431,83 @@
     </script>
   </div>
   </div>
+
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const toggle = document.getElementById('themeToggle');
+      const icon = document.getElementById('themeIcon');
+      const label = document.getElementById('themeLabel');
+      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)');
+      const preferences = ['auto', 'dark', 'light'];
+      const themeDetails = {
+        auto: { icon: '◐', label: 'Auto' },
+        dark: { icon: '☾', label: 'Dark' },
+        light: { icon: '☀', label: 'Light' }
+      };
+      let preference = root.dataset.themePreference || 'auto';
+
+      function resolvedTheme() {
+        return preference === 'auto'
+          ? (systemTheme.matches ? 'dark' : 'light')
+          : preference;
+      }
+
+      function syncComments(theme) {
+        const comments = document.querySelector('.utterances-frame');
+        if (!comments) return;
+        comments.contentWindow.postMessage({
+          type: 'set-theme',
+          theme: theme === 'dark' ? 'github-dark' : 'github-light'
+        }, 'https://utteranc.es');
+      }
+
+      function applyTheme(shouldPersist) {
+        const theme = resolvedTheme();
+        const details = themeDetails[preference];
+        root.dataset.theme = theme;
+        root.dataset.themePreference = preference;
+        icon.textContent = details.icon;
+        label.textContent = details.label;
+        toggle.setAttribute('aria-label', `Theme: ${details.label}`);
+
+        if (shouldPersist) {
+          try {
+            if (preference === 'auto') {
+              localStorage.removeItem('blog-theme-preference');
+            } else {
+              localStorage.setItem('blog-theme-preference', preference);
+            }
+          } catch (error) {}
+        }
+        syncComments(theme);
+      }
+
+      toggle.addEventListener('click', function () {
+        const currentIndex = preferences.indexOf(preference);
+        preference = preferences[(currentIndex + 1) % preferences.length];
+        applyTheme(true);
+      });
+
+      const handleSystemThemeChange = function () {
+        if (preference === 'auto') applyTheme(false);
+      };
+      if (systemTheme.addEventListener) {
+        systemTheme.addEventListener('change', handleSystemThemeChange);
+      } else {
+        systemTheme.addListener(handleSystemThemeChange);
+      }
+
+      const commentsObserver = new MutationObserver(function () {
+        if (document.querySelector('.utterances-frame')) {
+          syncComments(resolvedTheme());
+          commentsObserver.disconnect();
+        }
+      });
+      commentsObserver.observe(document.body, { childList: true, subtree: true });
+      applyTheme(false);
+    })();
+  </script>
 
   <!-- 动态生成目录 -->
   <script>

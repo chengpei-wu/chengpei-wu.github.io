@@ -62,7 +62,7 @@ I also maintain a <a href="/blog/">personal research blog</a>, where I write abo
 
 Reviewer for:
 
-- [IEEE Transactions on Multimedia](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6046)
+- [IEEE Transactions on Multimedia (TMM)](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6046)
 - [IEEE Transactions on Neural Networks and Learning Systems (TNNLS)](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=5962385)
 - [IEEE Transactions on Cybernetics (TCYB)](https://ieeexplore.ieee.org/xpl/RecentIssue.jsp?punumber=6221036)
 - [Reliability Engineering and System Safety (RESS)](https://www.journals.elsevier.com/reliability-engineering-and-system-safety)
@@ -72,9 +72,7 @@ Reviewer for:
   <div class="learning-status__header">
     <span class="learning-status__indicator" aria-hidden="true"></span>
     <div>
-      <p class="learning-status__eyebrow">Learning status</p>
-      <h2 id="learning-status-title">Currently Exploring</h2>
-      <p class="learning-status__intro">Topics and resources I am actively studying.</p>
+      <p class="learning-status__eyebrow">Currently Exploring</p>
     </div>
   </div>
   <ul class="learning-status__topics">
@@ -82,7 +80,7 @@ Reviewer for:
     <li><strong>Generative Modeling</strong><span><a href="https://arxiv.org/abs/2412.06264">Flow Matching Guide and Code</a> · <a href="https://diffusion.csail.mit.edu/">Introduction to Flow Matching and Diffusion Models</a></span></li>
     <li><strong>Statistical Learning Theory</strong><span><a href="https://www.cs.ox.ac.uk/people/varun.kanade/teaching/CLT-MT2023/">Computational Learning Theory [University of Oxford]</a> · <a href="https://epubs.siam.org/doi/full/10.1137/25M1807617">Modern Machine Learning Methods: Implicit Bias, Benign Overfitting, and Unstable Optimization</a></span></li>
     <li><strong>Robust Machine Learning</strong><span><a href="https://jerryzli.github.io/robust-ml-fall19.html">Robustness in Machine Learning</a></span></li>
-    <li><strong>Deep Reinforcement Learning</strong><span><a href="https://cs224r.stanford.edu">Stanford CS 224R</a></span></li>
+    <li><strong>Deep Reinforcement Learning</strong><span><a href="https://cs224r.stanford.edu">CS 224R [Stanford University] </a></span></li>
   </ul>
 </section>
 

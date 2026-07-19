@@ -169,7 +169,8 @@
 
     tagFilter.innerHTML = "";
 
-    const all = document.createElement("span");
+    const all = document.createElement("button");
+    all.type = "button";
     all.textContent = "All";
     all.onclick = () => {
       currentTag = "All";
@@ -182,7 +183,8 @@
     tagFilter.appendChild(all);
 
     [...tags].sort().forEach((tag) => {
-      const el = document.createElement("span");
+      const el = document.createElement("button");
+      el.type = "button";
       el.textContent = tag;
       el.onclick = () => {
         currentTag = tag;
@@ -217,7 +219,6 @@
         <div class="posts-post-excerpt">${post.excerpt}</div>
         <div class="posts-post-footer">
           <span>${estimateReadingTime(post.content)} min read</span>
-          <span class="posts-post-read">Read note <span aria-hidden="true">→</span></span>
         </div>
       </article>
     `).join("");

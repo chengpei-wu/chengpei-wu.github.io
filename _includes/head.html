@@ -8,6 +8,18 @@
 
 <script>
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  (function () {
+    const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    let preference = 'auto';
+    try {
+      const saved = localStorage.getItem('blog-theme-preference');
+      if (saved === 'light' || saved === 'dark') preference = saved;
+    } catch (error) {}
+    document.documentElement.dataset.themePreference = preference;
+    document.documentElement.dataset.theme = preference === 'auto'
+      ? (systemDark ? 'dark' : 'light')
+      : preference;
+  })();
 </script>
 
 <!-- For all browsers -->
