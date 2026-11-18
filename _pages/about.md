@@ -20,7 +20,7 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 ## About
-Hi, I'm Chengpei Wu. I am pursuing my Ph.D. at the Graduate School of Advanced Science and Engineering, Hiroshima University, under the supervision of [Yang Lou](https://fylou.github.io/index.html) and co-supervision of [Yi Yu](https://home.hiroshima-u.ac.jp/yiyu/index.html). My research interests include machine learning and graph representation learning. Recently, my work has primarily focused on unsupervised graph representation learning, including topics such as graph contrastive learning. Previously, I explored deep learning methods for efficient and accurate robustness estimation in complex networks. In addition, I am also interested in robust machine learning, generative modeling, and large language models.
+Hi, I'm Chengpei Wu. I am pursuing my Ph.D. at the Graduate School of Advanced Science and Engineering, Hiroshima University, under the supervision of [Yang Lou](https://fylou.github.io/index.html) and co-supervision of [Yi Yu](https://home.hiroshima-u.ac.jp/yiyu/index.html). My research interests include machine learning and graph representation learning. Recently, my work has primarily focused on graph foundation models and the development of meta-learners for problems in complex networks. In addition, I am also interested in robust machine learning, generative modeling, and large language models.
 
 I also maintain a <a href="/blog/">personal research blog</a>, where I write about topics related to machine learning.
 
