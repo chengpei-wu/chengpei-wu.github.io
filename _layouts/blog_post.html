@@ -257,6 +257,24 @@
       line-height: 1.78;
     }
 
+    article .example-card {
+      box-sizing: border-box;
+      min-width: 0;
+      margin: 1.5rem 0;
+      padding: 1.15rem 1.35rem;
+      border: 1px solid #eadce0;
+      border-left: 4px solid #9c0027;
+      border-radius: 10px;
+      background: #fcf7f8;
+      overflow-wrap: anywhere;
+    }
+    article .example-card > :first-child {
+      margin-top: 0;
+    }
+    article .example-card > :last-child {
+      margin-bottom: 0;
+    }
+
     /* 代码块 */
     pre, code {
       font-family: 'Fira Code', monospace;
@@ -308,6 +326,9 @@
         border: 0;
         border-radius: 0;
         box-shadow: none;
+      }
+      article .example-card {
+        padding: 0.9rem 1rem;
       }
     }
 
@@ -361,6 +382,11 @@
     html[data-theme="dark"] article strong,
     html[data-theme="dark"] article b {
       color: #ff718b;
+    }
+    html[data-theme="dark"] article .example-card {
+      border-color: #48313c;
+      border-left-color: #ff718b;
+      background: #211c24;
     }
     html[data-theme="dark"] pre,
     html[data-theme="dark"] code {

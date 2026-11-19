@@ -65,6 +65,31 @@ AcadHomepage
    1. 草稿写完后，再将文件移动到`_posts/`并按发布日期重命名，例如 `YYYY-MM-DD-title.md`。
 1. 当你修改完毕你的页面以后, 使用`git`命令，`commit`你的改动并`push`到你的github仓库中。
 
+## 博客 Example 卡片
+
+使用 `layout: blog_post` 的文章可以用下面的容器突出展示例子。卡片沿用正文的酒红色强调色、衬线字体和圆角风格，并自动适配深色模式与手机屏幕。
+
+```markdown
+<div class="example-card" markdown="1">
+
+**Example 1: Coin Tossing**
+
+设硬币正面朝上的概率为 $$\theta$$，先验为均匀分布 $$\mathrm{Beta}(1,1)$$。
+观察到 7 次正面、3 次反面后，后验分布为：
+
+$$
+p(\theta \mid \mathcal{D}) = \mathrm{Beta}(\theta; 8,4).
+$$
+
+</div>
+```
+
+- 保留 `markdown="1"`，并在容器标签与正文之间留空行，让内部的加粗、列表、代码块和公式正常解析。
+- 容器及正文不要整体缩进四个空格，否则可能被当成代码块。
+- 标题直接使用 `**Example 1: 标题**`，编号自行填写；这种标题不会加入左侧目录。
+- 行内公式使用 `$$...$$` 并放在正文同一段；独立公式使用单独成行的 `$$`，如上例。
+- 只需把现有例子包在容器里，不需要额外插件或逐篇添加样式。
+
 # Acknowledges
 
 - AcadHomepage incorporates Font Awesome, which is distributed under the terms of the SIL OFL 1.1 and MIT License.
